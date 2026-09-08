@@ -14,9 +14,9 @@ import '../../core/voice/voice_service.dart';
 import '../../core/widgets/listen_button.dart';
 import '../../core/widgets/primary_pill_button.dart';
 import '../../generated/l10n/app_localizations.dart';
-import '../auth/data/mock_auth_repository.dart';
+import '../auth/data/app_auth_repository.dart';
 import '../home/models/home_snapshot.dart';
-import 'data/local_fields_repository.dart';
+import 'data/app_fields_repository.dart';
 import 'models/farm_field.dart';
 
 /// Default coordinates centered on Pune, Maharashtra.
@@ -172,7 +172,7 @@ class _PinFieldScreenState extends State<PinFieldScreen> {
     setState(() => _isSaving = true);
     await VoiceService.instance.stop();
 
-    final profile = MockAuthRepository.instance.currentProfile();
+    final profile = AppAuthRepository.instance.currentProfile();
     final name = (widget.draftName != null && widget.draftName!.trim().isNotEmpty)
         ? widget.draftName!.trim()
         : 'Main field';
@@ -191,10 +191,18 @@ class _PinFieldScreenState extends State<PinFieldScreen> {
       health: FieldHealth.healthy,
     );
 
-    await LocalFieldsRepository.instance.saveField(field);
-
-    if (mounted) {
-      context.go(AppRoutes.fields);
+    try {
+      await AppFieldsRepository.instance.saveField(field);
+      if (mounted) {
+        context.go(AppRoutes.fields);
+      }
+    } catch (_) {
+      if (mounted) {
+        setState(() => _isSaving = false);
+        final l10n = AppLocalizations.of(context)!;
+        _showCalmNotice(l10n.saveFailed);
+        VoiceService.instance.speak(l10n.saveFailed);
+      }
     }
   }
 

@@ -478,4 +478,13 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get voiceMicTooltip => 'बोलकर आदेश दें';
+
+  @override
+  String get saveFailed => 'सहेजा नहीं जा सका। फिर से प्रयास करें।';
+
+  @override
+  String get debugOfflineDemo => 'ऑफ़लाइन डेमो डेटा';
+
+  @override
+  String get debugConnected => 'सर्वर से जुड़ा हुआ है';
 }

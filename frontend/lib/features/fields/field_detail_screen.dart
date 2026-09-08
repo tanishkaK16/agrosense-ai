@@ -9,10 +9,10 @@ import '../../core/voice/mic_button.dart';
 import '../../core/voice/voice_service.dart';
 import '../../core/widgets/listen_button.dart';
 import '../../generated/l10n/app_localizations.dart';
-import '../alerts/data/mock_alerts_repository.dart';
+import '../alerts/data/app_alerts_repository.dart';
 import '../alerts/models/farm_alert.dart';
-import 'data/local_fields_repository.dart';
-import 'data/mock_field_status_repository.dart';
+import 'data/app_field_status_repository.dart';
+import 'data/app_fields_repository.dart';
 import 'models/farm_field.dart';
 import 'models/field_status.dart';
 
@@ -55,7 +55,7 @@ class _FieldDetailScreenState extends State<FieldDetailScreen> {
   }
 
   Future<void> _loadFieldAndStatus() async {
-    final fields = await LocalFieldsRepository.instance.getFields();
+    final fields = await AppFieldsRepository.instance.getFields();
     final match = fields.where((f) => f.id == widget.fieldId);
 
     if (match.isEmpty) {
@@ -75,11 +75,11 @@ class _FieldDetailScreenState extends State<FieldDetailScreen> {
     }
 
     final field = match.first;
-    final status = await MockFieldStatusRepository.instance.getFieldStatus(
+    final status = await AppFieldStatusRepository.instance.getFieldStatus(
       widget.fieldId,
     );
 
-    final alerts = await MockAlertsRepository.instance.getAlerts();
+    final alerts = await AppAlertsRepository.instance.getAlerts();
     FarmAlert? fieldAlert;
     for (final a in alerts) {
       if (a.fieldId == widget.fieldId) {

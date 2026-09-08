@@ -138,5 +138,8 @@
   "voiceStatusWaterReport": "{field}: पानी {water} है।",
   "voiceStatusPestReport": "{field}: कीट {pest} है।",
   "voiceStatusHealthReport": "{field}: फसल का स्वास्थ्य {health} है।",
-  "voiceMicTooltip": "बोलकर आदेश दें"
+  "voiceMicTooltip": "बोलकर आदेश दें",
+  "saveFailed": "सहेजा नहीं जा सका। फिर से प्रयास करें।",
+  "debugOfflineDemo": "ऑफ़लाइन डेमो डेटा",
+  "debugConnected": "सर्वर से जुड़ा हुआ है"
 }

@@ -936,6 +936,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Voice command'**
   String get voiceMicTooltip;
+
+  /// Error message when saving a field or profile fails
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save. Try again.'**
+  String get saveFailed;
+
+  /// Debug-only banner indicating local demo mode
+  ///
+  /// In en, this message translates to:
+  /// **'Offline demo data'**
+  String get debugOfflineDemo;
+
+  /// Debug-only banner indicating live server connection
+  ///
+  /// In en, this message translates to:
+  /// **'Connected'**
+  String get debugConnected;
 }
 
 class _AppLocalizationsDelegate

@@ -10,7 +10,7 @@ import '../../core/voice/voice_service.dart';
 import '../../core/widgets/listen_button.dart';
 import '../../core/widgets/primary_pill_button.dart';
 import '../../generated/l10n/app_localizations.dart';
-import '../auth/data/mock_auth_repository.dart';
+import '../auth/data/app_auth_repository.dart';
 
 class _CropOption {
   const _CropOption({
@@ -89,7 +89,7 @@ class _AddFieldScreenState extends State<AddFieldScreen> {
       _selectedCrop = widget.initialCrop;
     } else {
       final profileCrop =
-          MockAuthRepository.instance.currentProfile()?.mainCrop;
+          AppAuthRepository.instance.currentProfile()?.mainCrop;
       if (profileCrop != null && profileCrop.isNotEmpty) {
         _selectedCrop = profileCrop.toLowerCase();
       } else {

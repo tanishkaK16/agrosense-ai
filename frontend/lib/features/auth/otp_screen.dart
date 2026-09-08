@@ -13,7 +13,7 @@ import '../../core/voice/voice_service.dart';
 import '../../core/widgets/listen_button.dart';
 import '../../core/widgets/primary_pill_button.dart';
 import '../../generated/l10n/app_localizations.dart';
-import 'data/mock_auth_repository.dart';
+import 'data/app_auth_repository.dart';
 
 /// Screen 2 of Auth: 4-digit OTP verification.
 ///
@@ -102,7 +102,7 @@ class _OtpScreenState extends State<OtpScreen> {
 
     await VoiceService.instance.stop();
 
-    final session = await MockAuthRepository.instance.verifyOtp(
+    final session = await AppAuthRepository.instance.verifyOtp(
       widget.phoneNumber,
       code,
     );
@@ -132,7 +132,7 @@ class _OtpScreenState extends State<OtpScreen> {
   Future<void> _onResend() async {
     if (_resendCooldown > 0) return;
     _startCooldownTimer();
-    await MockAuthRepository.instance.requestOtp(widget.phoneNumber);
+    await AppAuthRepository.instance.requestOtp(widget.phoneNumber);
   }
 
   @override

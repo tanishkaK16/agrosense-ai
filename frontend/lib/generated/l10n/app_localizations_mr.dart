@@ -478,4 +478,13 @@ class AppLocalizationsMr extends AppLocalizations {
 
   @override
   String get voiceMicTooltip => 'बोलून आज्ञा द्या';
+
+  @override
+  String get saveFailed => 'जतन करता आले नाही. पुन्हा प्रयत्न करा.';
+
+  @override
+  String get debugOfflineDemo => 'ऑफलाइन डेमो डेटा';
+
+  @override
+  String get debugConnected => 'सर्व्हरशी जोडलेले आहे';
 }

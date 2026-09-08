@@ -9,9 +9,9 @@ import '../../core/voice/mic_button.dart';
 import '../../core/voice/voice_service.dart';
 import '../../core/widgets/listen_button.dart';
 import '../../generated/l10n/app_localizations.dart';
-import '../fields/data/local_fields_repository.dart';
+import '../fields/data/app_fields_repository.dart';
 import '../fields/models/farm_field.dart';
-import 'data/mock_alerts_repository.dart';
+import 'data/app_alerts_repository.dart';
 import 'models/farm_alert.dart';
 
 /// Alerts Screen — Phase 6.
@@ -37,15 +37,15 @@ class _AlertsScreenState extends State<AlertsScreen> {
   void initState() {
     super.initState();
     _loadData();
-    MockAlertsRepository.instance.addListener(_onAlertsUpdate);
-    LocalFieldsRepository.instance.addListener(_onAlertsUpdate);
+    AppAlertsRepository.instance.addListener(_onAlertsUpdate);
+    AppFieldsRepository.instance.addListener(_onAlertsUpdate);
   }
 
   @override
   void dispose() {
     VoiceService.instance.stop();
-    MockAlertsRepository.instance.removeListener(_onAlertsUpdate);
-    LocalFieldsRepository.instance.removeListener(_onAlertsUpdate);
+    AppAlertsRepository.instance.removeListener(_onAlertsUpdate);
+    AppFieldsRepository.instance.removeListener(_onAlertsUpdate);
     super.dispose();
   }
 
@@ -54,8 +54,8 @@ class _AlertsScreenState extends State<AlertsScreen> {
   }
 
   Future<void> _loadData() async {
-    final alerts = await MockAlertsRepository.instance.getAlerts();
-    final fields = await LocalFieldsRepository.instance.getFields();
+    final alerts = await AppAlertsRepository.instance.getAlerts();
+    final fields = await AppFieldsRepository.instance.getFields();
     final map = {for (final f in fields) f.id: f};
 
     if (mounted) {

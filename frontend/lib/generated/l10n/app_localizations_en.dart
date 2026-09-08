@@ -479,4 +479,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get voiceMicTooltip => 'Voice command';
+
+  @override
+  String get saveFailed => 'Could not save. Try again.';
+
+  @override
+  String get debugOfflineDemo => 'Offline demo data';
+
+  @override
+  String get debugConnected => 'Connected';
 }

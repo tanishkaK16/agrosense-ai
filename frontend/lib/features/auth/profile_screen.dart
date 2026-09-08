@@ -10,7 +10,7 @@ import '../../core/voice/voice_service.dart';
 import '../../core/widgets/listen_button.dart';
 import '../../core/widgets/primary_pill_button.dart';
 import '../../generated/l10n/app_localizations.dart';
-import 'data/mock_auth_repository.dart';
+import 'data/app_auth_repository.dart';
 import 'models/farmer_profile.dart';
 
 class _CropOption {
@@ -89,6 +89,35 @@ class _ProfileScreenState extends State<ProfileScreen> {
     super.dispose();
   }
 
+  void _showSaveError(String message) {
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).hideCurrentSnackBar();
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          message,
+          style: const TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 14,
+            fontWeight: FontWeight.w500,
+            color: AppColors.onPhoto,
+          ),
+        ),
+        backgroundColor: AppColors.danger,
+        behavior: SnackBarBehavior.floating,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppSizes.radiusMedium),
+        ),
+        margin: const EdgeInsets.fromLTRB(
+          AppSizes.paddingL,
+          0,
+          AppSizes.paddingL,
+          AppSizes.paddingL,
+        ),
+      ),
+    );
+  }
+
   Future<void> _onSave() async {
     if (_selectedCrop == null || _isSaving) return;
 
@@ -102,10 +131,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
       mainCrop: _selectedCrop!,
     );
 
-    await MockAuthRepository.instance.saveProfile(profile);
-
-    if (mounted) {
-      context.go(AppRoutes.home);
+    try {
+      await AppAuthRepository.instance.saveProfile(profile);
+      if (mounted) {
+        context.go(AppRoutes.home);
+      }
+    } catch (_) {
+      if (mounted) {
+        setState(() => _isSaving = false);
+        final l10n = AppLocalizations.of(context)!;
+        _showSaveError(l10n.saveFailed);
+        VoiceService.instance.speak(l10n.saveFailed);
+      }
     }
   }
 

@@ -9,9 +9,9 @@ import '../../core/voice/mic_button.dart';
 import '../../core/voice/voice_service.dart';
 import '../../core/widgets/listen_button.dart';
 import '../../generated/l10n/app_localizations.dart';
-import '../fields/data/local_fields_repository.dart';
+import '../fields/data/app_fields_repository.dart';
 import '../fields/models/farm_field.dart';
-import 'data/mock_alerts_repository.dart';
+import 'data/app_alerts_repository.dart';
 import 'models/farm_alert.dart';
 
 /// Alert Detail Screen — Phase 6.
@@ -55,7 +55,7 @@ class _AlertDetailScreenState extends State<AlertDetailScreen> {
 
   Future<void> _loadAlert() async {
     final alert =
-        await MockAlertsRepository.instance.getAlertById(widget.alertId);
+        await AppAlertsRepository.instance.getAlertById(widget.alertId);
 
     if (alert == null) {
       if (mounted) {
@@ -68,7 +68,7 @@ class _AlertDetailScreenState extends State<AlertDetailScreen> {
       return;
     }
 
-    final fields = await LocalFieldsRepository.instance.getFields();
+    final fields = await AppFieldsRepository.instance.getFields();
     FarmField? field;
     for (final f in fields) {
       if (f.id == alert.fieldId) {
@@ -139,7 +139,7 @@ class _AlertDetailScreenState extends State<AlertDetailScreen> {
 
   Future<void> _handleDone() async {
     if (_alert != null) {
-      await MockAlertsRepository.instance.markAlertSeen(_alert!.id);
+      await AppAlertsRepository.instance.markAlertSeen(_alert!.id);
     }
     if (mounted) {
       if (context.canPop()) {

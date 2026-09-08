@@ -503,5 +503,14 @@
   },
 
   "voiceMicTooltip": "Voice command",
-  "@voiceMicTooltip": { "description": "Accessibility tooltip for mic button" }
+  "@voiceMicTooltip": { "description": "Accessibility tooltip for mic button" },
+
+  "saveFailed": "Could not save. Try again.",
+  "@saveFailed": { "description": "Error message when saving a field or profile fails" },
+
+  "debugOfflineDemo": "Offline demo data",
+  "@debugOfflineDemo": { "description": "Debug-only banner indicating local demo mode" },
+
+  "debugConnected": "Connected",
+  "@debugConnected": { "description": "Debug-only banner indicating live server connection" }
 }

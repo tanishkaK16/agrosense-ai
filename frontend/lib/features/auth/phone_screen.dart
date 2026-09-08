@@ -12,7 +12,7 @@ import '../../core/widgets/farm_photo_header.dart';
 import '../../core/widgets/listen_button.dart';
 import '../../core/widgets/primary_pill_button.dart';
 import '../../generated/l10n/app_localizations.dart';
-import 'data/mock_auth_repository.dart';
+import 'data/app_auth_repository.dart';
 
 /// Screen 1 of Auth: Phone number entry.
 ///
@@ -61,7 +61,7 @@ class _PhoneScreenState extends State<PhoneScreen> {
     await VoiceService.instance.stop();
 
     try {
-      await MockAuthRepository.instance.requestOtp(_rawDigits);
+      await AppAuthRepository.instance.requestOtp(_rawDigits);
       if (mounted) {
         context.push(AppRoutes.otp, extra: _rawDigits);
       }

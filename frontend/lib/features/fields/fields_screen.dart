@@ -10,7 +10,7 @@ import '../../core/widgets/listen_button.dart';
 import '../../core/widgets/primary_pill_button.dart';
 import '../../generated/l10n/app_localizations.dart';
 import '../home/models/home_snapshot.dart';
-import 'data/local_fields_repository.dart';
+import 'data/app_fields_repository.dart';
 import 'models/farm_field.dart';
 
 /// My Fields Screen — Phase 4.
@@ -36,12 +36,12 @@ class _FieldsScreenState extends State<FieldsScreen> {
   void initState() {
     super.initState();
     _loadFields();
-    LocalFieldsRepository.instance.addListener(_onRepositoryUpdate);
+    AppFieldsRepository.instance.addListener(_onRepositoryUpdate);
   }
 
   @override
   void dispose() {
-    LocalFieldsRepository.instance.removeListener(_onRepositoryUpdate);
+    AppFieldsRepository.instance.removeListener(_onRepositoryUpdate);
     super.dispose();
   }
 
@@ -50,7 +50,7 @@ class _FieldsScreenState extends State<FieldsScreen> {
   }
 
   Future<void> _loadFields() async {
-    final list = await LocalFieldsRepository.instance.getFields();
+    final list = await AppFieldsRepository.instance.getFields();
     if (mounted) {
       setState(() {
         _fields = list;

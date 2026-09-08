@@ -1,7 +1,9 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../core/constants/app_sizes.dart';
+import '../../core/network/connectivity.dart';
 import '../../core/routing/app_router.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_shadows.dart';
@@ -9,10 +11,10 @@ import '../../core/theme/app_text_styles.dart';
 import '../../core/voice/mic_button.dart';
 import '../../core/widgets/listen_button.dart';
 import '../../generated/l10n/app_localizations.dart';
-import '../auth/data/mock_auth_repository.dart';
-import '../fields/data/local_fields_repository.dart';
+import '../auth/data/app_auth_repository.dart';
+import '../fields/data/app_fields_repository.dart';
 import '../fields/models/farm_field.dart';
-import 'data/mock_home_repository.dart';
+import 'data/app_home_repository.dart';
 import 'models/home_snapshot.dart';
 
 /// Farmer Home Screen — Phase 3.
@@ -40,12 +42,12 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     _loadSnapshot();
-    LocalFieldsRepository.instance.addListener(_onFieldsUpdate);
+    AppFieldsRepository.instance.addListener(_onFieldsUpdate);
   }
 
   @override
   void dispose() {
-    LocalFieldsRepository.instance.removeListener(_onFieldsUpdate);
+    AppFieldsRepository.instance.removeListener(_onFieldsUpdate);
     super.dispose();
   }
 
@@ -54,11 +56,11 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Future<void> _loadSnapshot() async {
-    final profile = MockAuthRepository.instance.currentProfile();
-    final fields = await LocalFieldsRepository.instance.getFields();
+    final profile = AppAuthRepository.instance.currentProfile();
+    final fields = await AppFieldsRepository.instance.getFields();
     final firstField = fields.isNotEmpty ? fields.first : null;
 
-    final snapshot = await MockHomeRepository.instance.getHomeSnapshot(
+    final snapshot = await AppHomeRepository.instance.getHomeSnapshot(
       defaultCrop: firstField?.crop ?? profile?.mainCrop,
       fieldName: firstField?.name,
       fieldHealth: firstField?.health,
@@ -148,7 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final profile = MockAuthRepository.instance.currentProfile();
+    final profile = AppAuthRepository.instance.currentProfile();
 
     final greetingName =
         (profile?.name.isNotEmpty == true && profile?.name != 'Farmer')
@@ -191,6 +193,43 @@ class _HomeScreenState extends State<HomeScreen> {
             AppSizes.navBarHeight + AppSizes.navBarBottomMargin + 32,
           ),
           children: [
+            // ── Debug-Only Connectivity Banner ──────────────────────────────
+            if (kDebugMode)
+              ListenableBuilder(
+                listenable: ConnectivityStatus.instance,
+                builder: (context, _) {
+                  final status = ConnectivityStatus.instance;
+                  final isLive = status.isLiveConnected;
+                  return Padding(
+                    padding: const EdgeInsets.only(bottom: AppSizes.paddingS),
+                    child: Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 10,
+                        vertical: 3,
+                      ),
+                      decoration: BoxDecoration(
+                        color: isLive
+                            ? AppColors.healthyContainer
+                            : AppColors.surfaceVariant,
+                        borderRadius:
+                            BorderRadius.circular(AppSizes.radiusPill),
+                      ),
+                      child: Text(
+                        isLive ? l10n.debugConnected : l10n.debugOfflineDemo,
+                        style: const TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 11,
+                          fontWeight: FontWeight.w600,
+                          color: AppColors.muted,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  );
+                },
+              ),
+
             // ── Top Bar: Greeting, Village & Listen Button ───────────────────
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,

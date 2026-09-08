@@ -2,9 +2,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../features/alerts/data/mock_alerts_repository.dart';
-import '../../features/fields/data/local_fields_repository.dart';
-import '../../features/fields/data/mock_field_status_repository.dart';
+import '../../features/alerts/data/app_alerts_repository.dart';
+import '../../features/fields/data/app_field_status_repository.dart';
+import '../../features/fields/data/app_fields_repository.dart';
 import '../../features/fields/models/field_status.dart';
 import '../../generated/l10n/app_localizations.dart';
 import '../constants/app_sizes.dart';
@@ -130,7 +130,7 @@ class VoiceOverlay {
         break;
 
       case VoiceActionType.whatToDo:
-        final alerts = await MockAlertsRepository.instance.getAlerts();
+        final alerts = await AppAlertsRepository.instance.getAlerts();
         if (!context.mounted) return;
 
         if (alerts.isEmpty) {
@@ -144,7 +144,7 @@ class VoiceOverlay {
         } else {
           final targetAlert =
               alerts.where((a) => !a.seen).firstOrNull ?? alerts.first;
-          final fields = await LocalFieldsRepository.instance.getFields();
+          final fields = await AppFieldsRepository.instance.getFields();
           if (!context.mounted) return;
 
           final fieldName = fields
@@ -167,7 +167,7 @@ class VoiceOverlay {
       case VoiceActionType.statusWater:
       case VoiceActionType.statusPest:
       case VoiceActionType.statusHealth:
-        final fields = await LocalFieldsRepository.instance.getFields();
+        final fields = await AppFieldsRepository.instance.getFields();
         if (!context.mounted) return;
 
         if (fields.isEmpty) {
@@ -180,7 +180,7 @@ class VoiceOverlay {
           VoiceService.instance.speak(msg);
         } else {
           final firstField = fields.first;
-          final status = await MockFieldStatusRepository.instance
+          final status = await AppFieldStatusRepository.instance
               .getFieldStatus(firstField.id);
 
           String report;
