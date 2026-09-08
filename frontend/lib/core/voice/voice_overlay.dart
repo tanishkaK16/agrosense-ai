@@ -121,6 +121,17 @@ class VoiceOverlay {
         context.push(AppRoutes.smsInfo);
         break;
 
+      case VoiceActionType.openAccount:
+        final actionText = l10n.voiceOpeningAccount;
+        showFeedbackBanner(
+          context,
+          recognizedText: result.rawTranscript,
+          actionDescription: actionText,
+        );
+        VoiceService.instance.speak(actionText);
+        context.push(AppRoutes.account);
+        break;
+
       case VoiceActionType.triggerListen:
         if (currentListenText != null && currentListenText.trim().isNotEmpty) {
           showFeedbackBanner(

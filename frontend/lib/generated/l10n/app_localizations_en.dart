@@ -537,4 +537,38 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get voiceOpeningSmsInfo => 'Opening SMS alert info';
+
+  @override
+  String get changeLanguage => 'Change language';
+
+  @override
+  String get account => 'Account';
+
+  @override
+  String get signOut => 'Sign out';
+
+  @override
+  String get signOutConfirmTitle => 'Sign out?';
+
+  @override
+  String get signOutConfirmBody =>
+      'You will need your mobile number to sign in again.';
+
+  @override
+  String get stay => 'Stay';
+
+  @override
+  String get signedOut => 'Signed out';
+
+  @override
+  String get languagePrompt => 'English. Hindi. Marathi.';
+
+  @override
+  String get currentLanguage => 'Current language';
+
+  @override
+  String get smsAlerts => 'SMS alerts';
+
+  @override
+  String get voiceOpeningAccount => 'Opening account';
 }

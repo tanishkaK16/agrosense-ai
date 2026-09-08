@@ -156,5 +156,16 @@
   "smsStatusOn": "एसएमएस सूचनाएं चालू हैं।",
   "smsStatusOff": "एसएमएस सूचनाएं बंद हैं।",
   "smsSaveSuccess": "पसंद सहेज ली गई।",
-  "voiceOpeningSmsInfo": "एसएमएस सूचना जानकारी खोली जा रही है"
+  "voiceOpeningSmsInfo": "एसएमएस सूचना जानकारी खोली जा रही है",
+  "changeLanguage": "भाषा बदलें",
+  "account": "खाता",
+  "signOut": "साइन आउट",
+  "signOutConfirmTitle": "साइन आउट करें?",
+  "signOutConfirmBody": "दोबारा साइन इन करने के लिए आपको अपने मोबाइल नंबर की आवश्यकता होगी।",
+  "stay": "रुकें",
+  "signedOut": "साइन आउट हो गए",
+  "languagePrompt": "अंग्रेजी. हिंदी. मराठी.",
+  "currentLanguage": "वर्तमान भाषा",
+  "smsAlerts": "एसएमएस अलर्ट",
+  "voiceOpeningAccount": "खाता खोला जा रहा है"
 }

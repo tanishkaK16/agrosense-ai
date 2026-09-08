@@ -69,4 +69,9 @@ class MockAuthRepository implements AuthRepository {
 
   @override
   bool get isLoggedIn => AppPrefs.instance.hasSession;
+
+  @override
+  Future<void> signOut() async {
+    await AppPrefs.instance.setSessionJson(null);
+  }
 }

@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../core/l10n/locale_controller.dart';
 import '../../core/storage/app_prefs.dart';
+import '../../features/account/account_screen.dart';
 import '../../features/alerts/alert_detail_screen.dart';
 import '../../features/alerts/alerts_screen.dart';
 import '../../features/alerts/sms_info_screen.dart';
@@ -33,6 +34,7 @@ abstract final class AppRoutes {
   static const String alerts = '/alerts';
   static const String alertDetail = '/alerts/:id';
   static const String smsInfo = '/alerts/sms-info';
+  static const String account = '/account';
 }
 
 /// Application router.
@@ -200,6 +202,12 @@ GoRouter buildRouter() {
         path: AppRoutes.smsInfo,
         pageBuilder: (context, state) => const NoTransitionPage(
           child: SmsInfoScreen(),
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.account,
+        pageBuilder: (context, state) => const NoTransitionPage(
+          child: AccountScreen(),
         ),
       ),
     ],

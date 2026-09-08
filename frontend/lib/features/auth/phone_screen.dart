@@ -9,6 +9,7 @@ import '../../core/theme/app_shadows.dart';
 import '../../core/theme/app_text_styles.dart';
 import '../../core/voice/voice_service.dart';
 import '../../core/widgets/farm_photo_header.dart';
+import '../../core/widgets/language_button.dart';
 import '../../core/widgets/listen_button.dart';
 import '../../core/widgets/primary_pill_button.dart';
 import '../../generated/l10n/app_localizations.dart';
@@ -113,9 +114,16 @@ class _PhoneScreenState extends State<PhoneScreen> {
                       ),
                     ],
                   ),
-                  ListenButton(
-                    onPhoto: true,
-                    text: speechText,
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const LanguageButton(onPhoto: true),
+                      const SizedBox(width: AppSizes.paddingS),
+                      ListenButton(
+                        onPhoto: true,
+                        text: speechText,
+                      ),
+                    ],
                   ),
                 ],
               ),

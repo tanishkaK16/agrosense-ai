@@ -22,4 +22,7 @@ abstract class AuthRepository {
 
   /// Whether a farmer is currently signed in.
   bool get isLoggedIn;
+
+  /// Sign out the current farmer, clearing session state.
+  Future<void> signOut();
 }

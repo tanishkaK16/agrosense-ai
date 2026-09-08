@@ -9,6 +9,8 @@ import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_shadows.dart';
 import '../../core/theme/app_text_styles.dart';
 import '../../core/voice/mic_button.dart';
+import '../../core/voice/voice_service.dart';
+import '../../core/widgets/language_button.dart';
 import '../../core/widgets/listen_button.dart';
 import '../../generated/l10n/app_localizations.dart';
 import '../auth/data/app_auth_repository.dart';
@@ -270,54 +272,86 @@ class _HomeScreenState extends State<HomeScreen> {
               },
             ),
 
-            // ── Top Bar: Greeting, Village & Listen Button ───────────────────
+            // ── Top Bar: Account, Language Switcher, Voice & Listen ─────────
             Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        greetingText,
-                        style: AppTextStyles.screenTitle(context).copyWith(
-                          fontSize: 28,
-                        ),
+                // Account Button (top-left person icon button opposite actions)
+                Semantics(
+                  label: l10n.account,
+                  button: true,
+                  child: InkWell(
+                    onTap: () {
+                      VoiceService.instance.stop();
+                      context.push(AppRoutes.account);
+                    },
+                    borderRadius: BorderRadius.circular(AppSizes.radiusPill),
+                    child: Container(
+                      width: 48,
+                      height: 48,
+                      decoration: BoxDecoration(
+                        color: AppColors.surface,
+                        shape: BoxShape.circle,
+                        border: Border.all(color: AppColors.surfaceVariant),
+                        boxShadow: AppShadows.soft,
                       ),
-                      if (profile?.village.isNotEmpty == true) ...[
-                        const SizedBox(height: 4),
-                        Row(
-                          children: [
-                            const Icon(
-                              Icons.place_outlined,
-                              size: 16,
-                              color: AppColors.muted,
-                            ),
-                            const SizedBox(width: 4),
-                            Text(
-                              profile!.village,
-                              style: AppTextStyles.caption(context).copyWith(
-                                fontSize: 14,
-                                color: AppColors.muted,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ],
+                      alignment: Alignment.center,
+                      child: const Icon(
+                        Icons.person_outline_rounded,
+                        color: AppColors.primary,
+                        size: 24,
+                      ),
+                    ),
                   ),
                 ),
-                MicButton(
-                  onPhoto: false,
-                  currentListenText: speechText,
-                ),
-                const SizedBox(width: AppSizes.paddingS),
-                ListenButton(
-                  onPhoto: false,
-                  text: speechText,
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const LanguageButton(onPhoto: false),
+                    const SizedBox(width: AppSizes.paddingS),
+                    MicButton(
+                      onPhoto: false,
+                      currentListenText: speechText,
+                    ),
+                    const SizedBox(width: AppSizes.paddingS),
+                    ListenButton(
+                      onPhoto: false,
+                      text: speechText,
+                    ),
+                  ],
                 ),
               ],
             ),
+
+            const SizedBox(height: AppSizes.paddingM),
+
+            // ── Greeting & Village ──────────────────────────────────────────
+            Text(
+              greetingText,
+              style: AppTextStyles.screenTitle(context).copyWith(
+                fontSize: 28,
+              ),
+            ),
+            if (profile?.village.isNotEmpty == true) ...[
+              const SizedBox(height: 4),
+              Row(
+                children: [
+                  const Icon(
+                    Icons.place_outlined,
+                    size: 16,
+                    color: AppColors.muted,
+                  ),
+                  const SizedBox(width: 4),
+                  Text(
+                    profile!.village,
+                    style: AppTextStyles.caption(context).copyWith(
+                      fontSize: 14,
+                      color: AppColors.muted,
+                    ),
+                  ),
+                ],
+              ),
+            ],
 
             const SizedBox(height: AppSizes.paddingL),
 

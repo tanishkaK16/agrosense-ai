@@ -1044,6 +1044,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Opening SMS alert info'**
   String get voiceOpeningSmsInfo;
+
+  /// Label and tooltip for changing language
+  ///
+  /// In en, this message translates to:
+  /// **'Change language'**
+  String get changeLanguage;
+
+  /// Farmer account screen title
+  ///
+  /// In en, this message translates to:
+  /// **'Account'**
+  String get account;
+
+  /// Sign out button label
+  ///
+  /// In en, this message translates to:
+  /// **'Sign out'**
+  String get signOut;
+
+  /// Title for sign out confirmation
+  ///
+  /// In en, this message translates to:
+  /// **'Sign out?'**
+  String get signOutConfirmTitle;
+
+  /// Body message for sign out confirmation
+  ///
+  /// In en, this message translates to:
+  /// **'You will need your mobile number to sign in again.'**
+  String get signOutConfirmBody;
+
+  /// Button label to cancel sign out
+  ///
+  /// In en, this message translates to:
+  /// **'Stay'**
+  String get stay;
+
+  /// Notification when user signs out
+  ///
+  /// In en, this message translates to:
+  /// **'Signed out'**
+  String get signedOut;
+
+  /// Spoken prompt for language sheet
+  ///
+  /// In en, this message translates to:
+  /// **'English. Hindi. Marathi.'**
+  String get languagePrompt;
+
+  /// Label for current language in account
+  ///
+  /// In en, this message translates to:
+  /// **'Current language'**
+  String get currentLanguage;
+
+  /// Label for SMS alerts in account screen
+  ///
+  /// In en, this message translates to:
+  /// **'SMS alerts'**
+  String get smsAlerts;
+
+  /// Voice announcement when opening account screen
+  ///
+  /// In en, this message translates to:
+  /// **'Opening account'**
+  String get voiceOpeningAccount;
 }
 
 class _AppLocalizationsDelegate

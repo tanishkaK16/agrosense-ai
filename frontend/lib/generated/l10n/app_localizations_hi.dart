@@ -537,4 +537,38 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get voiceOpeningSmsInfo => 'एसएमएस सूचना जानकारी खोली जा रही है';
+
+  @override
+  String get changeLanguage => 'भाषा बदलें';
+
+  @override
+  String get account => 'खाता';
+
+  @override
+  String get signOut => 'साइन आउट';
+
+  @override
+  String get signOutConfirmTitle => 'साइन आउट करें?';
+
+  @override
+  String get signOutConfirmBody =>
+      'दोबारा साइन इन करने के लिए आपको अपने मोबाइल नंबर की आवश्यकता होगी।';
+
+  @override
+  String get stay => 'रुकें';
+
+  @override
+  String get signedOut => 'साइन आउट हो गए';
+
+  @override
+  String get languagePrompt => 'अंग्रेजी. हिंदी. मराठी.';
+
+  @override
+  String get currentLanguage => 'वर्तमान भाषा';
+
+  @override
+  String get smsAlerts => 'एसएमएस अलर्ट';
+
+  @override
+  String get voiceOpeningAccount => 'खाता खोला जा रहा है';
 }

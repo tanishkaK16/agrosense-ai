@@ -10,6 +10,7 @@ import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_shadows.dart';
 import '../../core/theme/app_text_styles.dart';
 import '../../core/voice/voice_service.dart';
+import '../../core/widgets/language_button.dart';
 import '../../core/widgets/listen_button.dart';
 import '../../core/widgets/primary_pill_button.dart';
 import '../../generated/l10n/app_localizations.dart';
@@ -184,10 +185,17 @@ class _OtpScreenState extends State<OtpScreen> {
                     ),
                   ),
 
-                  // Listen button
-                  ListenButton(
-                    onPhoto: false,
-                    text: speechText,
+                  // Language and Listen buttons
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const LanguageButton(onPhoto: false),
+                      const SizedBox(width: AppSizes.paddingS),
+                      ListenButton(
+                        onPhoto: false,
+                        text: speechText,
+                      ),
+                    ],
                   ),
                 ],
               ),

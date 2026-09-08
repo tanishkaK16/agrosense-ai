@@ -96,4 +96,10 @@ class AppAuthRepository implements AuthRepository {
 
   @override
   bool get isLoggedIn => _mockRepo.isLoggedIn;
+
+  @override
+  Future<void> signOut() async {
+    await _mockRepo.signOut();
+    await _liveRepo.signOut();
+  }
 }

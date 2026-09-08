@@ -72,4 +72,9 @@ class LiveAuthRepository implements AuthRepository {
 
   @override
   bool get isLoggedIn => currentSession() != null;
+
+  @override
+  Future<void> signOut() async {
+    await AppPrefs.instance.setSessionJson(null);
+  }
 }

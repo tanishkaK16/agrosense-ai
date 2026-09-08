@@ -4,6 +4,7 @@ enum VoiceActionType {
   navigateFields,
   navigateAlerts,
   openSmsInfo,
+  openAccount,
   triggerListen,
   whatToDo,
   statusWater,
@@ -166,6 +167,26 @@ class VoiceCommandParser {
         action: VoiceActionType.openSmsInfo,
         rawTranscript: transcript,
         matchedKeyword: 'sms',
+      );
+    }
+
+    // 5b. Account / Profile Screen
+    // English: "account", "profile"
+    // Hindi: "खाता", "प्रोफाइल"
+    // Marathi: "खाते", "प्रोफाइल"
+    if (_matchesAny(cleaned, [
+      'account',
+      'profile',
+      'khata',
+      'khate',
+      'खाता',
+      'खाते',
+      'प्रोफाइल',
+    ])) {
+      return VoiceCommandResult(
+        action: VoiceActionType.openAccount,
+        rawTranscript: transcript,
+        matchedKeyword: 'account',
       );
     }
 

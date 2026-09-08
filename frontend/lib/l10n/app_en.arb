@@ -562,5 +562,38 @@
   "@smsSaveSuccess": { "description": "Notice when SMS preference is saved" },
 
   "voiceOpeningSmsInfo": "Opening SMS alert info",
-  "@voiceOpeningSmsInfo": { "description": "Voice feedback when opening SMS info screen" }
+  "@voiceOpeningSmsInfo": { "description": "Voice feedback when opening SMS info screen" },
+
+  "changeLanguage": "Change language",
+  "@changeLanguage": { "description": "Label and tooltip for changing language" },
+
+  "account": "Account",
+  "@account": { "description": "Farmer account screen title" },
+
+  "signOut": "Sign out",
+  "@signOut": { "description": "Sign out button label" },
+
+  "signOutConfirmTitle": "Sign out?",
+  "@signOutConfirmTitle": { "description": "Title for sign out confirmation" },
+
+  "signOutConfirmBody": "You will need your mobile number to sign in again.",
+  "@signOutConfirmBody": { "description": "Body message for sign out confirmation" },
+
+  "stay": "Stay",
+  "@stay": { "description": "Button label to cancel sign out" },
+
+  "signedOut": "Signed out",
+  "@signedOut": { "description": "Notification when user signs out" },
+
+  "languagePrompt": "English. Hindi. Marathi.",
+  "@languagePrompt": { "description": "Spoken prompt for language sheet" },
+
+  "currentLanguage": "Current language",
+  "@currentLanguage": { "description": "Label for current language in account" },
+
+  "smsAlerts": "SMS alerts",
+  "@smsAlerts": { "description": "Label for SMS alerts in account screen" },
+
+  "voiceOpeningAccount": "Opening account",
+  "@voiceOpeningAccount": { "description": "Voice announcement when opening account screen" }
 }
