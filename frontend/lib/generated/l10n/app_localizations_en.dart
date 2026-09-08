@@ -220,4 +220,54 @@ class AppLocalizationsEn extends AppLocalizations {
       String greeting, int temp, int rain, String health, String alerts) {
     return '$greeting. Temperature $temp degrees. Rain $rain millimeter. Your field is $health. $alerts.';
   }
+
+  @override
+  String get noFieldsYet => 'No field yet';
+
+  @override
+  String get addFirstField => 'Add your first field';
+
+  @override
+  String get addField => 'Add field';
+
+  @override
+  String fieldsCount(int count) {
+    return 'You have $count fields';
+  }
+
+  @override
+  String get fieldsEmptySpeech => 'No field yet. Add your first field.';
+
+  @override
+  String get fieldNameLabel => 'Field name';
+
+  @override
+  String get fieldNameHint => 'Main field';
+
+  @override
+  String get selectCropQuestion => 'Which crop is grown here?';
+
+  @override
+  String get tapYourField => 'Tap your field';
+
+  @override
+  String get tapMapInstruction => 'Tap the map to drop a pin. You can move it.';
+
+  @override
+  String get useMyLocation => 'Use my location';
+
+  @override
+  String get locationDeniedNotice =>
+      'Location not shared. You can still tap the map to place your pin.';
+
+  @override
+  String get saveField => 'Save field';
+
+  @override
+  String get addFieldStep1Speech =>
+      'Add field. Enter a name or leave it as Main field, choose your crop, and tap next.';
+
+  @override
+  String get addFieldStep2Speech =>
+      'Tap your field. Tap the map to drop a pin. You can move it. Tap save field when done.';
 }

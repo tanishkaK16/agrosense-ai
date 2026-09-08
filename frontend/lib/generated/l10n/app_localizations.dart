@@ -490,6 +490,96 @@ abstract class AppLocalizations {
   /// **'{greeting}. Temperature {temp} degrees. Rain {rain} millimeter. Your field is {health}. {alerts}.'**
   String homeSpeech(
       String greeting, int temp, int rain, String health, String alerts);
+
+  /// Empty state title when farmer has no fields
+  ///
+  /// In en, this message translates to:
+  /// **'No field yet'**
+  String get noFieldsYet;
+
+  /// Empty state prompt to add first field
+  ///
+  /// In en, this message translates to:
+  /// **'Add your first field'**
+  String get addFirstField;
+
+  /// Action button to add a field
+  ///
+  /// In en, this message translates to:
+  /// **'Add field'**
+  String get addField;
+
+  /// Listen summary for fields list
+  ///
+  /// In en, this message translates to:
+  /// **'You have {count} fields'**
+  String fieldsCount(int count);
+
+  /// Speech text when field list is empty
+  ///
+  /// In en, this message translates to:
+  /// **'No field yet. Add your first field.'**
+  String get fieldsEmptySpeech;
+
+  /// Field name input label
+  ///
+  /// In en, this message translates to:
+  /// **'Field name'**
+  String get fieldNameLabel;
+
+  /// Default placeholder for field name
+  ///
+  /// In en, this message translates to:
+  /// **'Main field'**
+  String get fieldNameHint;
+
+  /// Crop selection prompt in add field screen
+  ///
+  /// In en, this message translates to:
+  /// **'Which crop is grown here?'**
+  String get selectCropQuestion;
+
+  /// Title on pin map screen
+  ///
+  /// In en, this message translates to:
+  /// **'Tap your field'**
+  String get tapYourField;
+
+  /// Instruction on pin map screen
+  ///
+  /// In en, this message translates to:
+  /// **'Tap the map to drop a pin. You can move it.'**
+  String get tapMapInstruction;
+
+  /// Button to center map on device GPS location
+  ///
+  /// In en, this message translates to:
+  /// **'Use my location'**
+  String get useMyLocation;
+
+  /// Calm message when location permission is not granted
+  ///
+  /// In en, this message translates to:
+  /// **'Location not shared. You can still tap the map to place your pin.'**
+  String get locationDeniedNotice;
+
+  /// Button to confirm and save field
+  ///
+  /// In en, this message translates to:
+  /// **'Save field'**
+  String get saveField;
+
+  /// Voice narration for add field step 1
+  ///
+  /// In en, this message translates to:
+  /// **'Add field. Enter a name or leave it as Main field, choose your crop, and tap next.'**
+  String get addFieldStep1Speech;
+
+  /// Voice narration for add field step 2 map
+  ///
+  /// In en, this message translates to:
+  /// **'Tap your field. Tap the map to drop a pin. You can move it. Tap save field when done.'**
+  String get addFieldStep2Speech;
 }
 
 class _AppLocalizationsDelegate

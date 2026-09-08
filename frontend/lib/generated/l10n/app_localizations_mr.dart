@@ -220,4 +220,56 @@ class AppLocalizationsMr extends AppLocalizations {
       String greeting, int temp, int rain, String health, String alerts) {
     return '$greeting. तापमान $temp अंश. पाऊस $rain मिमी. तुमचे शेत $health आहे. $alerts.';
   }
+
+  @override
+  String get noFieldsYet => 'अजून कोणतेही शेत नाही';
+
+  @override
+  String get addFirstField => 'तुमचे पहिले शेत जोडा';
+
+  @override
+  String get addField => 'शेत जोडा';
+
+  @override
+  String fieldsCount(int count) {
+    return 'तुमच्याकडे $count शेत आहेत';
+  }
+
+  @override
+  String get fieldsEmptySpeech =>
+      'अजून कोणतेही शेत नाही. पहिले शेत जोडण्यासाठी शेत जोडा दाबा.';
+
+  @override
+  String get fieldNameLabel => 'शेताचे नाव';
+
+  @override
+  String get fieldNameHint => 'मुख्य शेत';
+
+  @override
+  String get selectCropQuestion => 'येथे कोणते पीक घेतले जाते?';
+
+  @override
+  String get tapYourField => 'तुमच्या शेतावर टॅप करा';
+
+  @override
+  String get tapMapInstruction =>
+      'पिन ठेवण्यासाठी नकाशावर टॅप करा. तुम्ही ती हलवू शकता.';
+
+  @override
+  String get useMyLocation => 'माझे स्थान वापरा';
+
+  @override
+  String get locationDeniedNotice =>
+      'स्थान मिळाले नाही. तुम्ही नकाशावर टॅप करून पिन ठेवू शकता.';
+
+  @override
+  String get saveField => 'शेत जतन करा';
+
+  @override
+  String get addFieldStep1Speech =>
+      'शेत जोडा. नाव प्रविष्ट करा किंवा मुख्य शेत राहू द्या, आपले पीक निवडा, आणि पुढे दाबा.';
+
+  @override
+  String get addFieldStep2Speech =>
+      'तुमच्या शेतावर टॅप करा. नकाशावर पिन ठेवा. तुम्ही ती हलवू शकता. पूर्ण झाल्यावर शेत जतन करा दाबा.';
 }

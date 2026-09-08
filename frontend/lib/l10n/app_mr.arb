@@ -64,5 +64,20 @@
   "healthSummaryActNow": "पिकावर ताण दिसून येत आहे. आजच शेताची पाहणी करा.",
   "noAlertsToday": "आज कोणतीही सूचना नाही",
   "alertsTapToSee": "{count} सूचना. काय करायचे ते पाहण्यासाठी दाबा.",
-  "homeSpeech": "{greeting}. तापमान {temp} अंश. पाऊस {rain} मिमी. तुमचे शेत {health} आहे. {alerts}."
+  "homeSpeech": "{greeting}. तापमान {temp} अंश. पाऊस {rain} मिमी. तुमचे शेत {health} आहे. {alerts}.",
+  "noFieldsYet": "अजून कोणतेही शेत नाही",
+  "addFirstField": "तुमचे पहिले शेत जोडा",
+  "addField": "शेत जोडा",
+  "fieldsCount": "तुमच्याकडे {count} शेत आहेत",
+  "fieldsEmptySpeech": "अजून कोणतेही शेत नाही. पहिले शेत जोडण्यासाठी शेत जोडा दाबा.",
+  "fieldNameLabel": "शेताचे नाव",
+  "fieldNameHint": "मुख्य शेत",
+  "selectCropQuestion": "येथे कोणते पीक घेतले जाते?",
+  "tapYourField": "तुमच्या शेतावर टॅप करा",
+  "tapMapInstruction": "पिन ठेवण्यासाठी नकाशावर टॅप करा. तुम्ही ती हलवू शकता.",
+  "useMyLocation": "माझे स्थान वापरा",
+  "locationDeniedNotice": "स्थान मिळाले नाही. तुम्ही नकाशावर टॅप करून पिन ठेवू शकता.",
+  "saveField": "शेत जतन करा",
+  "addFieldStep1Speech": "शेत जोडा. नाव प्रविष्ट करा किंवा मुख्य शेत राहू द्या, आपले पीक निवडा, आणि पुढे दाबा.",
+  "addFieldStep2Speech": "तुमच्या शेतावर टॅप करा. नकाशावर पिन ठेवा. तुम्ही ती हलवू शकता. पूर्ण झाल्यावर शेत जतन करा दाबा."
 }

@@ -64,5 +64,20 @@
   "healthSummaryActNow": "फसल में तनाव के लक्षण हैं। आज ही खेत का मुआयना करें।",
   "noAlertsToday": "आज कोई चेतावनी नहीं",
   "alertsTapToSee": "{count} चेतावनी। क्या करना है देखने के लिए दबाएं।",
-  "homeSpeech": "{greeting}। तापमान {temp} अंश। बारिश {rain} मिलीमीटर। आपका खेत {health} है। {alerts}।"
+  "homeSpeech": "{greeting}। तापमान {temp} अंश। बारिश {rain} मिलीमीटर। आपका खेत {health} है। {alerts}।",
+  "noFieldsYet": "अभी कोई खेत नहीं है",
+  "addFirstField": "अपना पहला खेत जोड़ें",
+  "addField": "खेत जोड़ें",
+  "fieldsCount": "आपके पास {count} खेत हैं",
+  "fieldsEmptySpeech": "अभी कोई खेत नहीं है। अपना पहला खेत जोड़ने के लिए खेत जोड़ें दबाएं।",
+  "fieldNameLabel": "खेत का नाम",
+  "fieldNameHint": "मुख्य खेत",
+  "selectCropQuestion": "यहाँ कौन सी फसल उगाई जाती है?",
+  "tapYourField": "अपने खेत पर टैप करें",
+  "tapMapInstruction": "पिन लगाने के लिए नक्शे पर टैप करें। आप इसे हिला सकते हैं।",
+  "useMyLocation": "मेरी लोकेशन का उपयोग करें",
+  "locationDeniedNotice": "लोकेशन नहीं मिली। आप नक्शे पर टैप करके पिन लगा सकते हैं।",
+  "saveField": "खेत सहेजें",
+  "addFieldStep1Speech": "खेत जोड़ें। नाम दर्ज करें या मुख्य खेत रहने दें, अपनी फसल चुनें, और आगे दबाएं।",
+  "addFieldStep2Speech": "अपने खेत पर टैप करें। नक्शे पर पिन लगाएं। आप इसे हिला सकते हैं। पूरा होने पर खेत सहेजें दबाएं।"
 }

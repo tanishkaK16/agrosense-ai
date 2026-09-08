@@ -9,6 +9,8 @@ import '../../core/theme/app_text_styles.dart';
 import '../../core/widgets/listen_button.dart';
 import '../../generated/l10n/app_localizations.dart';
 import '../auth/data/mock_auth_repository.dart';
+import '../fields/data/local_fields_repository.dart';
+import '../fields/models/farm_field.dart';
 import 'data/mock_home_repository.dart';
 import 'models/home_snapshot.dart';
 
@@ -31,20 +33,40 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   HomeSnapshot? _snapshot;
+  FarmField? _firstField;
 
   @override
   void initState() {
     super.initState();
     _loadSnapshot();
+    LocalFieldsRepository.instance.addListener(_onFieldsUpdate);
+  }
+
+  @override
+  void dispose() {
+    LocalFieldsRepository.instance.removeListener(_onFieldsUpdate);
+    super.dispose();
+  }
+
+  void _onFieldsUpdate() {
+    _loadSnapshot();
   }
 
   Future<void> _loadSnapshot() async {
     final profile = MockAuthRepository.instance.currentProfile();
+    final fields = await LocalFieldsRepository.instance.getFields();
+    final firstField = fields.isNotEmpty ? fields.first : null;
+
     final snapshot = await MockHomeRepository.instance.getHomeSnapshot(
-      defaultCrop: profile?.mainCrop,
+      defaultCrop: firstField?.crop ?? profile?.mainCrop,
+      fieldName: firstField?.name,
+      fieldHealth: firstField?.health,
     );
     if (mounted) {
-      setState(() => _snapshot = snapshot);
+      setState(() {
+        _firstField = firstField;
+        _snapshot = snapshot;
+      });
     }
   }
 
@@ -293,7 +315,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         // Real farm photograph
                         Image.asset(
-                          'assets/images/hero_field_wide.jpg',
+                          _firstField?.photoAsset ??
+                              'assets/images/hero_field_wide.jpg',
                           fit: BoxFit.cover,
                           errorBuilder: (_, __, ___) => const ColoredBox(
                             color: AppColors.goldSoft,
@@ -331,7 +354,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          l10n.myFieldToday,
+                                          _firstField != null
+                                              ? _firstField!.name
+                                              : l10n.myFieldToday,
                                           style: const TextStyle(
                                             fontFamily: 'Fraunces',
                                             fontSize: 20,

@@ -220,4 +220,56 @@ class AppLocalizationsHi extends AppLocalizations {
       String greeting, int temp, int rain, String health, String alerts) {
     return '$greeting। तापमान $temp अंश। बारिश $rain मिलीमीटर। आपका खेत $health है। $alerts।';
   }
+
+  @override
+  String get noFieldsYet => 'अभी कोई खेत नहीं है';
+
+  @override
+  String get addFirstField => 'अपना पहला खेत जोड़ें';
+
+  @override
+  String get addField => 'खेत जोड़ें';
+
+  @override
+  String fieldsCount(int count) {
+    return 'आपके पास $count खेत हैं';
+  }
+
+  @override
+  String get fieldsEmptySpeech =>
+      'अभी कोई खेत नहीं है। अपना पहला खेत जोड़ने के लिए खेत जोड़ें दबाएं।';
+
+  @override
+  String get fieldNameLabel => 'खेत का नाम';
+
+  @override
+  String get fieldNameHint => 'मुख्य खेत';
+
+  @override
+  String get selectCropQuestion => 'यहाँ कौन सी फसल उगाई जाती है?';
+
+  @override
+  String get tapYourField => 'अपने खेत पर टैप करें';
+
+  @override
+  String get tapMapInstruction =>
+      'पिन लगाने के लिए नक्शे पर टैप करें। आप इसे हिला सकते हैं।';
+
+  @override
+  String get useMyLocation => 'मेरी लोकेशन का उपयोग करें';
+
+  @override
+  String get locationDeniedNotice =>
+      'लोकेशन नहीं मिली। आप नक्शे पर टैप करके पिन लगा सकते हैं।';
+
+  @override
+  String get saveField => 'खेत सहेजें';
+
+  @override
+  String get addFieldStep1Speech =>
+      'खेत जोड़ें। नाम दर्ज करें या मुख्य खेत रहने दें, अपनी फसल चुनें, और आगे दबाएं।';
+
+  @override
+  String get addFieldStep2Speech =>
+      'अपने खेत पर टैप करें। नक्शे पर पिन लगाएं। आप इसे हिला सकते हैं। पूरा होने पर खेत सहेजें दबाएं।';
 }

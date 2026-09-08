@@ -222,5 +222,55 @@
       "health": { "type": "String" },
       "alerts": { "type": "String" }
     }
-  }
+  },
+
+  "noFieldsYet": "No field yet",
+  "@noFieldsYet": { "description": "Empty state title when farmer has no fields" },
+
+  "addFirstField": "Add your first field",
+  "@addFirstField": { "description": "Empty state prompt to add first field" },
+
+  "addField": "Add field",
+  "@addField": { "description": "Action button to add a field" },
+
+  "fieldsCount": "You have {count} fields",
+  "@fieldsCount": {
+    "description": "Listen summary for fields list",
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+
+  "fieldsEmptySpeech": "No field yet. Add your first field.",
+  "@fieldsEmptySpeech": { "description": "Speech text when field list is empty" },
+
+  "fieldNameLabel": "Field name",
+  "@fieldNameLabel": { "description": "Field name input label" },
+
+  "fieldNameHint": "Main field",
+  "@fieldNameHint": { "description": "Default placeholder for field name" },
+
+  "selectCropQuestion": "Which crop is grown here?",
+  "@selectCropQuestion": { "description": "Crop selection prompt in add field screen" },
+
+  "tapYourField": "Tap your field",
+  "@tapYourField": { "description": "Title on pin map screen" },
+
+  "tapMapInstruction": "Tap the map to drop a pin. You can move it.",
+  "@tapMapInstruction": { "description": "Instruction on pin map screen" },
+
+  "useMyLocation": "Use my location",
+  "@useMyLocation": { "description": "Button to center map on device GPS location" },
+
+  "locationDeniedNotice": "Location not shared. You can still tap the map to place your pin.",
+  "@locationDeniedNotice": { "description": "Calm message when location permission is not granted" },
+
+  "saveField": "Save field",
+  "@saveField": { "description": "Button to confirm and save field" },
+
+  "addFieldStep1Speech": "Add field. Enter a name or leave it as Main field, choose your crop, and tap next.",
+  "@addFieldStep1Speech": { "description": "Voice narration for add field step 1" },
+
+  "addFieldStep2Speech": "Tap your field. Tap the map to drop a pin. You can move it. Tap save field when done.",
+  "@addFieldStep2Speech": { "description": "Voice narration for add field step 2 map" }
 }

@@ -7,7 +7,9 @@ import '../../features/alerts/alerts_screen.dart';
 import '../../features/auth/otp_screen.dart';
 import '../../features/auth/phone_screen.dart';
 import '../../features/auth/profile_screen.dart';
+import '../../features/fields/add_field_screen.dart';
 import '../../features/fields/fields_screen.dart';
+import '../../features/fields/pin_field_screen.dart';
 import '../../features/home/home_screen.dart';
 import '../../features/onboarding/language_screen.dart';
 import '../../features/onboarding/onboarding_screen.dart';
@@ -22,6 +24,8 @@ abstract final class AppRoutes {
   static const String profile = '/profile';
   static const String home = '/';
   static const String fields = '/fields';
+  static const String fieldsAdd = '/fields/add';
+  static const String fieldsPin = '/fields/pin';
   static const String alerts = '/alerts';
 }
 
@@ -133,6 +137,32 @@ GoRouter buildRouter() {
             pageBuilder: (context, state) => const NoTransitionPage(
               child: FieldsScreen(),
             ),
+            routes: [
+              GoRoute(
+                path: 'add',
+                pageBuilder: (context, state) {
+                  final extra = state.extra as Map<String, dynamic>?;
+                  return NoTransitionPage(
+                    child: AddFieldScreen(
+                      initialName: extra?['name'] as String?,
+                      initialCrop: extra?['crop'] as String?,
+                    ),
+                  );
+                },
+              ),
+              GoRoute(
+                path: 'pin',
+                pageBuilder: (context, state) {
+                  final extra = state.extra as Map<String, dynamic>?;
+                  return NoTransitionPage(
+                    child: PinFieldScreen(
+                      draftName: extra?['name'] as String?,
+                      draftCrop: extra?['crop'] as String?,
+                    ),
+                  );
+                },
+              ),
+            ],
           ),
           GoRoute(
             path: AppRoutes.alerts,

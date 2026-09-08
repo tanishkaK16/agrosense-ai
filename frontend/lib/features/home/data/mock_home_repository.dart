@@ -15,17 +15,22 @@ class MockHomeRepository implements HomeRepository {
   static final MockHomeRepository instance = MockHomeRepository._();
 
   @override
-  Future<HomeSnapshot> getHomeSnapshot({String? defaultCrop}) async {
+  Future<HomeSnapshot> getHomeSnapshot({
+    String? defaultCrop,
+    String? fieldName,
+    FieldHealth? fieldHealth,
+  }) async {
+    final effectiveHealth = fieldHealth ?? kDevHealthOverride;
     return HomeSnapshot(
       temperatureC: 32,
       rainMm: 0,
       windKmh: 12,
-      fieldName: 'Main field',
+      fieldName: fieldName ?? 'Main field',
       crop: defaultCrop != null && defaultCrop.trim().isNotEmpty
           ? defaultCrop
           : 'wheat',
-      health: kDevHealthOverride,
-      summarySentence: _getSummaryForHealth(kDevHealthOverride),
+      health: effectiveHealth,
+      summarySentence: _getSummaryForHealth(effectiveHealth),
       alertCount: kDevAlertCount,
     );
   }
