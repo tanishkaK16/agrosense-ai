@@ -1,35 +1,61 @@
-# ── OS artefacts ─────────────────────────────────────────────────────────────
+# OS artifacts
+.DS_Store
 **/.DS_Store
 Thumbs.db
 
-# ── IDE / Editor ──────────────────────────────────────────────────────────────
+# IDE and editors
 .idea/
+**/.idea/
+.vscode/
+**/.vscode/
 *.iml
+**/*.iml
 *.ipr
 *.iws
-.vscode/
 
-# ── Android / Gradle ─────────────────────────────────────────────────────────
+# Android and Gradle build artifacts
 .gradle/
-/local.properties
+**/.gradle/
+local.properties
 **/local.properties
-/build/
-/captures/
+captures/
+**/captures/
 .externalNativeBuild/
 .cxx/
+**/build/
+build/
+*.apk
+*.aab
+*.ipa
+*.app
 
-# ── Flutter / Dart ────────────────────────────────────────────────────────────
-frontend/.dart_tool/
-frontend/build/
-frontend/.flutter-plugins-dependencies
-frontend/.pub-cache/
-frontend/.pub/
-frontend/coverage/
+# Flutter and Dart
+.dart_tool/
+**/.dart_tool/
+.flutter-plugins-dependencies
+**/.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+coverage/
+**/*.lcov
 
-# ── Secrets / env ─────────────────────────────────────────────────────────────
+# Secrets and environment configurations
 .env
-frontend/.env
-**/*.keystore
-**/*.jks
+.env.*
+!.env.example
+*.env.local
+*.jks
+*.keystore
+key.properties
+**/key.properties
+google-services.json
 **/google-services.json
+GoogleService-Info.plist
 **/GoogleService-Info.plist
+
+# Python and Backend
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.log
