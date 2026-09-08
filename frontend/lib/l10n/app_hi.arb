@@ -167,5 +167,17 @@
   "languagePrompt": "अंग्रेजी. हिंदी. मराठी.",
   "currentLanguage": "वर्तमान भाषा",
   "smsAlerts": "एसएमएस अलर्ट",
-  "voiceOpeningAccount": "खाता खोला जा रहा है"
+  "voiceOpeningAccount": "खाता खोला जा रहा है",
+  "textSize": "अक्षर का आकार",
+  "textSizeSmall": "छोटा",
+  "textSizeSmallDesc": "स्क्रीन पर अधिक शब्द",
+  "textSizeDefault": "सामान्य",
+  "textSizeDefaultDesc": "मानक पढ़ने योग्य आकार",
+  "textSizeLarge": "बड़ा",
+  "textSizeLargeDesc": "धूप में पढ़ने के लिए बड़ा आकार",
+  "textSizePrompt": "अक्षर का आकार। छोटा। सामान्य। बड़ा।",
+  "semanticsFieldPhoto": "खेत की तस्वीर",
+  "semanticsWheatField": "गेहूं के खेत की तस्वीर",
+  "semanticsBack": "पीछे जाएं",
+  "semanticsClose": "बंद करें"
 }

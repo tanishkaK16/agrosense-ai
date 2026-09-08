@@ -12,6 +12,7 @@ import '../../core/voice/mic_button.dart';
 import '../../core/voice/voice_service.dart';
 import '../../core/widgets/language_button.dart';
 import '../../core/widgets/listen_button.dart';
+import '../../core/widgets/text_size_button.dart';
 import '../../generated/l10n/app_localizations.dart';
 import '../auth/data/app_auth_repository.dart';
 import '../fields/data/app_fields_repository.dart';
@@ -307,6 +308,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
+                    const TextSizeButton(onPhoto: false),
+                    const SizedBox(width: AppSizes.paddingS),
                     const LanguageButton(onPhoto: false),
                     const SizedBox(width: AppSizes.paddingS),
                     MicButton(

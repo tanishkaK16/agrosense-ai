@@ -57,8 +57,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   void _onNext() {
     if (_currentPage < kOnboardingPages.length - 1) {
+      final disableAnim = MediaQuery.disableAnimationsOf(context);
       _pageController.nextPage(
-        duration: const Duration(milliseconds: 320),
+        duration: disableAnim ? Duration.zero : const Duration(milliseconds: 320),
         curve: Curves.easeInOut,
       );
     } else {

@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'app.dart';
 import 'core/l10n/locale_controller.dart';
 import 'core/storage/app_prefs.dart';
+import 'core/theme/text_scale_controller.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,9 +24,10 @@ Future<void> main() async {
 
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
 
-  // Load persisted preferences and locale before first frame
+  // Load persisted preferences, locale, and text scale before first frame
   await AppPrefs.instance.init();
   await LocaleController.instance.init();
+  await TextScaleController.instance.init();
 
   runApp(const AgroSenseApp());
 }

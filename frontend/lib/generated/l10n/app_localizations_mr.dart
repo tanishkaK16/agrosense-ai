@@ -571,4 +571,40 @@ class AppLocalizationsMr extends AppLocalizations {
 
   @override
   String get voiceOpeningAccount => 'खाते उघडत आहे';
+
+  @override
+  String get textSize => 'अक्षराचा आकार';
+
+  @override
+  String get textSizeSmall => 'लहान';
+
+  @override
+  String get textSizeSmallDesc => 'स्क्रीनवर अधिक मजकूर';
+
+  @override
+  String get textSizeDefault => 'सामान्य';
+
+  @override
+  String get textSizeDefaultDesc => 'प्रमाणित वाचनीय आकार';
+
+  @override
+  String get textSizeLarge => 'मोठा';
+
+  @override
+  String get textSizeLargeDesc => 'उन्हात वाचण्यासाठी मोठे अक्षर';
+
+  @override
+  String get textSizePrompt => 'अक्षराचा आकार. लहान. सामान्य. मोठा.';
+
+  @override
+  String get semanticsFieldPhoto => 'शेताचे छायाचित्र';
+
+  @override
+  String get semanticsWheatField => 'गव्हाच्या शेताचे छायाचित्र';
+
+  @override
+  String get semanticsBack => 'मागे जा';
+
+  @override
+  String get semanticsClose => 'बंद करा';
 }

@@ -17,6 +17,7 @@ class AppPrefs extends ChangeNotifier {
   static const String keyOnboardingComplete = 'onboarding_complete';
   static const String keySession = 'auth_session';
   static const String keyProfile = 'farmer_profile';
+  static const String keyTextScale = 'text_scale';
 
   late SharedPreferences _prefs;
   bool _initialized = false;
@@ -80,6 +81,15 @@ class AppPrefs extends ChangeNotifier {
     notifyListeners();
   }
 
+  String? get textScale =>
+      _initialized ? _prefs.getString(keyTextScale) : null;
+
+  /// Save selected text scale option (e.g. 'small', 'default', 'large').
+  Future<void> setTextScale(String scale) async {
+    await _prefs.setString(keyTextScale, scale);
+    notifyListeners();
+  }
+
   /// Clear session and profile (useful for testing).
   Future<void> clearSession() async {
     await _prefs.remove(keySession);
@@ -93,6 +103,7 @@ class AppPrefs extends ChangeNotifier {
     await _prefs.remove(keyOnboardingComplete);
     await _prefs.remove(keySession);
     await _prefs.remove(keyProfile);
+    await _prefs.remove(keyTextScale);
     notifyListeners();
   }
 }

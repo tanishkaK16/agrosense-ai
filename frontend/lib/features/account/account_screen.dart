@@ -7,9 +7,11 @@ import '../../core/routing/app_router.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_shadows.dart';
 import '../../core/theme/app_text_styles.dart';
+import '../../core/theme/text_scale_controller.dart';
 import '../../core/voice/voice_service.dart';
 import '../../core/widgets/language_sheet.dart';
 import '../../core/widgets/listen_button.dart';
+import '../../core/widgets/text_size_sheet.dart';
 import '../../generated/l10n/app_localizations.dart';
 import '../auth/data/app_auth_repository.dart';
 
@@ -18,6 +20,7 @@ import '../auth/data/app_auth_repository.dart';
 /// Features:
 /// - Farmer profile summary: masked phone, name, village, crop
 /// - Language preference row opening the consistent [LanguageSheet]
+/// - Text size preference row opening the consistent [TextSizeSheet]
 /// - SMS alerts on/off row opening the SMS explanation screen
 /// - Outlined danger-tinted Sign out block with confirmed two-pill dialog
 /// - High contrast EcoFarm aesthetic with 64+ tap targets
@@ -34,12 +37,14 @@ class _AccountScreenState extends State<AccountScreen> {
   void initState() {
     super.initState();
     LocaleController.instance.addListener(_onLocaleChanged);
+    TextScaleController.instance.addListener(_onLocaleChanged);
   }
 
   @override
   void dispose() {
     VoiceService.instance.stop();
     LocaleController.instance.removeListener(_onLocaleChanged);
+    TextScaleController.instance.removeListener(_onLocaleChanged);
     super.dispose();
   }
 
@@ -86,6 +91,14 @@ class _AccountScreenState extends State<AccountScreen> {
       default:
         return 'English';
     }
+  }
+
+  String _getTextSizeDisplayName(AppTextScale scale, AppLocalizations l10n) {
+    return switch (scale) {
+      AppTextScale.small => l10n.textSizeSmall,
+      AppTextScale.standard => l10n.textSizeDefault,
+      AppTextScale.large => l10n.textSizeLarge,
+    };
   }
 
   Future<void> _showSignOutConfirmDialog(BuildContext context) async {
@@ -259,9 +272,13 @@ class _AccountScreenState extends State<AccountScreen> {
     final crop = _getCropName(profile?.mainCrop, l10n);
     final smsStatusText = (profile?.smsOptIn ?? true) ? l10n.smsOptInOn : l10n.smsOptInOff;
 
+    final currentTextScale = TextScaleController.instance.scale;
+    final textSizeName = _getTextSizeDisplayName(currentTextScale, l10n);
+
     final speechSummary =
         '${l10n.account}. $farmerName. $village. $crop. $maskedPhone. '
         '${l10n.currentLanguage}: $activeLangName. '
+        '${l10n.textSize}: $textSizeName. '
         '${l10n.smsAlerts}: $smsStatusText. '
         '${l10n.signOut}.';
 
@@ -485,6 +502,70 @@ class _AccountScreenState extends State<AccountScreen> {
                                           ),
                                           Text(
                                             activeLangName,
+                                            style: AppTextStyles.caption(context).copyWith(
+                                              fontSize: 13,
+                                              color: AppColors.muted,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    const Icon(
+                                      Icons.chevron_right_rounded,
+                                      color: AppColors.muted,
+                                      size: 24,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          const Divider(height: 1, indent: 64),
+
+                          // Text Size Row
+                          Semantics(
+                            label: '${l10n.textSize}: $textSizeName',
+                            button: true,
+                            child: InkWell(
+                              onTap: () {
+                                VoiceService.instance.stop();
+                                TextSizeSheet.show(context);
+                              },
+                              child: Container(
+                                constraints: const BoxConstraints(minHeight: 68),
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: AppSizes.paddingL,
+                                  vertical: AppSizes.paddingM,
+                                ),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      width: 44,
+                                      height: 44,
+                                      decoration: BoxDecoration(
+                                        color: AppColors.surfaceVariant.withValues(alpha: 0.5),
+                                        shape: BoxShape.circle,
+                                      ),
+                                      alignment: Alignment.center,
+                                      child: const Icon(
+                                        Icons.format_size_rounded,
+                                        color: AppColors.primary,
+                                        size: 22,
+                                      ),
+                                    ),
+                                    const SizedBox(width: AppSizes.paddingM),
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            l10n.textSize,
+                                            style: AppTextStyles.labelLarge(context).copyWith(
+                                              fontSize: 16,
+                                            ),
+                                          ),
+                                          Text(
+                                            textSizeName,
                                             style: AppTextStyles.caption(context).copyWith(
                                               fontSize: 13,
                                               color: AppColors.muted,

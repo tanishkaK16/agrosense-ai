@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
-        android:label="agrosense_ai"
+        android:label="AgroSense"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

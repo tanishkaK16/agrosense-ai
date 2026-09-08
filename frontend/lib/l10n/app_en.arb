@@ -595,5 +595,41 @@
   "@smsAlerts": { "description": "Label for SMS alerts in account screen" },
 
   "voiceOpeningAccount": "Opening account",
-  "@voiceOpeningAccount": { "description": "Voice announcement when opening account screen" }
+  "@voiceOpeningAccount": { "description": "Voice announcement when opening account screen" },
+
+  "textSize": "Text size",
+  "@textSize": { "description": "Label for text size option and tooltip" },
+
+  "textSizeSmall": "Small",
+  "@textSizeSmall": { "description": "Small text size choice" },
+
+  "textSizeSmallDesc": "Compact view",
+  "@textSizeSmallDesc": { "description": "Description for small text size" },
+
+  "textSizeDefault": "Default",
+  "@textSizeDefault": { "description": "Default text size choice" },
+
+  "textSizeDefaultDesc": "Standard readable size",
+  "@textSizeDefaultDesc": { "description": "Description for default text size" },
+
+  "textSizeLarge": "Large",
+  "@textSizeLarge": { "description": "Large text size choice" },
+
+  "textSizeLargeDesc": "Bigger text for bright sunlight",
+  "@textSizeLargeDesc": { "description": "Description for large text size" },
+
+  "textSizePrompt": "Text size. Small. Default. Large.",
+  "@textSizePrompt": { "description": "Voice speech for text size sheet" },
+
+  "semanticsFieldPhoto": "Field photo",
+  "@semanticsFieldPhoto": { "description": "Accessibility label for field photo" },
+
+  "semanticsWheatField": "Wheat field photo",
+  "@semanticsWheatField": { "description": "Accessibility label for wheat header photo" },
+
+  "semanticsBack": "Back",
+  "@semanticsBack": { "description": "Accessibility label for back button" },
+
+  "semanticsClose": "Close",
+  "@semanticsClose": { "description": "Accessibility label for close button" }
 }

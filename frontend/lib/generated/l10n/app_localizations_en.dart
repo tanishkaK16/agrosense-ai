@@ -571,4 +571,40 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get voiceOpeningAccount => 'Opening account';
+
+  @override
+  String get textSize => 'Text size';
+
+  @override
+  String get textSizeSmall => 'Small';
+
+  @override
+  String get textSizeSmallDesc => 'Compact view';
+
+  @override
+  String get textSizeDefault => 'Default';
+
+  @override
+  String get textSizeDefaultDesc => 'Standard readable size';
+
+  @override
+  String get textSizeLarge => 'Large';
+
+  @override
+  String get textSizeLargeDesc => 'Bigger text for bright sunlight';
+
+  @override
+  String get textSizePrompt => 'Text size. Small. Default. Large.';
+
+  @override
+  String get semanticsFieldPhoto => 'Field photo';
+
+  @override
+  String get semanticsWheatField => 'Wheat field photo';
+
+  @override
+  String get semanticsBack => 'Back';
+
+  @override
+  String get semanticsClose => 'Close';
 }

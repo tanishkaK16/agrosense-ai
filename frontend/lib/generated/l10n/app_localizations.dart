@@ -1110,6 +1110,78 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Opening account'**
   String get voiceOpeningAccount;
+
+  /// Label for text size option and tooltip
+  ///
+  /// In en, this message translates to:
+  /// **'Text size'**
+  String get textSize;
+
+  /// Small text size choice
+  ///
+  /// In en, this message translates to:
+  /// **'Small'**
+  String get textSizeSmall;
+
+  /// Description for small text size
+  ///
+  /// In en, this message translates to:
+  /// **'Compact view'**
+  String get textSizeSmallDesc;
+
+  /// Default text size choice
+  ///
+  /// In en, this message translates to:
+  /// **'Default'**
+  String get textSizeDefault;
+
+  /// Description for default text size
+  ///
+  /// In en, this message translates to:
+  /// **'Standard readable size'**
+  String get textSizeDefaultDesc;
+
+  /// Large text size choice
+  ///
+  /// In en, this message translates to:
+  /// **'Large'**
+  String get textSizeLarge;
+
+  /// Description for large text size
+  ///
+  /// In en, this message translates to:
+  /// **'Bigger text for bright sunlight'**
+  String get textSizeLargeDesc;
+
+  /// Voice speech for text size sheet
+  ///
+  /// In en, this message translates to:
+  /// **'Text size. Small. Default. Large.'**
+  String get textSizePrompt;
+
+  /// Accessibility label for field photo
+  ///
+  /// In en, this message translates to:
+  /// **'Field photo'**
+  String get semanticsFieldPhoto;
+
+  /// Accessibility label for wheat header photo
+  ///
+  /// In en, this message translates to:
+  /// **'Wheat field photo'**
+  String get semanticsWheatField;
+
+  /// Accessibility label for back button
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get semanticsBack;
+
+  /// Accessibility label for close button
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get semanticsClose;
 }
 
 class _AppLocalizationsDelegate

@@ -1,0 +1,26 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group
+        android:scaleX="1.6"
+        android:scaleY="1.6"
+        android:translateX="-32.4"
+        android:translateY="-32.4">
+        <!-- Sprout / Wheat shoot leaf left -->
+        <path
+            android:fillColor="#FFF9F0"
+            android:pathData="M54,34 C44,38 38,48 40,62 C48,64 60,58 62,48 C62,40 58,36 54,34 Z" />
+        <!-- Sprout leaf right -->
+        <path
+            android:fillColor="#E7D3A1"
+            android:pathData="M54,42 C58,38 68,36 72,46 C74,56 66,66 54,68 C52,58 52,50 54,42 Z" />
+        <!-- Central stem -->
+        <path
+            android:strokeColor="#FFF9F0"
+            android:strokeWidth="3.5"
+            android:strokeLineCap="round"
+            android:pathData="M54,46 L54,76" />
+    </group>
+</vector>

@@ -571,4 +571,40 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get voiceOpeningAccount => 'खाता खोला जा रहा है';
+
+  @override
+  String get textSize => 'अक्षर का आकार';
+
+  @override
+  String get textSizeSmall => 'छोटा';
+
+  @override
+  String get textSizeSmallDesc => 'स्क्रीन पर अधिक शब्द';
+
+  @override
+  String get textSizeDefault => 'सामान्य';
+
+  @override
+  String get textSizeDefaultDesc => 'मानक पढ़ने योग्य आकार';
+
+  @override
+  String get textSizeLarge => 'बड़ा';
+
+  @override
+  String get textSizeLargeDesc => 'धूप में पढ़ने के लिए बड़ा आकार';
+
+  @override
+  String get textSizePrompt => 'अक्षर का आकार। छोटा। सामान्य। बड़ा।';
+
+  @override
+  String get semanticsFieldPhoto => 'खेत की तस्वीर';
+
+  @override
+  String get semanticsWheatField => 'गेहूं के खेत की तस्वीर';
+
+  @override
+  String get semanticsBack => 'पीछे जाएं';
+
+  @override
+  String get semanticsClose => 'बंद करें';
 }

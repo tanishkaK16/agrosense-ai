@@ -39,12 +39,14 @@ class FarmPhotoHeader extends StatelessWidget {
       child: Stack(
         fit: StackFit.expand,
         children: [
-          // Background photo
-          Image.asset(
-            imagePath,
-            fit: BoxFit.cover,
-            errorBuilder: (_, __, ___) => const ColoredBox(
-              color: AppColors.goldSoft,
+          // Background photo (decorative, excluded from screen reader noise)
+          ExcludeSemantics(
+            child: Image.asset(
+              imagePath,
+              fit: BoxFit.cover,
+              errorBuilder: (_, __, ___) => const ColoredBox(
+                color: AppColors.goldSoft,
+              ),
             ),
           ),
 

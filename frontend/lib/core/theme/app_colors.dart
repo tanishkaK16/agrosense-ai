@@ -47,8 +47,8 @@ abstract final class AppColors {
   /// Healthy container tint
   static const Color healthyContainer = Color(0xFFD4EDDA);
 
-  /// Warning / watch — amber wheat
-  static const Color warning = Color(0xFFC4A35A);
+  /// Warning / watch — deep amber wheat for high contrast on cream & sunlight (4.5:1+)
+  static const Color warning = Color(0xFF8B5E0D);
 
   /// Warning container tint
   static const Color warningContainer = Color(0xFFFFF3CD);
