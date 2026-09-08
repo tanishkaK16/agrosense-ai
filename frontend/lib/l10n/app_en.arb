@@ -85,5 +85,81 @@
   "@skip": { "description": "Skip button label" },
 
   "tapContinueWhenReady": "Tap continue when ready",
-  "@tapContinueWhenReady": { "description": "Spoken prompt when a language is selected" }
+  "@tapContinueWhenReady": { "description": "Spoken prompt when a language is selected" },
+
+  "phoneTitle": "Your mobile number",
+  "@phoneTitle": { "description": "Phone entry screen title" },
+
+  "phoneSubtitle": "We will send a 4-digit code",
+  "@phoneSubtitle": { "description": "Phone entry screen help line" },
+
+  "phoneHint": "10-digit number",
+  "@phoneHint": { "description": "Phone input placeholder" },
+
+  "otpTitle": "Enter the 4-digit code",
+  "@otpTitle": { "description": "OTP screen title" },
+
+  "otpSubtitle": "Sent to {phone}",
+  "@otpSubtitle": {
+    "description": "OTP screen subtitle with masked phone number",
+    "placeholders": {
+      "phone": { "type": "String" }
+    }
+  },
+
+  "otpWrongCode": "That code is not right. Try 1234 for now.",
+  "@otpWrongCode": { "description": "Incorrect OTP error message" },
+
+  "resendCode": "Resend code",
+  "@resendCode": { "description": "Resend OTP button label" },
+
+  "resendCodeIn": "Resend code in {seconds}s",
+  "@resendCodeIn": {
+    "description": "Cooldown indicator for OTP resend",
+    "placeholders": {
+      "seconds": { "type": "int" }
+    }
+  },
+
+  "demoCodeNotice": "Demo code 1234",
+  "@demoCodeNotice": { "description": "Muted caption showing demo OTP code" },
+
+  "profileTitle": "Tell us about your farm",
+  "@profileTitle": { "description": "Farmer profile screen title" },
+
+  "nameQuestion": "What should we call you?",
+  "@nameQuestion": { "description": "Profile: Farmer name question" },
+
+  "nameHint": "Your name (optional)",
+  "@nameHint": { "description": "Profile: Name field hint" },
+
+  "villageQuestion": "Your village or town?",
+  "@villageQuestion": { "description": "Profile: Village question" },
+
+  "villageHint": "Village or town name",
+  "@villageHint": { "description": "Profile: Village field hint" },
+
+  "cropQuestion": "Main crop?",
+  "@cropQuestion": { "description": "Profile: Main crop selection question" },
+
+  "cropRice": "Rice",
+  "@cropRice": { "description": "Crop option: Rice" },
+
+  "cropWheat": "Wheat",
+  "@cropWheat": { "description": "Crop option: Wheat" },
+
+  "cropCotton": "Cotton",
+  "@cropCotton": { "description": "Crop option: Cotton" },
+
+  "cropSugarcane": "Sugarcane",
+  "@cropSugarcane": { "description": "Crop option: Sugarcane" },
+
+  "cropSoybean": "Soybean",
+  "@cropSoybean": { "description": "Crop option: Soybean" },
+
+  "cropOther": "Other",
+  "@cropOther": { "description": "Crop option: Other" },
+
+  "saveAndContinue": "Save and continue",
+  "@saveAndContinue": { "description": "Profile submit button label" }
 }

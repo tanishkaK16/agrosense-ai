@@ -273,6 +273,138 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Tap continue when ready'**
   String get tapContinueWhenReady;
+
+  /// Phone entry screen title
+  ///
+  /// In en, this message translates to:
+  /// **'Your mobile number'**
+  String get phoneTitle;
+
+  /// Phone entry screen help line
+  ///
+  /// In en, this message translates to:
+  /// **'We will send a 4-digit code'**
+  String get phoneSubtitle;
+
+  /// Phone input placeholder
+  ///
+  /// In en, this message translates to:
+  /// **'10-digit number'**
+  String get phoneHint;
+
+  /// OTP screen title
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the 4-digit code'**
+  String get otpTitle;
+
+  /// OTP screen subtitle with masked phone number
+  ///
+  /// In en, this message translates to:
+  /// **'Sent to {phone}'**
+  String otpSubtitle(String phone);
+
+  /// Incorrect OTP error message
+  ///
+  /// In en, this message translates to:
+  /// **'That code is not right. Try 1234 for now.'**
+  String get otpWrongCode;
+
+  /// Resend OTP button label
+  ///
+  /// In en, this message translates to:
+  /// **'Resend code'**
+  String get resendCode;
+
+  /// Cooldown indicator for OTP resend
+  ///
+  /// In en, this message translates to:
+  /// **'Resend code in {seconds}s'**
+  String resendCodeIn(int seconds);
+
+  /// Muted caption showing demo OTP code
+  ///
+  /// In en, this message translates to:
+  /// **'Demo code 1234'**
+  String get demoCodeNotice;
+
+  /// Farmer profile screen title
+  ///
+  /// In en, this message translates to:
+  /// **'Tell us about your farm'**
+  String get profileTitle;
+
+  /// Profile: Farmer name question
+  ///
+  /// In en, this message translates to:
+  /// **'What should we call you?'**
+  String get nameQuestion;
+
+  /// Profile: Name field hint
+  ///
+  /// In en, this message translates to:
+  /// **'Your name (optional)'**
+  String get nameHint;
+
+  /// Profile: Village question
+  ///
+  /// In en, this message translates to:
+  /// **'Your village or town?'**
+  String get villageQuestion;
+
+  /// Profile: Village field hint
+  ///
+  /// In en, this message translates to:
+  /// **'Village or town name'**
+  String get villageHint;
+
+  /// Profile: Main crop selection question
+  ///
+  /// In en, this message translates to:
+  /// **'Main crop?'**
+  String get cropQuestion;
+
+  /// Crop option: Rice
+  ///
+  /// In en, this message translates to:
+  /// **'Rice'**
+  String get cropRice;
+
+  /// Crop option: Wheat
+  ///
+  /// In en, this message translates to:
+  /// **'Wheat'**
+  String get cropWheat;
+
+  /// Crop option: Cotton
+  ///
+  /// In en, this message translates to:
+  /// **'Cotton'**
+  String get cropCotton;
+
+  /// Crop option: Sugarcane
+  ///
+  /// In en, this message translates to:
+  /// **'Sugarcane'**
+  String get cropSugarcane;
+
+  /// Crop option: Soybean
+  ///
+  /// In en, this message translates to:
+  /// **'Soybean'**
+  String get cropSoybean;
+
+  /// Crop option: Other
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get cropOther;
+
+  /// Profile submit button label
+  ///
+  /// In en, this message translates to:
+  /// **'Save and continue'**
+  String get saveAndContinue;
 }
 
 class _AppLocalizationsDelegate

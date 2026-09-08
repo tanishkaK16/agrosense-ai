@@ -98,4 +98,74 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get tapContinueWhenReady => 'Tap continue when ready';
+
+  @override
+  String get phoneTitle => 'Your mobile number';
+
+  @override
+  String get phoneSubtitle => 'We will send a 4-digit code';
+
+  @override
+  String get phoneHint => '10-digit number';
+
+  @override
+  String get otpTitle => 'Enter the 4-digit code';
+
+  @override
+  String otpSubtitle(String phone) {
+    return 'Sent to $phone';
+  }
+
+  @override
+  String get otpWrongCode => 'That code is not right. Try 1234 for now.';
+
+  @override
+  String get resendCode => 'Resend code';
+
+  @override
+  String resendCodeIn(int seconds) {
+    return 'Resend code in ${seconds}s';
+  }
+
+  @override
+  String get demoCodeNotice => 'Demo code 1234';
+
+  @override
+  String get profileTitle => 'Tell us about your farm';
+
+  @override
+  String get nameQuestion => 'What should we call you?';
+
+  @override
+  String get nameHint => 'Your name (optional)';
+
+  @override
+  String get villageQuestion => 'Your village or town?';
+
+  @override
+  String get villageHint => 'Village or town name';
+
+  @override
+  String get cropQuestion => 'Main crop?';
+
+  @override
+  String get cropRice => 'Rice';
+
+  @override
+  String get cropWheat => 'Wheat';
+
+  @override
+  String get cropCotton => 'Cotton';
+
+  @override
+  String get cropSugarcane => 'Sugarcane';
+
+  @override
+  String get cropSoybean => 'Soybean';
+
+  @override
+  String get cropOther => 'Other';
+
+  @override
+  String get saveAndContinue => 'Save and continue';
 }

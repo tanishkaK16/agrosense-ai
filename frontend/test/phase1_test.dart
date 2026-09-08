@@ -151,11 +151,13 @@ void main() {
       await tester.tap(find.text('शुरू करें'));
       await tester.pumpAndSettle();
 
-      // Now onboarding is marked done and user is on Home
+      // Onboarding is marked done and user is redirected to phone screen
       expect(AppPrefs.instance.isOnboardingDone, isTrue);
+      expect(find.text('आपका मोबाइल नंबर'), findsOneWidget);
     });
 
-    testWidgets('Skip button on screen 2 completes onboarding', (tester) async {
+    testWidgets('Skip button on screen 2 completes onboarding and lands on /phone',
+        (tester) async {
       tester.view.physicalSize = const Size(1080, 2400);
       tester.view.devicePixelRatio = 2.5;
       addTearDown(() {
@@ -187,8 +189,9 @@ void main() {
       await tester.tap(find.text('Skip'));
       await tester.pumpAndSettle();
 
-      // Onboarding marked done
+      // Onboarding marked done and user on Phone screen
       expect(AppPrefs.instance.isOnboardingDone, isTrue);
+      expect(find.text('Your mobile number'), findsOneWidget);
     });
   });
 }

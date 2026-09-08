@@ -98,4 +98,74 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get tapContinueWhenReady => 'तैयार होने पर आगे बढ़ें दबाएं';
+
+  @override
+  String get phoneTitle => 'आपका मोबाइल नंबर';
+
+  @override
+  String get phoneSubtitle => 'हम 4 अंकों का कोड भेजेंगे';
+
+  @override
+  String get phoneHint => '10 अंकों का नंबर';
+
+  @override
+  String get otpTitle => '4 अंकों का कोड दर्ज करें';
+
+  @override
+  String otpSubtitle(String phone) {
+    return '$phone पर भेजा गया';
+  }
+
+  @override
+  String get otpWrongCode => 'यह कोड सही नहीं है। अभी 1234 आज़माएं।';
+
+  @override
+  String get resendCode => 'कोड फिर से भेजें';
+
+  @override
+  String resendCodeIn(int seconds) {
+    return '$seconds सेकंड में फिर भेजें';
+  }
+
+  @override
+  String get demoCodeNotice => 'डेमो कोड 1234';
+
+  @override
+  String get profileTitle => 'अपने खेत के बारे में बताएं';
+
+  @override
+  String get nameQuestion => 'हम आपको क्या बुलाएं?';
+
+  @override
+  String get nameHint => 'आपका नाम (वैकल्पिक)';
+
+  @override
+  String get villageQuestion => 'आपका गांव या शहर?';
+
+  @override
+  String get villageHint => 'गांव या शहर का नाम';
+
+  @override
+  String get cropQuestion => 'मुख्य फसल?';
+
+  @override
+  String get cropRice => 'चावल';
+
+  @override
+  String get cropWheat => 'गेहूं';
+
+  @override
+  String get cropCotton => 'कपास';
+
+  @override
+  String get cropSugarcane => 'गन्ना';
+
+  @override
+  String get cropSoybean => 'सोयाबीन';
+
+  @override
+  String get cropOther => 'अन्य';
+
+  @override
+  String get saveAndContinue => 'सहेजें और आगे बढ़ें';
 }

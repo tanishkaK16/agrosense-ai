@@ -101,32 +101,35 @@ class _NavItem extends StatelessWidget {
               color: isSelected ? AppColors.primary : Colors.transparent,
               borderRadius: BorderRadius.circular(AppSizes.radiusPill),
             ),
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  isSelected ? destination.selectedIcon : destination.icon,
-                  size: AppSizes.iconMedium,
-                  color: isSelected ? AppColors.onPhoto : AppColors.muted,
-                ),
-                if (!isSelected) ...[
-                  const SizedBox(height: 2),
-                  Text(
-                    destination.label,
-                    style: const TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10,
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.muted,
-                    ),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    textScaler: TextScaler.noScaling,
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    isSelected ? destination.selectedIcon : destination.icon,
+                    size: AppSizes.iconMedium,
+                    color: isSelected ? AppColors.onPhoto : AppColors.muted,
                   ),
+                  if (!isSelected) ...[
+                    const SizedBox(height: 2),
+                    Text(
+                      destination.label,
+                      style: const TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10,
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.muted,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      textScaler: TextScaler.noScaling,
+                    ),
+                  ],
                 ],
-              ],
+              ),
             ),
           ),
         ),

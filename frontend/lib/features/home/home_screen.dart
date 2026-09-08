@@ -7,6 +7,7 @@ import '../../core/constants/app_sizes.dart';
 import '../../core/widgets/farm_photo_header.dart';
 import '../../core/widgets/listen_button.dart';
 import '../../generated/l10n/app_localizations.dart';
+import '../auth/data/mock_auth_repository.dart';
 
 /// Home tab — Phase 0 foundation.
 ///
@@ -20,6 +21,15 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final topPad = MediaQuery.paddingOf(context).top;
+
+    final profile = MockAuthRepository.instance.currentProfile();
+    final greetingName =
+        (profile?.name.isNotEmpty == true && profile?.name != 'Farmer')
+            ? profile!.name
+            : null;
+    final greetingText = greetingName != null
+        ? '${l10n.helloFarmer}, $greetingName'
+        : l10n.helloFarmer;
 
     return Scaffold(
       backgroundColor: AppColors.background,
@@ -56,7 +66,7 @@ class HomeScreen extends StatelessWidget {
                   // Listen button — TTS placeholder
                   ListenButton(
                     onPhoto: true,
-                    text: l10n.helloFarmer,
+                    text: greetingText,
                   ),
                 ],
               ),
@@ -76,7 +86,7 @@ class HomeScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  l10n.helloFarmer,
+                  greetingText,
                   style: AppTextStyles.screenTitle(context),
                 ),
                 const SizedBox(height: AppSizes.paddingXL),

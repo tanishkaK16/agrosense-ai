@@ -4,6 +4,9 @@ import 'package:go_router/go_router.dart';
 import '../../core/l10n/locale_controller.dart';
 import '../../core/storage/app_prefs.dart';
 import '../../features/alerts/alerts_screen.dart';
+import '../../features/auth/otp_screen.dart';
+import '../../features/auth/phone_screen.dart';
+import '../../features/auth/profile_screen.dart';
 import '../../features/fields/fields_screen.dart';
 import '../../features/home/home_screen.dart';
 import '../../features/onboarding/language_screen.dart';
@@ -14,6 +17,9 @@ import '../../features/shell/main_shell.dart';
 abstract final class AppRoutes {
   static const String language = '/language';
   static const String onboarding = '/onboarding';
+  static const String phone = '/phone';
+  static const String otp = '/otp';
+  static const String profile = '/profile';
   static const String home = '/';
   static const String fields = '/fields';
   static const String alerts = '/alerts';
@@ -24,7 +30,9 @@ abstract final class AppRoutes {
 /// Flow:
 ///   - If no locale saved: /language
 ///   - If locale saved but onboarding incomplete: /onboarding
-///   - If both done: / (home inside MainShell)
+///   - If not signed in: /phone
+///   - If signed in but profile incomplete: /profile
+///   - If all done: / (home inside MainShell)
 GoRouter buildRouter() {
   final localeController = LocaleController.instance;
   final appPrefs = AppPrefs.instance;
@@ -39,10 +47,15 @@ GoRouter buildRouter() {
 
       final hasLocale = localeController.hasLocale;
       final onboardingDone = appPrefs.isOnboardingDone;
+      final hasSession = appPrefs.hasSession;
+      final hasProfile = appPrefs.hasProfile;
       final loc = state.matchedLocation;
 
       final onLanguage = loc == AppRoutes.language;
       final onOnboarding = loc == AppRoutes.onboarding;
+      final onPhone = loc == AppRoutes.phone;
+      final onOtp = loc == AppRoutes.otp;
+      final onProfile = loc == AppRoutes.profile;
 
       // 1. If no locale saved: language screen first
       if (!hasLocale) {
@@ -54,8 +67,18 @@ GoRouter buildRouter() {
         return onOnboarding ? null : AppRoutes.onboarding;
       }
 
-      // 3. Both done: MainShell Home (redirect away from onboarding / language)
-      if (onLanguage || onOnboarding) {
+      // 3. If not signed in: /phone (or /otp while entering verification code)
+      if (!hasSession) {
+        return (onPhone || onOtp) ? null : AppRoutes.phone;
+      }
+
+      // 4. If signed in but profile incomplete: /profile
+      if (!hasProfile) {
+        return onProfile ? null : AppRoutes.profile;
+      }
+
+      // 5. All done: MainShell Home (redirect away from onboarding/auth/language)
+      if (onLanguage || onOnboarding || onPhone || onOtp || onProfile) {
         return AppRoutes.home;
       }
 
@@ -72,6 +95,28 @@ GoRouter buildRouter() {
         path: AppRoutes.onboarding,
         pageBuilder: (context, state) => const NoTransitionPage(
           child: OnboardingScreen(),
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.phone,
+        pageBuilder: (context, state) => NoTransitionPage(
+          child: PhoneScreen(
+            initialPhone: state.extra as String?,
+          ),
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.otp,
+        pageBuilder: (context, state) => NoTransitionPage(
+          child: OtpScreen(
+            phoneNumber: state.extra as String? ?? '',
+          ),
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.profile,
+        pageBuilder: (context, state) => const NoTransitionPage(
+          child: ProfileScreen(),
         ),
       ),
       ShellRoute(

@@ -98,4 +98,74 @@ class AppLocalizationsMr extends AppLocalizations {
 
   @override
   String get tapContinueWhenReady => 'तयार झाल्यावर पुढे जा दाबा';
+
+  @override
+  String get phoneTitle => 'तुमचा मोबाईल नंबर';
+
+  @override
+  String get phoneSubtitle => 'आम्ही ४-अंकी कोड पाठवू';
+
+  @override
+  String get phoneHint => '१० अंकी नंबर';
+
+  @override
+  String get otpTitle => '४-अंकी कोड टाका';
+
+  @override
+  String otpSubtitle(String phone) {
+    return '$phone वर पाठवले';
+  }
+
+  @override
+  String get otpWrongCode => 'हा कोड बरोबर नाही. सध्या 1234 वापरून पहा.';
+
+  @override
+  String get resendCode => 'कोड पुन्हा पाठवा';
+
+  @override
+  String resendCodeIn(int seconds) {
+    return '$seconds सेकंदात पुन्हा पाठवा';
+  }
+
+  @override
+  String get demoCodeNotice => 'डेमो कोड 1234';
+
+  @override
+  String get profileTitle => 'आपल्या शेतीबद्दल सांगा';
+
+  @override
+  String get nameQuestion => 'आम्ही तुम्हाला काय म्हणावे?';
+
+  @override
+  String get nameHint => 'तुमचे नाव (पर्यायी)';
+
+  @override
+  String get villageQuestion => 'तुमचे गाव किंवा शहर?';
+
+  @override
+  String get villageHint => 'गाव किंवा शहराचे नाव';
+
+  @override
+  String get cropQuestion => 'मुख्य पीक?';
+
+  @override
+  String get cropRice => 'भात (तांदूळ)';
+
+  @override
+  String get cropWheat => 'गहू';
+
+  @override
+  String get cropCotton => 'कापूस';
+
+  @override
+  String get cropSugarcane => 'ऊस';
+
+  @override
+  String get cropSoybean => 'सोयाबीन';
+
+  @override
+  String get cropOther => 'इतर';
+
+  @override
+  String get saveAndContinue => 'जतन करा आणि पुढे जा';
 }
