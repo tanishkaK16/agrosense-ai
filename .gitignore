@@ -1,15 +1,35 @@
+# ── OS artefacts ─────────────────────────────────────────────────────────────
+**/.DS_Store
+Thumbs.db
+
+# ── IDE / Editor ──────────────────────────────────────────────────────────────
+.idea/
 *.iml
-.gradle
+*.ipr
+*.iws
+.vscode/
+
+# ── Android / Gradle ─────────────────────────────────────────────────────────
+.gradle/
 /local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
-local.properties
+**/local.properties
+/build/
+/captures/
+.externalNativeBuild/
+.cxx/
+
+# ── Flutter / Dart ────────────────────────────────────────────────────────────
+frontend/.dart_tool/
+frontend/build/
+frontend/.flutter-plugins-dependencies
+frontend/.pub-cache/
+frontend/.pub/
+frontend/coverage/
+
+# ── Secrets / env ─────────────────────────────────────────────────────────────
+.env
+frontend/.env
+**/*.keystore
+**/*.jks
+**/google-services.json
+**/GoogleService-Info.plist
