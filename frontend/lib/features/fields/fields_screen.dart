@@ -278,17 +278,22 @@ class _FieldsScreenState extends State<FieldsScreen> {
     final cropLabel = _getCropName(field.crop, l10n);
     final health = field.health;
 
-    return Container(
-      decoration: BoxDecoration(
-        color: AppColors.surface,
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: () => context.push('/fields/${field.id}'),
         borderRadius: BorderRadius.circular(AppSizes.radiusLarge),
-        boxShadow: AppShadows.medium,
-        border: Border.all(color: AppColors.surfaceVariant),
-      ),
-      clipBehavior: Clip.antiAlias,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+        child: Container(
+          decoration: BoxDecoration(
+            color: AppColors.surface,
+            borderRadius: BorderRadius.circular(AppSizes.radiusLarge),
+            boxShadow: AppShadows.medium,
+            border: Border.all(color: AppColors.surfaceVariant),
+          ),
+          clipBehavior: Clip.antiAlias,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
           // Crop photo with gradient scrim and status pill
           SizedBox(
             height: 160,
@@ -450,6 +455,8 @@ class _FieldsScreenState extends State<FieldsScreen> {
           ),
         ],
       ),
+    ),
+    ),
     );
   }
 }

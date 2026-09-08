@@ -79,5 +79,20 @@
   "locationDeniedNotice": "लोकेशन नहीं मिली। आप नक्शे पर टैप करके पिन लगा सकते हैं।",
   "saveField": "खेत सहेजें",
   "addFieldStep1Speech": "खेत जोड़ें। नाम दर्ज करें या मुख्य खेत रहने दें, अपनी फसल चुनें, और आगे दबाएं।",
-  "addFieldStep2Speech": "अपने खेत पर टैप करें। नक्शे पर पिन लगाएं। आप इसे हिला सकते हैं। पूरा होने पर खेत सहेजें दबाएं।"
+  "addFieldStep2Speech": "अपने खेत पर टैप करें। नक्शे पर पिन लगाएं। आप इसे हिला सकते हैं। पूरा होने पर खेत सहेजें दबाएं।",
+  "meterHealth": "स्वास्थ्य",
+  "meterWater": "पानी",
+  "meterPest": "कीट",
+  "statusLow": "कम",
+  "statusOkay": "ठीक",
+  "statusDry": "सूखा",
+  "statusRisk": "जोखिम",
+  "legendHealthy": "स्वस्थ",
+  "legendWatch": "सावधान",
+  "legendNeedsCare": "देखभाल चाहिए",
+  "detailSummaryAllGood": "यह खेत आज बिल्कुल ठीक दिख रहा है।",
+  "detailSummaryWaterLow": "पानी कम है। मिट्टी सूखी हो तो पानी दें।",
+  "detailSummaryPestWatch": "कीट का खतरा बढ़ गया है। आज ही खेत का मुआयना करें।",
+  "detailSummaryActNow": "फसल को आज देखभाल की ज़रूरत है। प्रभावित हिस्से की जाँच करें।",
+  "fieldDetailSpeech": "{name}। स्वास्थ्य {health}। पानी {water}। कीट {pest}। {summary}"
 }

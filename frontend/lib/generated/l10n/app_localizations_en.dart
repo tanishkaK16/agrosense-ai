@@ -270,4 +270,54 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get addFieldStep2Speech =>
       'Tap your field. Tap the map to drop a pin. You can move it. Tap save field when done.';
+
+  @override
+  String get meterHealth => 'Health';
+
+  @override
+  String get meterWater => 'Water';
+
+  @override
+  String get meterPest => 'Pest';
+
+  @override
+  String get statusLow => 'Low';
+
+  @override
+  String get statusOkay => 'Okay';
+
+  @override
+  String get statusDry => 'Dry';
+
+  @override
+  String get statusRisk => 'Risk';
+
+  @override
+  String get legendHealthy => 'Healthy';
+
+  @override
+  String get legendWatch => 'Watch';
+
+  @override
+  String get legendNeedsCare => 'Needs care';
+
+  @override
+  String get detailSummaryAllGood => 'This field looks fine today.';
+
+  @override
+  String get detailSummaryWaterLow =>
+      'Water is low. Give water if the soil is dry.';
+
+  @override
+  String get detailSummaryPestWatch => 'Pest risk is up. Walk the field today.';
+
+  @override
+  String get detailSummaryActNow =>
+      'Crop needs care today. Check the stressed area.';
+
+  @override
+  String fieldDetailSpeech(
+      String name, String health, String water, String pest, String summary) {
+    return '$name. Health $health. Water $water. Pest $pest. $summary';
+  }
 }

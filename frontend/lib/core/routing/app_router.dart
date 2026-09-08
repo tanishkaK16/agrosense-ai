@@ -8,6 +8,7 @@ import '../../features/auth/otp_screen.dart';
 import '../../features/auth/phone_screen.dart';
 import '../../features/auth/profile_screen.dart';
 import '../../features/fields/add_field_screen.dart';
+import '../../features/fields/field_detail_screen.dart';
 import '../../features/fields/fields_screen.dart';
 import '../../features/fields/pin_field_screen.dart';
 import '../../features/home/home_screen.dart';
@@ -26,6 +27,7 @@ abstract final class AppRoutes {
   static const String fields = '/fields';
   static const String fieldsAdd = '/fields/add';
   static const String fieldsPin = '/fields/pin';
+  static const String fieldDetail = '/fields/:id';
   static const String alerts = '/alerts';
 }
 
@@ -171,6 +173,15 @@ GoRouter buildRouter() {
             ),
           ),
         ],
+      ),
+      GoRoute(
+        path: AppRoutes.fieldDetail,
+        pageBuilder: (context, state) {
+          final fieldId = state.pathParameters['id'] ?? '';
+          return NoTransitionPage(
+            child: FieldDetailScreen(fieldId: fieldId),
+          );
+        },
       ),
     ],
   );

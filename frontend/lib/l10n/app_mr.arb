@@ -79,5 +79,20 @@
   "locationDeniedNotice": "स्थान मिळाले नाही. तुम्ही नकाशावर टॅप करून पिन ठेवू शकता.",
   "saveField": "शेत जतन करा",
   "addFieldStep1Speech": "शेत जोडा. नाव प्रविष्ट करा किंवा मुख्य शेत राहू द्या, आपले पीक निवडा, आणि पुढे दाबा.",
-  "addFieldStep2Speech": "तुमच्या शेतावर टॅप करा. नकाशावर पिन ठेवा. तुम्ही ती हलवू शकता. पूर्ण झाल्यावर शेत जतन करा दाबा."
+  "addFieldStep2Speech": "तुमच्या शेतावर टॅप करा. नकाशावर पिन ठेवा. तुम्ही ती हलवू शकता. पूर्ण झाल्यावर शेत जतन करा दाबा.",
+  "meterHealth": "आरोग्य",
+  "meterWater": "पाणी",
+  "meterPest": "कीड",
+  "statusLow": "कमी",
+  "statusOkay": "ठीक",
+  "statusDry": "कोरडी",
+  "statusRisk": "धोका",
+  "legendHealthy": "उत्तम",
+  "legendWatch": "लक्ष ठेवा",
+  "legendNeedsCare": "काळजीची गरज",
+  "detailSummaryAllGood": "हे शेत आज उत्तम दिसत आहे.",
+  "detailSummaryWaterLow": "पाणी कमी आहे. माती कोरडी असल्यास पाणी द्या.",
+  "detailSummaryPestWatch": "कीडीचा धोका वाढला आहे. आजच शेतात फेरफटका मारा.",
+  "detailSummaryActNow": "पिकाला आज काळजीची गरज आहे. बाधित भागाची पाहणी करा.",
+  "fieldDetailSpeech": "{name}. आरोग्य {health}. पाणी {water}. कीड {pest}. {summary}"
 }

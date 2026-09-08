@@ -300,7 +300,13 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Material(
                 color: Colors.transparent,
                 child: InkWell(
-                  onTap: () => context.go(AppRoutes.fields),
+                  onTap: () {
+                    if (_firstField != null) {
+                      context.push('/fields/${_firstField!.id}');
+                    } else {
+                      context.go(AppRoutes.fields);
+                    }
+                  },
                   borderRadius: BorderRadius.circular(AppSizes.radiusLarge + 4),
                   child: Container(
                     height: 250,

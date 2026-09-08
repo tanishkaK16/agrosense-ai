@@ -272,4 +272,55 @@ class AppLocalizationsMr extends AppLocalizations {
   @override
   String get addFieldStep2Speech =>
       'तुमच्या शेतावर टॅप करा. नकाशावर पिन ठेवा. तुम्ही ती हलवू शकता. पूर्ण झाल्यावर शेत जतन करा दाबा.';
+
+  @override
+  String get meterHealth => 'आरोग्य';
+
+  @override
+  String get meterWater => 'पाणी';
+
+  @override
+  String get meterPest => 'कीड';
+
+  @override
+  String get statusLow => 'कमी';
+
+  @override
+  String get statusOkay => 'ठीक';
+
+  @override
+  String get statusDry => 'कोरडी';
+
+  @override
+  String get statusRisk => 'धोका';
+
+  @override
+  String get legendHealthy => 'उत्तम';
+
+  @override
+  String get legendWatch => 'लक्ष ठेवा';
+
+  @override
+  String get legendNeedsCare => 'काळजीची गरज';
+
+  @override
+  String get detailSummaryAllGood => 'हे शेत आज उत्तम दिसत आहे.';
+
+  @override
+  String get detailSummaryWaterLow =>
+      'पाणी कमी आहे. माती कोरडी असल्यास पाणी द्या.';
+
+  @override
+  String get detailSummaryPestWatch =>
+      'कीडीचा धोका वाढला आहे. आजच शेतात फेरफटका मारा.';
+
+  @override
+  String get detailSummaryActNow =>
+      'पिकाला आज काळजीची गरज आहे. बाधित भागाची पाहणी करा.';
+
+  @override
+  String fieldDetailSpeech(
+      String name, String health, String water, String pest, String summary) {
+    return '$name. आरोग्य $health. पाणी $water. कीड $pest. $summary';
+  }
 }

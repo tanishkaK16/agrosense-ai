@@ -272,5 +272,59 @@
   "@addFieldStep1Speech": { "description": "Voice narration for add field step 1" },
 
   "addFieldStep2Speech": "Tap your field. Tap the map to drop a pin. You can move it. Tap save field when done.",
-  "@addFieldStep2Speech": { "description": "Voice narration for add field step 2 map" }
+  "@addFieldStep2Speech": { "description": "Voice narration for add field step 2 map" },
+
+  "meterHealth": "Health",
+  "@meterHealth": { "description": "Health meter label" },
+
+  "meterWater": "Water",
+  "@meterWater": { "description": "Water meter label" },
+
+  "meterPest": "Pest",
+  "@meterPest": { "description": "Pest meter label" },
+
+  "statusLow": "Low",
+  "@statusLow": { "description": "Meter status: Low" },
+
+  "statusOkay": "Okay",
+  "@statusOkay": { "description": "Meter status: Okay" },
+
+  "statusDry": "Dry",
+  "@statusDry": { "description": "Meter status hint: Dry" },
+
+  "statusRisk": "Risk",
+  "@statusRisk": { "description": "Meter status hint: Risk" },
+
+  "legendHealthy": "Healthy",
+  "@legendHealthy": { "description": "Overlay legend: Healthy zone" },
+
+  "legendWatch": "Watch",
+  "@legendWatch": { "description": "Overlay legend: Watch zone" },
+
+  "legendNeedsCare": "Needs care",
+  "@legendNeedsCare": { "description": "Overlay legend: Needs care zone" },
+
+  "detailSummaryAllGood": "This field looks fine today.",
+  "@detailSummaryAllGood": { "description": "Advice sentence when all meters are good" },
+
+  "detailSummaryWaterLow": "Water is low. Give water if the soil is dry.",
+  "@detailSummaryWaterLow": { "description": "Advice sentence when water is low" },
+
+  "detailSummaryPestWatch": "Pest risk is up. Walk the field today.",
+  "@detailSummaryPestWatch": { "description": "Advice sentence when pest risk is detected" },
+
+  "detailSummaryActNow": "Crop needs care today. Check the stressed area.",
+  "@detailSummaryActNow": { "description": "Advice sentence when immediate action is needed" },
+
+  "fieldDetailSpeech": "{name}. Health {health}. Water {water}. Pest {pest}. {summary}",
+  "@fieldDetailSpeech": {
+    "description": "Voice narration for field detail screen",
+    "placeholders": {
+      "name": { "type": "String" },
+      "health": { "type": "String" },
+      "water": { "type": "String" },
+      "pest": { "type": "String" },
+      "summary": { "type": "String" }
+    }
+  }
 }

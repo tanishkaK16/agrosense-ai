@@ -580,6 +580,97 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Tap your field. Tap the map to drop a pin. You can move it. Tap save field when done.'**
   String get addFieldStep2Speech;
+
+  /// Health meter label
+  ///
+  /// In en, this message translates to:
+  /// **'Health'**
+  String get meterHealth;
+
+  /// Water meter label
+  ///
+  /// In en, this message translates to:
+  /// **'Water'**
+  String get meterWater;
+
+  /// Pest meter label
+  ///
+  /// In en, this message translates to:
+  /// **'Pest'**
+  String get meterPest;
+
+  /// Meter status: Low
+  ///
+  /// In en, this message translates to:
+  /// **'Low'**
+  String get statusLow;
+
+  /// Meter status: Okay
+  ///
+  /// In en, this message translates to:
+  /// **'Okay'**
+  String get statusOkay;
+
+  /// Meter status hint: Dry
+  ///
+  /// In en, this message translates to:
+  /// **'Dry'**
+  String get statusDry;
+
+  /// Meter status hint: Risk
+  ///
+  /// In en, this message translates to:
+  /// **'Risk'**
+  String get statusRisk;
+
+  /// Overlay legend: Healthy zone
+  ///
+  /// In en, this message translates to:
+  /// **'Healthy'**
+  String get legendHealthy;
+
+  /// Overlay legend: Watch zone
+  ///
+  /// In en, this message translates to:
+  /// **'Watch'**
+  String get legendWatch;
+
+  /// Overlay legend: Needs care zone
+  ///
+  /// In en, this message translates to:
+  /// **'Needs care'**
+  String get legendNeedsCare;
+
+  /// Advice sentence when all meters are good
+  ///
+  /// In en, this message translates to:
+  /// **'This field looks fine today.'**
+  String get detailSummaryAllGood;
+
+  /// Advice sentence when water is low
+  ///
+  /// In en, this message translates to:
+  /// **'Water is low. Give water if the soil is dry.'**
+  String get detailSummaryWaterLow;
+
+  /// Advice sentence when pest risk is detected
+  ///
+  /// In en, this message translates to:
+  /// **'Pest risk is up. Walk the field today.'**
+  String get detailSummaryPestWatch;
+
+  /// Advice sentence when immediate action is needed
+  ///
+  /// In en, this message translates to:
+  /// **'Crop needs care today. Check the stressed area.'**
+  String get detailSummaryActNow;
+
+  /// Voice narration for field detail screen
+  ///
+  /// In en, this message translates to:
+  /// **'{name}. Health {health}. Water {water}. Pest {pest}. {summary}'**
+  String fieldDetailSpeech(
+      String name, String health, String water, String pest, String summary);
 }
 
 class _AppLocalizationsDelegate
