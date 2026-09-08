@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 
 import 'app.dart';
 import 'core/l10n/locale_controller.dart';
+import 'core/storage/app_prefs.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,7 +23,8 @@ Future<void> main() async {
 
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
 
-  // Load persisted locale before first frame
+  // Load persisted preferences and locale before first frame
+  await AppPrefs.instance.init();
   await LocaleController.instance.init();
 
   runApp(const AgroSenseApp());

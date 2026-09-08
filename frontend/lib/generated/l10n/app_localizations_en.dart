@@ -65,4 +65,37 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get helloFarmer => 'Welcome, farmer';
+
+  @override
+  String get onboarding1Title => 'Your field, in one look';
+
+  @override
+  String get onboarding1Body =>
+      'The app shows which part of the crop is healthy and which part needs care.';
+
+  @override
+  String get onboarding2Title => 'Know before the crop looks sick';
+
+  @override
+  String get onboarding2Body =>
+      'If water, pests, or weakness start, you get a simple alert.';
+
+  @override
+  String get onboarding3Title => 'Clear next step';
+
+  @override
+  String get onboarding3Body =>
+      'Each alert tells you what to do today, in your language.';
+
+  @override
+  String get next => 'Next';
+
+  @override
+  String get start => 'Start';
+
+  @override
+  String get skip => 'Skip';
+
+  @override
+  String get tapContinueWhenReady => 'Tap continue when ready';
 }

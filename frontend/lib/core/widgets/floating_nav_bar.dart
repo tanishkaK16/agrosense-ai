@@ -101,7 +101,7 @@ class _NavItem extends StatelessWidget {
               color: isSelected ? AppColors.primary : Colors.transparent,
               borderRadius: BorderRadius.circular(AppSizes.radiusPill),
             ),
-            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,

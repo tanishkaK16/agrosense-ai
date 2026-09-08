@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-const String _kLocaleKey = 'selected_locale';
+import '../storage/app_prefs.dart';
 
-/// Controls the app locale, persisted to [SharedPreferences].
+/// Controls the app locale, persisted via [AppPrefs].
 ///
 /// Usage:
-///   final controller = LocaleController();
+///   final controller = LocaleController.instance;
 ///   await controller.init();
 ///   controller.addListener(() { ... });
 ///   controller.setLocale(const Locale('hi'));
@@ -33,8 +32,10 @@ class LocaleController extends ChangeNotifier {
 
   /// Load persisted locale from device storage.
   Future<void> init() async {
-    final prefs = await SharedPreferences.getInstance();
-    final saved = prefs.getString(_kLocaleKey);
+    if (!AppPrefs.instance.isInitialized) {
+      await AppPrefs.instance.init();
+    }
+    final saved = AppPrefs.instance.localeCode;
     if (saved != null && saved.isNotEmpty) {
       _locale = Locale(saved);
     }
@@ -46,16 +47,14 @@ class LocaleController extends ChangeNotifier {
   Future<void> setLocale(Locale locale) async {
     if (_locale == locale) return;
     _locale = locale;
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString(_kLocaleKey, locale.languageCode);
+    await AppPrefs.instance.setLocaleCode(locale.languageCode);
     notifyListeners();
   }
 
   /// Clear saved locale (used during testing / reset flows).
   Future<void> clear() async {
     _locale = null;
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.remove(_kLocaleKey);
+    await AppPrefs.instance.clear();
     notifyListeners();
   }
 }

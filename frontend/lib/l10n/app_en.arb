@@ -55,5 +55,35 @@
   "@tapToStart": { "description": "Hint shown before a language is selected" },
 
   "helloFarmer": "Welcome, farmer",
-  "@helloFarmer": { "description": "Generic greeting on the home screen — no real name" }
+  "@helloFarmer": { "description": "Generic greeting on the home screen — no real name" },
+
+  "onboarding1Title": "Your field, in one look",
+  "@onboarding1Title": { "description": "Onboarding screen 1 title" },
+
+  "onboarding1Body": "The app shows which part of the crop is healthy and which part needs care.",
+  "@onboarding1Body": { "description": "Onboarding screen 1 body" },
+
+  "onboarding2Title": "Know before the crop looks sick",
+  "@onboarding2Title": { "description": "Onboarding screen 2 title" },
+
+  "onboarding2Body": "If water, pests, or weakness start, you get a simple alert.",
+  "@onboarding2Body": { "description": "Onboarding screen 2 body" },
+
+  "onboarding3Title": "Clear next step",
+  "@onboarding3Title": { "description": "Onboarding screen 3 title" },
+
+  "onboarding3Body": "Each alert tells you what to do today, in your language.",
+  "@onboarding3Body": { "description": "Onboarding screen 3 body" },
+
+  "next": "Next",
+  "@next": { "description": "Next button label" },
+
+  "start": "Start",
+  "@start": { "description": "Start button label" },
+
+  "skip": "Skip",
+  "@skip": { "description": "Skip button label" },
+
+  "tapContinueWhenReady": "Tap continue when ready",
+  "@tapContinueWhenReady": { "description": "Spoken prompt when a language is selected" }
 }

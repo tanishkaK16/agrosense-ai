@@ -65,4 +65,37 @@ class AppLocalizationsMr extends AppLocalizations {
 
   @override
   String get helloFarmer => 'नमस्कार, शेतकरी';
+
+  @override
+  String get onboarding1Title => 'एका दृष्टीक्षेपात तुमचे शेत';
+
+  @override
+  String get onboarding1Body =>
+      'पिकाचा कोणता भाग चांगला आहे आणि कशाला काळजीची गरज आहे हे अॅप दाखवते.';
+
+  @override
+  String get onboarding2Title => 'पीक आजारी दिसण्यापूर्वी ओळखा';
+
+  @override
+  String get onboarding2Body =>
+      'पाणी, कीड किंवा अशक्तपणा सुरू झाल्यास तुम्हाला सोपी सूचना मिळेल.';
+
+  @override
+  String get onboarding3Title => 'पुढचे पाऊल अगदी स्पष्ट';
+
+  @override
+  String get onboarding3Body =>
+      'प्रत्येक सूचना आज काय करायचे ते तुमच्या भाषेत सांगते.';
+
+  @override
+  String get next => 'पुढे';
+
+  @override
+  String get start => 'सुरू करा';
+
+  @override
+  String get skip => 'वगळा';
+
+  @override
+  String get tapContinueWhenReady => 'तयार झाल्यावर पुढे जा दाबा';
 }

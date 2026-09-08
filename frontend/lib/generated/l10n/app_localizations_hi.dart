@@ -65,4 +65,37 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get helloFarmer => 'नमस्ते, किसान';
+
+  @override
+  String get onboarding1Title => 'एक नज़र में आपका खेत';
+
+  @override
+  String get onboarding1Body =>
+      'ऐप बताता है कि फसल का कौन सा हिस्सा स्वस्थ है और किसे देखभाल की ज़रूरत है।';
+
+  @override
+  String get onboarding2Title => 'बीमारी दिखने से पहले जानें';
+
+  @override
+  String get onboarding2Body =>
+      'पानी की कमी, कीड़े या कमज़ोरी शुरू होते ही आपको आसान चेतावनी मिलेगी।';
+
+  @override
+  String get onboarding3Title => 'सीधा और आसान अगला कदम';
+
+  @override
+  String get onboarding3Body =>
+      'हर सूचना आपको बताती है कि आज क्या करना है, आपकी अपनी भाषा में।';
+
+  @override
+  String get next => 'आगे';
+
+  @override
+  String get start => 'शुरू करें';
+
+  @override
+  String get skip => 'छोड़ें';
+
+  @override
+  String get tapContinueWhenReady => 'तैयार होने पर आगे बढ़ें दबाएं';
 }

@@ -213,6 +213,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Welcome, farmer'**
   String get helloFarmer;
+
+  /// Onboarding screen 1 title
+  ///
+  /// In en, this message translates to:
+  /// **'Your field, in one look'**
+  String get onboarding1Title;
+
+  /// Onboarding screen 1 body
+  ///
+  /// In en, this message translates to:
+  /// **'The app shows which part of the crop is healthy and which part needs care.'**
+  String get onboarding1Body;
+
+  /// Onboarding screen 2 title
+  ///
+  /// In en, this message translates to:
+  /// **'Know before the crop looks sick'**
+  String get onboarding2Title;
+
+  /// Onboarding screen 2 body
+  ///
+  /// In en, this message translates to:
+  /// **'If water, pests, or weakness start, you get a simple alert.'**
+  String get onboarding2Body;
+
+  /// Onboarding screen 3 title
+  ///
+  /// In en, this message translates to:
+  /// **'Clear next step'**
+  String get onboarding3Title;
+
+  /// Onboarding screen 3 body
+  ///
+  /// In en, this message translates to:
+  /// **'Each alert tells you what to do today, in your language.'**
+  String get onboarding3Body;
+
+  /// Next button label
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get next;
+
+  /// Start button label
+  ///
+  /// In en, this message translates to:
+  /// **'Start'**
+  String get start;
+
+  /// Skip button label
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get skip;
+
+  /// Spoken prompt when a language is selected
+  ///
+  /// In en, this message translates to:
+  /// **'Tap continue when ready'**
+  String get tapContinueWhenReady;
 }
 
 class _AppLocalizationsDelegate
