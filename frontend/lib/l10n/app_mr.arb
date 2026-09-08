@@ -141,5 +141,20 @@
   "voiceMicTooltip": "बोलून आज्ञा द्या",
   "saveFailed": "जतन करता आले नाही. पुन्हा प्रयत्न करा.",
   "debugOfflineDemo": "ऑफलाइन डेमो डेटा",
-  "debugConnected": "सर्व्हरशी जोडलेले आहे"
+  "debugConnected": "सर्व्हरशी जोडलेले आहे",
+  "offlineSavedInfoChip": "शेवटची जतन केलेली शेताची माहिती दाखवत आहे",
+  "howWillIGetAlerts": "मला सूचना कशा मिळतील?",
+  "alsoSentAsSms": "एसएमएस द्वारे देखील पाठवले",
+  "smsScreenTitle": "तुमच्या फोनवर सूचना",
+  "smsSentence1": "एखाद्या शेताला काळजीची गरज असल्यास, अॅग्रोसेन्स एक लहान एसएमएस पाठवू शकते.",
+  "smsSentence2": "तुम्ही साइन इन करण्यासाठी वापरलेल्या नंबरवर एसएमएस येईल: {phone}",
+  "smsExampleMessage": "अॅग्रोसेन्स: मुख्य शेतात पाणी कमी आहे. जमीन कोरडी असल्यास पाणी द्या.",
+  "smsOptInOn": "चालू",
+  "smsOptInOnDesc": "मला एसएमएस हवा आहे",
+  "smsOptInOff": "बंद",
+  "smsOptInOffDesc": "फक्त अॅपमध्ये",
+  "smsStatusOn": "एसएमएस सूचना चालू आहेत.",
+  "smsStatusOff": "एसएमएस सूचना बंद आहेत.",
+  "smsSaveSuccess": "पसंती जतन केली.",
+  "voiceOpeningSmsInfo": "एसएमएस सूचना माहिती उघडत आहे"
 }

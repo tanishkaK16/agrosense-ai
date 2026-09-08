@@ -3,6 +3,7 @@ enum VoiceActionType {
   navigateHome,
   navigateFields,
   navigateAlerts,
+  openSmsInfo,
   triggerListen,
   whatToDo,
   statusWater,
@@ -147,7 +148,28 @@ class VoiceCommandParser {
       );
     }
 
-    // 5. Navigate: Alerts
+    // 5. SMS / Message Screen
+    // English: "sms", "message"
+    // Hindi: "एसएमएस", "संदेश", "मैसेज", "मेसेज"
+    // Marathi: "एसएमएस", "संदेश", "मेसेज"
+    if (_matchesAny(cleaned, [
+      'sms',
+      'message',
+      'sandesh',
+      'meseg',
+      'संदेश',
+      'मेसेज',
+      'मैसेज',
+      'एसएमएस',
+    ])) {
+      return VoiceCommandResult(
+        action: VoiceActionType.openSmsInfo,
+        rawTranscript: transcript,
+        matchedKeyword: 'sms',
+      );
+    }
+
+    // 6. Navigate: Alerts
     // English: "alert", "alerts", "warning", "warnings", "notices"
     // Hindi: "चेतावनी", "सूचना", "अलर्ट"
     // Marathi: "इशारा", "इशारे", "सूचना"

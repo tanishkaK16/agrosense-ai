@@ -512,5 +512,55 @@
   "@debugOfflineDemo": { "description": "Debug-only banner indicating local demo mode" },
 
   "debugConnected": "Connected",
-  "@debugConnected": { "description": "Debug-only banner indicating live server connection" }
+  "@debugConnected": { "description": "Debug-only banner indicating live server connection" },
+
+  "offlineSavedInfoChip": "Showing last saved field info",
+  "@offlineSavedInfoChip": { "description": "Calm chip shown on home when offline cache is displayed" },
+
+  "howWillIGetAlerts": "How will I get alerts?",
+  "@howWillIGetAlerts": { "description": "Text button in alerts empty state opening SMS info" },
+
+  "alsoSentAsSms": "Also sent as SMS",
+  "@alsoSentAsSms": { "description": "Secondary button under Done in alert detail opening SMS info" },
+
+  "smsScreenTitle": "Alerts on your phone",
+  "@smsScreenTitle": { "description": "Title of SMS explanation screen" },
+
+  "smsSentence1": "If a field needs care, AgroSense can send a short SMS.",
+  "@smsSentence1": { "description": "First explanation sentence about SMS alerts" },
+
+  "smsSentence2": "SMS will come to the number you used to sign in: {phone}",
+  "@smsSentence2": {
+    "description": "Second sentence showing masked sign in phone number",
+    "placeholders": {
+      "phone": { "type": "String" }
+    }
+  },
+
+  "smsExampleMessage": "AgroSense: Water is low in Main field. Give water if the soil is dry.",
+  "@smsExampleMessage": { "description": "Sample SMS text in current language" },
+
+  "smsOptInOn": "On",
+  "@smsOptInOn": { "description": "SMS opt-in choice: On" },
+
+  "smsOptInOnDesc": "I want SMS",
+  "@smsOptInOnDesc": { "description": "Description for SMS On option" },
+
+  "smsOptInOff": "Off",
+  "@smsOptInOff": { "description": "SMS opt-in choice: Off" },
+
+  "smsOptInOffDesc": "Only in the app",
+  "@smsOptInOffDesc": { "description": "Description for SMS Off option" },
+
+  "smsStatusOn": "SMS alerts are on.",
+  "@smsStatusOn": { "description": "Speech text when SMS is enabled" },
+
+  "smsStatusOff": "SMS alerts are off.",
+  "@smsStatusOff": { "description": "Speech text when SMS is disabled" },
+
+  "smsSaveSuccess": "Preference saved.",
+  "@smsSaveSuccess": { "description": "Notice when SMS preference is saved" },
+
+  "voiceOpeningSmsInfo": "Opening SMS alert info",
+  "@voiceOpeningSmsInfo": { "description": "Voice feedback when opening SMS info screen" }
 }

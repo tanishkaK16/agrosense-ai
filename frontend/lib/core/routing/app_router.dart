@@ -5,6 +5,7 @@ import '../../core/l10n/locale_controller.dart';
 import '../../core/storage/app_prefs.dart';
 import '../../features/alerts/alert_detail_screen.dart';
 import '../../features/alerts/alerts_screen.dart';
+import '../../features/alerts/sms_info_screen.dart';
 import '../../features/auth/otp_screen.dart';
 import '../../features/auth/phone_screen.dart';
 import '../../features/auth/profile_screen.dart';
@@ -31,6 +32,7 @@ abstract final class AppRoutes {
   static const String fieldDetail = '/fields/:id';
   static const String alerts = '/alerts';
   static const String alertDetail = '/alerts/:id';
+  static const String smsInfo = '/alerts/sms-info';
 }
 
 /// Application router.
@@ -193,6 +195,12 @@ GoRouter buildRouter() {
             child: AlertDetailScreen(alertId: alertId),
           );
         },
+      ),
+      GoRoute(
+        path: AppRoutes.smsInfo,
+        pageBuilder: (context, state) => const NoTransitionPage(
+          child: SmsInfoScreen(),
+        ),
       ),
     ],
   );

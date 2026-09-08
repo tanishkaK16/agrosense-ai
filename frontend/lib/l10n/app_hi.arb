@@ -141,5 +141,20 @@
   "voiceMicTooltip": "बोलकर आदेश दें",
   "saveFailed": "सहेजा नहीं जा सका। फिर से प्रयास करें।",
   "debugOfflineDemo": "ऑफ़लाइन डेमो डेटा",
-  "debugConnected": "सर्वर से जुड़ा हुआ है"
+  "debugConnected": "सर्वर से जुड़ा हुआ है",
+  "offlineSavedInfoChip": "पिछली सहेजी गई खेत की जानकारी दिखाई जा रही है",
+  "howWillIGetAlerts": "मुझे सूचनाएं कैसे मिलेंगी?",
+  "alsoSentAsSms": "एसएमएस के रूप में भी भेजा गया",
+  "smsScreenTitle": "आपके फोन पर सूचनाएं",
+  "smsSentence1": "यदि किसी खेत को देखभाल की आवश्यकता है, तो एग्रोसेन्स एक छोटा एसएमएस भेज सकता है।",
+  "smsSentence2": "एसएमएस उस नंबर पर आएगा जिससे आपने साइन इन किया था: {phone}",
+  "smsExampleMessage": "एग्रोसेन्स: मुख्य खेत में पानी कम है। मिट्टी सूखी होने पर पानी दें।",
+  "smsOptInOn": "चालू",
+  "smsOptInOnDesc": "मुझे एसएमएस चाहिए",
+  "smsOptInOff": "बंद",
+  "smsOptInOffDesc": "केवल ऐप में",
+  "smsStatusOn": "एसएमएस सूचनाएं चालू हैं।",
+  "smsStatusOff": "एसएमएस सूचनाएं बंद हैं।",
+  "smsSaveSuccess": "पसंद सहेज ली गई।",
+  "voiceOpeningSmsInfo": "एसएमएस सूचना जानकारी खोली जा रही है"
 }

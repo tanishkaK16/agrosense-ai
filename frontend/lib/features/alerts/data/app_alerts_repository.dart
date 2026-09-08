@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 
+import '../../../core/cache/snapshot_cache.dart';
 import '../../../core/config/app_config.dart';
 import '../../../core/network/connectivity.dart';
 import '../../../core/network/pending_sync_queue.dart';
@@ -9,13 +10,15 @@ import 'live_alerts_repository.dart';
 import 'mock_alerts_repository.dart';
 
 /// Facade implementation of [AlertsRepository].
-/// Seamlessly routes between [LiveAlertsRepository] and [MockAlertsRepository].
+/// Seamlessly routes between [LiveAlertsRepository], [SnapshotCache], and [MockAlertsRepository].
 class AppAlertsRepository extends ChangeNotifier implements AlertsRepository {
   AppAlertsRepository({
     LiveAlertsRepository? liveRepo,
     MockAlertsRepository? mockRepo,
+    SnapshotCache? cache,
   })  : _liveRepo = liveRepo ?? LiveAlertsRepository(),
-        _mockRepo = mockRepo ?? MockAlertsRepository.instance {
+        _mockRepo = mockRepo ?? MockAlertsRepository.instance,
+        _cache = cache ?? SnapshotCache.instance {
     _mockRepo.addListener(notifyListeners);
   }
 
@@ -23,49 +26,54 @@ class AppAlertsRepository extends ChangeNotifier implements AlertsRepository {
 
   final LiveAlertsRepository _liveRepo;
   final MockAlertsRepository _mockRepo;
+  final SnapshotCache _cache;
 
   @override
   Future<List<FarmAlert>> getAlerts() async {
     if (!AppConfig.instance.useLive) {
       ConnectivityStatus.instance.reportFallbackUsed();
-      return _mockRepo.getAlerts();
+      final cached = await _cache.getAlerts();
+      if (cached != null) {
+        return cached;
+      }
+      final mock = await _mockRepo.getAlerts();
+      await _cache.saveAlerts(mock);
+      return mock;
     }
 
     try {
       final list = await _liveRepo.getAlerts();
       ConnectivityStatus.instance.reportLiveSuccess();
+      await _cache.saveAlerts(list);
       return list;
     } catch (_) {
       ConnectivityStatus.instance.reportFallbackUsed();
-      return _mockRepo.getAlerts();
+      final cached = await _cache.getAlerts();
+      if (cached != null) {
+        return cached;
+      }
+      final mock = await _mockRepo.getAlerts();
+      await _cache.saveAlerts(mock);
+      return mock;
     }
   }
 
   @override
   Future<FarmAlert?> getAlertById(String id) async {
-    if (!AppConfig.instance.useLive) {
-      ConnectivityStatus.instance.reportFallbackUsed();
-      return _mockRepo.getAlertById(id);
+    final alerts = await getAlerts();
+    for (final a in alerts) {
+      if (a.id == id) return a;
     }
-
-    try {
-      final alert = await _liveRepo.getAlertById(id);
-      if (alert != null) {
-        ConnectivityStatus.instance.reportLiveSuccess();
-        return alert;
-      }
-      return _mockRepo.getAlertById(id);
-    } catch (_) {
-      ConnectivityStatus.instance.reportFallbackUsed();
-      return _mockRepo.getAlertById(id);
-    }
+    return _mockRepo.getAlertById(id);
   }
 
   @override
   Future<void> markAlertSeen(String id) async {
+    await _cache.markAlertSeen(id);
+    await _mockRepo.markAlertSeen(id);
+
     if (!AppConfig.instance.useLive) {
       ConnectivityStatus.instance.reportFallbackUsed();
-      await _mockRepo.markAlertSeen(id);
       notifyListeners();
       return;
     }
@@ -73,10 +81,8 @@ class AppAlertsRepository extends ChangeNotifier implements AlertsRepository {
     try {
       await _liveRepo.markAlertSeen(id);
       ConnectivityStatus.instance.reportLiveSuccess();
-      await _mockRepo.markAlertSeen(id);
     } catch (_) {
       ConnectivityStatus.instance.reportFallbackUsed();
-      await _mockRepo.markAlertSeen(id);
       await PendingSyncQueue.instance.enqueue(
         'mark_alert_seen',
         {'id': id},
@@ -88,6 +94,7 @@ class AppAlertsRepository extends ChangeNotifier implements AlertsRepository {
   @override
   Future<void> clear() async {
     await _mockRepo.clear();
+    await _cache.saveAlerts([]);
     notifyListeners();
   }
 }

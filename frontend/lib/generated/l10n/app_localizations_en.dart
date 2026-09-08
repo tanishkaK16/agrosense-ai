@@ -488,4 +488,53 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get debugConnected => 'Connected';
+
+  @override
+  String get offlineSavedInfoChip => 'Showing last saved field info';
+
+  @override
+  String get howWillIGetAlerts => 'How will I get alerts?';
+
+  @override
+  String get alsoSentAsSms => 'Also sent as SMS';
+
+  @override
+  String get smsScreenTitle => 'Alerts on your phone';
+
+  @override
+  String get smsSentence1 =>
+      'If a field needs care, AgroSense can send a short SMS.';
+
+  @override
+  String smsSentence2(String phone) {
+    return 'SMS will come to the number you used to sign in: $phone';
+  }
+
+  @override
+  String get smsExampleMessage =>
+      'AgroSense: Water is low in Main field. Give water if the soil is dry.';
+
+  @override
+  String get smsOptInOn => 'On';
+
+  @override
+  String get smsOptInOnDesc => 'I want SMS';
+
+  @override
+  String get smsOptInOff => 'Off';
+
+  @override
+  String get smsOptInOffDesc => 'Only in the app';
+
+  @override
+  String get smsStatusOn => 'SMS alerts are on.';
+
+  @override
+  String get smsStatusOff => 'SMS alerts are off.';
+
+  @override
+  String get smsSaveSuccess => 'Preference saved.';
+
+  @override
+  String get voiceOpeningSmsInfo => 'Opening SMS alert info';
 }

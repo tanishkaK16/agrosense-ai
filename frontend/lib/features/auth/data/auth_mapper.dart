@@ -22,6 +22,7 @@ class AuthMapper {
       name: json['name'] as String? ?? '',
       village: json['village'] as String? ?? '',
       mainCrop: json['crop'] as String? ?? 'wheat',
+      smsOptIn: json['sms_opt_in'] as bool? ?? true,
     );
   }
 
@@ -30,6 +31,7 @@ class AuthMapper {
       'name': profile.name,
       'village': profile.village,
       'crop': profile.mainCrop,
+      'sms_opt_in': profile.smsOptIn,
     };
   }
 }

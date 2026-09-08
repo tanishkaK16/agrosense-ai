@@ -171,14 +171,19 @@ class _HomeScreenState extends State<HomeScreen> {
         ? l10n.alertsTapToSee(alertCount)
         : l10n.noAlertsToday;
 
+    final isCachedOffline = ConnectivityStatus.instance.isUsingCachedData;
+
     // Speech text for voice guidance
-    final speechText = l10n.homeSpeech(
+    final baseSpeech = l10n.homeSpeech(
       greetingText,
       snapshot?.temperatureC ?? 32,
       snapshot?.rainMm ?? 0,
       healthLabel,
       alertsText,
     );
+    final speechText = isCachedOffline
+        ? '${l10n.offlineSavedInfoChip}. $baseSpeech'
+        : baseSpeech;
 
     return Scaffold(
       backgroundColor: AppColors.background,
@@ -193,12 +198,44 @@ class _HomeScreenState extends State<HomeScreen> {
             AppSizes.navBarHeight + AppSizes.navBarBottomMargin + 32,
           ),
           children: [
-            // ── Debug-Only Connectivity Banner ──────────────────────────────
-            if (kDebugMode)
-              ListenableBuilder(
-                listenable: ConnectivityStatus.instance,
-                builder: (context, _) {
-                  final status = ConnectivityStatus.instance;
+            // ── Single Top Banner: Offline Cache Chip or Debug Banner ────────
+            ListenableBuilder(
+              listenable: ConnectivityStatus.instance,
+              builder: (context, _) {
+                final status = ConnectivityStatus.instance;
+                if (status.isUsingCachedData) {
+                  return Padding(
+                    padding: const EdgeInsets.only(bottom: AppSizes.paddingS),
+                    child: Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 12,
+                        vertical: 6,
+                      ),
+                      decoration: BoxDecoration(
+                        color: AppColors.surface,
+                        borderRadius:
+                            BorderRadius.circular(AppSizes.radiusPill),
+                        border: Border.all(
+                          color: AppColors.surfaceVariant,
+                          width: 1,
+                        ),
+                      ),
+                      child: Text(
+                        l10n.offlineSavedInfoChip,
+                        style: const TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                          color: AppColors.muted,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  );
+                }
+
+                if (kDebugMode) {
                   final isLive = status.isLiveConnected;
                   return Padding(
                     padding: const EdgeInsets.only(bottom: AppSizes.paddingS),
@@ -227,8 +264,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   );
-                },
-              ),
+                }
+
+                return const SizedBox.shrink();
+              },
+            ),
 
             // ── Top Bar: Greeting, Village & Listen Button ───────────────────
             Row(

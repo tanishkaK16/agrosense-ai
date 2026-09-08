@@ -487,4 +487,54 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get debugConnected => 'सर्वर से जुड़ा हुआ है';
+
+  @override
+  String get offlineSavedInfoChip =>
+      'पिछली सहेजी गई खेत की जानकारी दिखाई जा रही है';
+
+  @override
+  String get howWillIGetAlerts => 'मुझे सूचनाएं कैसे मिलेंगी?';
+
+  @override
+  String get alsoSentAsSms => 'एसएमएस के रूप में भी भेजा गया';
+
+  @override
+  String get smsScreenTitle => 'आपके फोन पर सूचनाएं';
+
+  @override
+  String get smsSentence1 =>
+      'यदि किसी खेत को देखभाल की आवश्यकता है, तो एग्रोसेन्स एक छोटा एसएमएस भेज सकता है।';
+
+  @override
+  String smsSentence2(String phone) {
+    return 'एसएमएस उस नंबर पर आएगा जिससे आपने साइन इन किया था: $phone';
+  }
+
+  @override
+  String get smsExampleMessage =>
+      'एग्रोसेन्स: मुख्य खेत में पानी कम है। मिट्टी सूखी होने पर पानी दें।';
+
+  @override
+  String get smsOptInOn => 'चालू';
+
+  @override
+  String get smsOptInOnDesc => 'मुझे एसएमएस चाहिए';
+
+  @override
+  String get smsOptInOff => 'बंद';
+
+  @override
+  String get smsOptInOffDesc => 'केवल ऐप में';
+
+  @override
+  String get smsStatusOn => 'एसएमएस सूचनाएं चालू हैं।';
+
+  @override
+  String get smsStatusOff => 'एसएमएस सूचनाएं बंद हैं।';
+
+  @override
+  String get smsSaveSuccess => 'पसंद सहेज ली गई।';
+
+  @override
+  String get voiceOpeningSmsInfo => 'एसएमएस सूचना जानकारी खोली जा रही है';
 }

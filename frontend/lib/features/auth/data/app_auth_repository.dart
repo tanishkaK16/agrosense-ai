@@ -1,3 +1,4 @@
+import '../../../core/cache/snapshot_cache.dart';
 import '../../../core/config/app_config.dart';
 import '../../../core/network/connectivity.dart';
 import '../../../core/network/pending_sync_queue.dart';
@@ -11,19 +12,22 @@ import 'mock_auth_repository.dart';
 export 'mock_auth_repository.dart' show kShowDemoOtp;
 
 /// Facade implementation of [AuthRepository].
-/// Seamlessly routes between [LiveAuthRepository] and [MockAuthRepository]
+/// Seamlessly routes between [LiveAuthRepository], [SnapshotCache], and [MockAuthRepository]
 /// according to [AppConfig.instance.useLive] and network reachability.
 class AppAuthRepository implements AuthRepository {
   AppAuthRepository({
     LiveAuthRepository? liveRepo,
     MockAuthRepository? mockRepo,
+    SnapshotCache? cache,
   })  : _liveRepo = liveRepo ?? LiveAuthRepository(),
-        _mockRepo = mockRepo ?? MockAuthRepository.instance;
+        _mockRepo = mockRepo ?? MockAuthRepository.instance,
+        _cache = cache ?? SnapshotCache.instance;
 
   static final AppAuthRepository instance = AppAuthRepository();
 
   final LiveAuthRepository _liveRepo;
   final MockAuthRepository _mockRepo;
+  final SnapshotCache _cache;
 
   @override
   Future<bool> requestOtp(String phone) async {
@@ -64,9 +68,11 @@ class AppAuthRepository implements AuthRepository {
 
   @override
   Future<void> saveProfile(FarmerProfile profile) async {
+    await _cache.saveProfile(profile);
+    await _mockRepo.saveProfile(profile);
+
     if (!AppConfig.instance.useLive) {
       ConnectivityStatus.instance.reportFallbackUsed();
-      await _mockRepo.saveProfile(profile);
       return;
     }
 
@@ -75,8 +81,6 @@ class AppAuthRepository implements AuthRepository {
       ConnectivityStatus.instance.reportLiveSuccess();
     } catch (_) {
       ConnectivityStatus.instance.reportFallbackUsed();
-      // Offline fallback: save locally and record in pending sync queue
-      await _mockRepo.saveProfile(profile);
       await PendingSyncQueue.instance.enqueue(
         'save_profile',
         AuthMapper.profileToJson(profile),

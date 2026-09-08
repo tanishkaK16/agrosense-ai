@@ -78,30 +78,35 @@ Retrieves authenticated farmer's profile.
   "phone": "+919876543210",
   "name": "Ramesh",
   "village": "Baramati",
-  "crop": "sugarcane"
+  "crop": "sugarcane",
+  "sms_opt_in": true
 }
 ```
 
 ---
 
 ### `PUT /me`
-Updates farmer profile information.
+Updates farmer profile information and SMS opt-in preferences.
 
 **Request**:
 ```json
 {
   "name": "Ramesh Patil",
   "village": "Baramati",
-  "crop": "sugarcane"
+  "crop": "sugarcane",
+  "sms_opt_in": true
 }
 ```
+
+*Note: `sms_opt_in` is optional boolean (defaults to `true`).*
 
 **Response** (`200 OK`):
 ```json
 {
   "name": "Ramesh Patil",
   "village": "Baramati",
-  "crop": "sugarcane"
+  "crop": "sugarcane",
+  "sms_opt_in": true
 }
 ```
 

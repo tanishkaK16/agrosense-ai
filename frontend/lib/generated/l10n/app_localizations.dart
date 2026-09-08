@@ -954,6 +954,96 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Connected'**
   String get debugConnected;
+
+  /// Calm chip shown on home when offline cache is displayed
+  ///
+  /// In en, this message translates to:
+  /// **'Showing last saved field info'**
+  String get offlineSavedInfoChip;
+
+  /// Text button in alerts empty state opening SMS info
+  ///
+  /// In en, this message translates to:
+  /// **'How will I get alerts?'**
+  String get howWillIGetAlerts;
+
+  /// Secondary button under Done in alert detail opening SMS info
+  ///
+  /// In en, this message translates to:
+  /// **'Also sent as SMS'**
+  String get alsoSentAsSms;
+
+  /// Title of SMS explanation screen
+  ///
+  /// In en, this message translates to:
+  /// **'Alerts on your phone'**
+  String get smsScreenTitle;
+
+  /// First explanation sentence about SMS alerts
+  ///
+  /// In en, this message translates to:
+  /// **'If a field needs care, AgroSense can send a short SMS.'**
+  String get smsSentence1;
+
+  /// Second sentence showing masked sign in phone number
+  ///
+  /// In en, this message translates to:
+  /// **'SMS will come to the number you used to sign in: {phone}'**
+  String smsSentence2(String phone);
+
+  /// Sample SMS text in current language
+  ///
+  /// In en, this message translates to:
+  /// **'AgroSense: Water is low in Main field. Give water if the soil is dry.'**
+  String get smsExampleMessage;
+
+  /// SMS opt-in choice: On
+  ///
+  /// In en, this message translates to:
+  /// **'On'**
+  String get smsOptInOn;
+
+  /// Description for SMS On option
+  ///
+  /// In en, this message translates to:
+  /// **'I want SMS'**
+  String get smsOptInOnDesc;
+
+  /// SMS opt-in choice: Off
+  ///
+  /// In en, this message translates to:
+  /// **'Off'**
+  String get smsOptInOff;
+
+  /// Description for SMS Off option
+  ///
+  /// In en, this message translates to:
+  /// **'Only in the app'**
+  String get smsOptInOffDesc;
+
+  /// Speech text when SMS is enabled
+  ///
+  /// In en, this message translates to:
+  /// **'SMS alerts are on.'**
+  String get smsStatusOn;
+
+  /// Speech text when SMS is disabled
+  ///
+  /// In en, this message translates to:
+  /// **'SMS alerts are off.'**
+  String get smsStatusOff;
+
+  /// Notice when SMS preference is saved
+  ///
+  /// In en, this message translates to:
+  /// **'Preference saved.'**
+  String get smsSaveSuccess;
+
+  /// Voice feedback when opening SMS info screen
+  ///
+  /// In en, this message translates to:
+  /// **'Opening SMS alert info'**
+  String get voiceOpeningSmsInfo;
 }
 
 class _AppLocalizationsDelegate

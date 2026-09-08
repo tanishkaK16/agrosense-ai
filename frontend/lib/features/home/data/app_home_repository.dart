@@ -1,3 +1,4 @@
+import '../../../core/cache/snapshot_cache.dart';
 import '../../../core/config/app_config.dart';
 import '../../../core/network/connectivity.dart';
 import '../models/home_snapshot.dart';
@@ -6,18 +7,21 @@ import 'live_home_repository.dart';
 import 'mock_home_repository.dart';
 
 /// Facade implementation of [HomeRepository].
-/// Seamlessly routes between [LiveHomeRepository] and [MockHomeRepository].
+/// Seamlessly routes between [LiveHomeRepository], [SnapshotCache], and [MockHomeRepository].
 class AppHomeRepository implements HomeRepository {
   AppHomeRepository({
     LiveHomeRepository? liveRepo,
     MockHomeRepository? mockRepo,
+    SnapshotCache? cache,
   })  : _liveRepo = liveRepo ?? LiveHomeRepository(),
-        _mockRepo = mockRepo ?? MockHomeRepository.instance;
+        _mockRepo = mockRepo ?? MockHomeRepository.instance,
+        _cache = cache ?? SnapshotCache.instance;
 
   static final AppHomeRepository instance = AppHomeRepository();
 
   final LiveHomeRepository _liveRepo;
   final MockHomeRepository _mockRepo;
+  final SnapshotCache _cache;
 
   @override
   Future<HomeSnapshot> getHomeSnapshot({
@@ -27,11 +31,17 @@ class AppHomeRepository implements HomeRepository {
   }) async {
     if (!AppConfig.instance.useLive) {
       ConnectivityStatus.instance.reportFallbackUsed();
-      return _mockRepo.getHomeSnapshot(
+      final cached = await _cache.getHome();
+      if (cached != null) {
+        return cached;
+      }
+      final mock = await _mockRepo.getHomeSnapshot(
         defaultCrop: defaultCrop,
         fieldName: fieldName,
         fieldHealth: fieldHealth,
       );
+      await _cache.saveHome(mock);
+      return mock;
     }
 
     try {
@@ -41,14 +51,23 @@ class AppHomeRepository implements HomeRepository {
         fieldHealth: fieldHealth,
       );
       ConnectivityStatus.instance.reportLiveSuccess();
+      await _cache.saveHome(snapshot);
       return snapshot;
     } catch (_) {
       ConnectivityStatus.instance.reportFallbackUsed();
-      return _mockRepo.getHomeSnapshot(
+      final cached = await _cache.getHome();
+      if (cached != null) {
+        ConnectivityStatus.instance.reportCachedDataUsed(true);
+        return cached;
+      }
+
+      final mock = await _mockRepo.getHomeSnapshot(
         defaultCrop: defaultCrop,
         fieldName: fieldName,
         fieldHealth: fieldHealth,
       );
+      await _cache.saveHome(mock);
+      return mock;
     }
   }
 }

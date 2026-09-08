@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../core/constants/app_sizes.dart';
+import '../../core/routing/app_router.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_shadows.dart';
 import '../../core/theme/app_text_styles.dart';
@@ -226,6 +227,31 @@ class _AlertsScreenState extends State<AlertsScreen> {
                 l10n.fieldsLookFine,
                 style: AppTextStyles.caption(context),
                 textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: AppSizes.paddingL),
+              Semantics(
+                button: true,
+                child: TextButton.icon(
+                  onPressed: () => context.push(AppRoutes.smsInfo),
+                  style: TextButton.styleFrom(
+                    minimumSize: const Size(200, 48),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: 12,
+                    ),
+                    foregroundColor: AppColors.primary,
+                  ),
+                  icon: const Icon(Icons.chat_outlined, size: 20),
+                  label: Text(
+                    l10n.howWillIGetAlerts,
+                    style: const TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
