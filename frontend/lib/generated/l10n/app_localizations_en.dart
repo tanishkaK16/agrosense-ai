@@ -168,4 +168,56 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get saveAndContinue => 'Save and continue';
+
+  @override
+  String helloName(String name) {
+    return 'Hello, $name';
+  }
+
+  @override
+  String get weatherTemp => 'Temp';
+
+  @override
+  String get weatherRain => 'Rain today';
+
+  @override
+  String get weatherWind => 'Wind';
+
+  @override
+  String get myFieldToday => 'My field today';
+
+  @override
+  String get healthyStatus => 'Healthy';
+
+  @override
+  String get watchStatus => 'Watch';
+
+  @override
+  String get actNowStatus => 'Act now';
+
+  @override
+  String get healthSummaryHealthy =>
+      'Most of the crop looks fine. Check the dry corner tomorrow.';
+
+  @override
+  String get healthSummaryWatch =>
+      'Soil moisture is dipping. Plan watering for tomorrow.';
+
+  @override
+  String get healthSummaryActNow =>
+      'Crop stress detected. Inspect the field today.';
+
+  @override
+  String get noAlertsToday => 'No alert today';
+
+  @override
+  String alertsTapToSee(int count) {
+    return '$count alert. Tap to see what to do.';
+  }
+
+  @override
+  String homeSpeech(
+      String greeting, int temp, int rain, String health, String alerts) {
+    return '$greeting. Temperature $temp degrees. Rain $rain millimeter. Your field is $health. $alerts.';
+  }
 }

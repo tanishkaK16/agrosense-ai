@@ -50,5 +50,19 @@
   "cropSugarcane": "गन्ना",
   "cropSoybean": "सोयाबीन",
   "cropOther": "अन्य",
-  "saveAndContinue": "सहेजें और आगे बढ़ें"
+  "saveAndContinue": "सहेजें और आगे बढ़ें",
+  "helloName": "नमस्ते, {name}",
+  "weatherTemp": "तापमान",
+  "weatherRain": "आज बारिश",
+  "weatherWind": "हवा",
+  "myFieldToday": "आज मेरा खेत",
+  "healthyStatus": "स्वस्थ",
+  "watchStatus": "सावधान",
+  "actNowStatus": "तुरंत कदम उठाएं",
+  "healthSummaryHealthy": "ज़्यादातर फसल ठीक दिख रही है। कल सूखे कोने को देखें।",
+  "healthSummaryWatch": "मिट्टी की नमी कम हो रही है। कल पानी देने की योजना बनाएं।",
+  "healthSummaryActNow": "फसल में तनाव के लक्षण हैं। आज ही खेत का मुआयना करें।",
+  "noAlertsToday": "आज कोई चेतावनी नहीं",
+  "alertsTapToSee": "{count} चेतावनी। क्या करना है देखने के लिए दबाएं।",
+  "homeSpeech": "{greeting}। तापमान {temp} अंश। बारिश {rain} मिलीमीटर। आपका खेत {health} है। {alerts}।"
 }

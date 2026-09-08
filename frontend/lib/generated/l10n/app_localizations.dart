@@ -405,6 +405,91 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Save and continue'**
   String get saveAndContinue;
+
+  /// Personalized farmer greeting
+  ///
+  /// In en, this message translates to:
+  /// **'Hello, {name}'**
+  String helloName(String name);
+
+  /// Temperature label
+  ///
+  /// In en, this message translates to:
+  /// **'Temp'**
+  String get weatherTemp;
+
+  /// Rain label
+  ///
+  /// In en, this message translates to:
+  /// **'Rain today'**
+  String get weatherRain;
+
+  /// Wind label
+  ///
+  /// In en, this message translates to:
+  /// **'Wind'**
+  String get weatherWind;
+
+  /// Title of the main field health card
+  ///
+  /// In en, this message translates to:
+  /// **'My field today'**
+  String get myFieldToday;
+
+  /// Healthy field status tag
+  ///
+  /// In en, this message translates to:
+  /// **'Healthy'**
+  String get healthyStatus;
+
+  /// Watch caution field status tag
+  ///
+  /// In en, this message translates to:
+  /// **'Watch'**
+  String get watchStatus;
+
+  /// Act now warning field status tag
+  ///
+  /// In en, this message translates to:
+  /// **'Act now'**
+  String get actNowStatus;
+
+  /// Healthy field summary sentence
+  ///
+  /// In en, this message translates to:
+  /// **'Most of the crop looks fine. Check the dry corner tomorrow.'**
+  String get healthSummaryHealthy;
+
+  /// Watch field summary sentence
+  ///
+  /// In en, this message translates to:
+  /// **'Soil moisture is dipping. Plan watering for tomorrow.'**
+  String get healthSummaryWatch;
+
+  /// Act now field summary sentence
+  ///
+  /// In en, this message translates to:
+  /// **'Crop stress detected. Inspect the field today.'**
+  String get healthSummaryActNow;
+
+  /// Empty state label when there are zero alerts
+  ///
+  /// In en, this message translates to:
+  /// **'No alert today'**
+  String get noAlertsToday;
+
+  /// Alert card text when alerts exist
+  ///
+  /// In en, this message translates to:
+  /// **'{count} alert. Tap to see what to do.'**
+  String alertsTapToSee(int count);
+
+  /// Full home screen text-to-speech summary
+  ///
+  /// In en, this message translates to:
+  /// **'{greeting}. Temperature {temp} degrees. Rain {rain} millimeter. Your field is {health}. {alerts}.'**
+  String homeSpeech(
+      String greeting, int temp, int rain, String health, String alerts);
 }
 
 class _AppLocalizationsDelegate

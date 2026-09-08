@@ -50,5 +50,19 @@
   "cropSugarcane": "ऊस",
   "cropSoybean": "सोयाबीन",
   "cropOther": "इतर",
-  "saveAndContinue": "जतन करा आणि पुढे जा"
+  "saveAndContinue": "जतन करा आणि पुढे जा",
+  "helloName": "नमस्कार, {name}",
+  "weatherTemp": "तापमान",
+  "weatherRain": "आज पाऊस",
+  "weatherWind": "वारा",
+  "myFieldToday": "आज माझे शेत",
+  "healthyStatus": "उत्तम",
+  "watchStatus": "लक्ष ठेवा",
+  "actNowStatus": "तातडीने कृती करा",
+  "healthSummaryHealthy": "बहुतांश पीक चांगले दिसत आहे. उद्या कोरड्या भागाची पाहणी करा.",
+  "healthSummaryWatch": "मातीतील ओलावा कमी होत आहे. उद्या पाणी देण्याचे नियोजन करा.",
+  "healthSummaryActNow": "पिकावर ताण दिसून येत आहे. आजच शेताची पाहणी करा.",
+  "noAlertsToday": "आज कोणतीही सूचना नाही",
+  "alertsTapToSee": "{count} सूचना. काय करायचे ते पाहण्यासाठी दाबा.",
+  "homeSpeech": "{greeting}. तापमान {temp} अंश. पाऊस {rain} मिमी. तुमचे शेत {health} आहे. {alerts}."
 }

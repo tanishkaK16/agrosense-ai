@@ -168,4 +168,56 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get saveAndContinue => 'सहेजें और आगे बढ़ें';
+
+  @override
+  String helloName(String name) {
+    return 'नमस्ते, $name';
+  }
+
+  @override
+  String get weatherTemp => 'तापमान';
+
+  @override
+  String get weatherRain => 'आज बारिश';
+
+  @override
+  String get weatherWind => 'हवा';
+
+  @override
+  String get myFieldToday => 'आज मेरा खेत';
+
+  @override
+  String get healthyStatus => 'स्वस्थ';
+
+  @override
+  String get watchStatus => 'सावधान';
+
+  @override
+  String get actNowStatus => 'तुरंत कदम उठाएं';
+
+  @override
+  String get healthSummaryHealthy =>
+      'ज़्यादातर फसल ठीक दिख रही है। कल सूखे कोने को देखें।';
+
+  @override
+  String get healthSummaryWatch =>
+      'मिट्टी की नमी कम हो रही है। कल पानी देने की योजना बनाएं।';
+
+  @override
+  String get healthSummaryActNow =>
+      'फसल में तनाव के लक्षण हैं। आज ही खेत का मुआयना करें।';
+
+  @override
+  String get noAlertsToday => 'आज कोई चेतावनी नहीं';
+
+  @override
+  String alertsTapToSee(int count) {
+    return '$count चेतावनी। क्या करना है देखने के लिए दबाएं।';
+  }
+
+  @override
+  String homeSpeech(
+      String greeting, int temp, int rain, String health, String alerts) {
+    return '$greeting। तापमान $temp अंश। बारिश $rain मिलीमीटर। आपका खेत $health है। $alerts।';
+  }
 }

@@ -173,7 +173,7 @@ void main() {
 
       // 6. Home Screen reached with personalized greeting
       expect(find.byType(HomeScreen), findsOneWidget);
-      expect(find.text('Welcome, farmer, Anand'), findsOneWidget);
+      expect(find.text('Hello, Anand'), findsOneWidget);
     });
 
     testWidgets('Back button from OTP preserves phone number', (tester) async {

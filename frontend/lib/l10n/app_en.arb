@@ -161,5 +161,66 @@
   "@cropOther": { "description": "Crop option: Other" },
 
   "saveAndContinue": "Save and continue",
-  "@saveAndContinue": { "description": "Profile submit button label" }
+  "@saveAndContinue": { "description": "Profile submit button label" },
+
+  "helloName": "Hello, {name}",
+  "@helloName": {
+    "description": "Personalized farmer greeting",
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+
+  "weatherTemp": "Temp",
+  "@weatherTemp": { "description": "Temperature label" },
+
+  "weatherRain": "Rain today",
+  "@weatherRain": { "description": "Rain label" },
+
+  "weatherWind": "Wind",
+  "@weatherWind": { "description": "Wind label" },
+
+  "myFieldToday": "My field today",
+  "@myFieldToday": { "description": "Title of the main field health card" },
+
+  "healthyStatus": "Healthy",
+  "@healthyStatus": { "description": "Healthy field status tag" },
+
+  "watchStatus": "Watch",
+  "@watchStatus": { "description": "Watch caution field status tag" },
+
+  "actNowStatus": "Act now",
+  "@actNowStatus": { "description": "Act now warning field status tag" },
+
+  "healthSummaryHealthy": "Most of the crop looks fine. Check the dry corner tomorrow.",
+  "@healthSummaryHealthy": { "description": "Healthy field summary sentence" },
+
+  "healthSummaryWatch": "Soil moisture is dipping. Plan watering for tomorrow.",
+  "@healthSummaryWatch": { "description": "Watch field summary sentence" },
+
+  "healthSummaryActNow": "Crop stress detected. Inspect the field today.",
+  "@healthSummaryActNow": { "description": "Act now field summary sentence" },
+
+  "noAlertsToday": "No alert today",
+  "@noAlertsToday": { "description": "Empty state label when there are zero alerts" },
+
+  "alertsTapToSee": "{count} alert. Tap to see what to do.",
+  "@alertsTapToSee": {
+    "description": "Alert card text when alerts exist",
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+
+  "homeSpeech": "{greeting}. Temperature {temp} degrees. Rain {rain} millimeter. Your field is {health}. {alerts}.",
+  "@homeSpeech": {
+    "description": "Full home screen text-to-speech summary",
+    "placeholders": {
+      "greeting": { "type": "String" },
+      "temp": { "type": "int" },
+      "rain": { "type": "int" },
+      "health": { "type": "String" },
+      "alerts": { "type": "String" }
+    }
+  }
 }
