@@ -121,5 +121,22 @@
   "seeWhatToDo": "काय करायचे ते पहा",
   "alertsSpeechEmpty": "आज कोणतीही सूचना नाही. तुमची शेते उत्तम आहेत.",
   "alertsSpeechCount": "तुमच्याकडे {count} सूचना आहेत. पहिली: {fieldName} मध्ये {firstProblem}",
-  "alertDetailSpeech": "{problem}. आजची पावले: {steps}. {help}"
+  "alertDetailSpeech": "{problem}. आजची पावले: {steps}. {help}",
+  "voiceListening": "ऐकत आहोत...",
+  "voiceStop": "थांबवा",
+  "voicePermissionDenied": "तुमचा आवाज ऐकण्यासाठी मायक्रोफोन परवानगी आवश्यक आहे.",
+  "voiceNotUnderstood": "समजले नाही. घर, शेत, इशारा, किंवा काय करायचे ते सांगा.",
+  "voiceHelpPrompt": "तुम्ही घर, माझी शेते, इशारा, किंवा काय करायचे ते बोलू शकता.",
+  "voiceNoAlerts": "आज कोणतीही सूचना नाही. तुमची शेते उत्तम आहेत.",
+  "voiceNoFields": "कृपया आधी एक शेत जोडा.",
+  "voiceOpeningHome": "मुख्य पृष्ठ उघडत आहे",
+  "voiceOpeningFields": "माझी शेते उघडत आहे",
+  "voiceOpeningAlerts": "इशारे उघडत आहे",
+  "voiceOpeningAlertDetail": "{fieldName} साठी इशारा उघडत आहे",
+  "voiceReadingScreen": "वाचून दाखवत आहोत",
+  "voiceStatusReport": "{field}: आरोग्य {health} आहे, पाणी {water} आहे, आणि कीड {pest} आहे.",
+  "voiceStatusWaterReport": "{field}: पाणी {water} आहे.",
+  "voiceStatusPestReport": "{field}: कीड {pest} आहे.",
+  "voiceStatusHealthReport": "{field}: पिकाचे आरोग्य {health} आहे.",
+  "voiceMicTooltip": "बोलून आज्ञा द्या"
 }

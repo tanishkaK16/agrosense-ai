@@ -121,5 +121,22 @@
   "seeWhatToDo": "क्या करना है देखें",
   "alertsSpeechEmpty": "आज कोई चेतावनी नहीं। आपके खेत ठीक हैं।",
   "alertsSpeechCount": "आपके पास {count} सूचनाएँ हैं। पहली: {fieldName} में {firstProblem}",
-  "alertDetailSpeech": "{problem}। आज के कदम: {steps}। {help}"
+  "alertDetailSpeech": "{problem}। आज के कदम: {steps}। {help}",
+  "voiceListening": "सुन रहे हैं...",
+  "voiceStop": "रोकें",
+  "voicePermissionDenied": "आपकी आवाज़ सुनने के लिए माइक्रोफ़ोन की अनुमति चाहिए।",
+  "voiceNotUnderstood": "समझ नहीं आया। घर, खेत, चेतावनी, या क्या करें कहें।",
+  "voiceHelpPrompt": "आप घर, मेरे खेत, चेतावनी, या क्या करें कह सकते हैं।",
+  "voiceNoAlerts": "आज कोई चेतावनी नहीं। आपके खेत ठीक हैं।",
+  "voiceNoFields": "कृपया पहले एक खेत जोड़ें।",
+  "voiceOpeningHome": "मुख्य पृष्ठ खोल रहे हैं",
+  "voiceOpeningFields": "मेरे खेत खोल रहे हैं",
+  "voiceOpeningAlerts": "चेतावनी पृष्ठ खोल रहे हैं",
+  "voiceOpeningAlertDetail": "{fieldName} के लिए चेतावनी खोल रहे हैं",
+  "voiceReadingScreen": "पृष्ठ पढ़कर सुना रहे हैं",
+  "voiceStatusReport": "{field}: स्वास्थ्य {health} है, पानी {water} है, और कीट {pest} है।",
+  "voiceStatusWaterReport": "{field}: पानी {water} है।",
+  "voiceStatusPestReport": "{field}: कीट {pest} है।",
+  "voiceStatusHealthReport": "{field}: फसल का स्वास्थ्य {health} है।",
+  "voiceMicTooltip": "बोलकर आदेश दें"
 }

@@ -5,6 +5,7 @@ import '../../core/constants/app_sizes.dart';
 import '../../core/routing/app_router.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_shadows.dart';
+import '../../core/voice/mic_button.dart';
 import '../../core/voice/voice_service.dart';
 import '../../core/widgets/listen_button.dart';
 import '../../generated/l10n/app_localizations.dart';
@@ -279,6 +280,18 @@ class _AlertDetailScreenState extends State<AlertDetailScreen> {
                               ),
                             ),
                             const Spacer(),
+                            Container(
+                              decoration: BoxDecoration(
+                                color: AppColors.surface.withValues(alpha: 0.92),
+                                shape: BoxShape.circle,
+                                boxShadow: AppShadows.medium,
+                              ),
+                              child: MicButton(
+                                onPhoto: false,
+                                currentListenText: speechText,
+                              ),
+                            ),
+                            const SizedBox(width: AppSizes.paddingS),
                             Container(
                               decoration: BoxDecoration(
                                 color: AppColors.surface.withValues(alpha: 0.92),

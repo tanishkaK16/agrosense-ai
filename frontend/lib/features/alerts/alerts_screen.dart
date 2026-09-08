@@ -5,6 +5,7 @@ import '../../core/constants/app_sizes.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_shadows.dart';
 import '../../core/theme/app_text_styles.dart';
+import '../../core/voice/mic_button.dart';
 import '../../core/voice/voice_service.dart';
 import '../../core/widgets/listen_button.dart';
 import '../../generated/l10n/app_localizations.dart';
@@ -140,11 +141,17 @@ class _AlertsScreenState extends State<AlertsScreen> {
               ),
               child: Row(
                 children: [
-                  Text(
-                    l10n.alerts,
-                    style: AppTextStyles.screenTitle(context),
+                  Expanded(
+                    child: Text(
+                      l10n.alerts,
+                      style: AppTextStyles.screenTitle(context),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
-                  const Spacer(),
+                  const SizedBox(width: AppSizes.paddingS),
+                  MicButton(currentListenText: speechText),
+                  const SizedBox(width: AppSizes.paddingS),
                   ListenButton(text: speechText),
                 ],
               ),

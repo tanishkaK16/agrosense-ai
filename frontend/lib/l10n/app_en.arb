@@ -421,5 +421,87 @@
       "steps": { "type": "String" },
       "help": { "type": "String" }
     }
-  }
+  },
+
+  "voiceListening": "Listening...",
+  "@voiceListening": { "description": "Status text while microphone is active" },
+
+  "voiceStop": "Stop",
+  "@voiceStop": { "description": "Button to stop voice recording" },
+
+  "voicePermissionDenied": "Microphone access is needed to hear your voice.",
+  "@voicePermissionDenied": { "description": "Calm message when mic permission is denied" },
+
+  "voiceNotUnderstood": "Did not catch that. Try saying Home, Fields, Alerts, or What to do.",
+  "@voiceNotUnderstood": { "description": "Guidance when spoken input is unparsed" },
+
+  "voiceHelpPrompt": "You can say Home, My Fields, Alerts, or What to do.",
+  "@voiceHelpPrompt": { "description": "Spoken help options" },
+
+  "voiceNoAlerts": "No alert today. Your fields look fine.",
+  "@voiceNoAlerts": { "description": "Spoken response when there are no alerts" },
+
+  "voiceNoFields": "Please add a field first.",
+  "@voiceNoFields": { "description": "Spoken response when farmer asks about field status without fields" },
+
+  "voiceOpeningHome": "Opening Home",
+  "@voiceOpeningHome": { "description": "Feedback banner and speech for home command" },
+
+  "voiceOpeningFields": "Opening My Fields",
+  "@voiceOpeningFields": { "description": "Feedback banner and speech for fields command" },
+
+  "voiceOpeningAlerts": "Opening Alerts",
+  "@voiceOpeningAlerts": { "description": "Feedback banner and speech for alerts command" },
+
+  "voiceOpeningAlertDetail": "Opening alert for {fieldName}",
+  "@voiceOpeningAlertDetail": {
+    "description": "Feedback banner and speech when navigating to an alert",
+    "placeholders": {
+      "fieldName": { "type": "String" }
+    }
+  },
+
+  "voiceReadingScreen": "Reading screen",
+  "@voiceReadingScreen": { "description": "Banner when listen command is triggered" },
+
+  "voiceStatusReport": "{field}: Health is {health}, water is {water}, pest risk is {pest}.",
+  "@voiceStatusReport": {
+    "description": "Overall field telemetry voice response",
+    "placeholders": {
+      "field": { "type": "String" },
+      "health": { "type": "String" },
+      "water": { "type": "String" },
+      "pest": { "type": "String" }
+    }
+  },
+
+  "voiceStatusWaterReport": "{field}: Water is {water}.",
+  "@voiceStatusWaterReport": {
+    "description": "Water status voice response",
+    "placeholders": {
+      "field": { "type": "String" },
+      "water": { "type": "String" }
+    }
+  },
+
+  "voiceStatusPestReport": "{field}: Pest risk is {pest}.",
+  "@voiceStatusPestReport": {
+    "description": "Pest status voice response",
+    "placeholders": {
+      "field": { "type": "String" },
+      "pest": { "type": "String" }
+    }
+  },
+
+  "voiceStatusHealthReport": "{field}: Crop health is {health}.",
+  "@voiceStatusHealthReport": {
+    "description": "Health status voice response",
+    "placeholders": {
+      "field": { "type": "String" },
+      "health": { "type": "String" }
+    }
+  },
+
+  "voiceMicTooltip": "Voice command",
+  "@voiceMicTooltip": { "description": "Accessibility tooltip for mic button" }
 }

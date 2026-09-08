@@ -53,3 +53,6 @@ lib/
     alerts/       alerts_screen.dart
   generated/l10n/ (generated — do not edit)
 ```
+
+Android emulator may need a Google speech pack and a working mic.
+

@@ -833,6 +833,109 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{problem}. Steps for today: {steps}. {help}'**
   String alertDetailSpeech(String problem, String steps, String help);
+
+  /// Status text while microphone is active
+  ///
+  /// In en, this message translates to:
+  /// **'Listening...'**
+  String get voiceListening;
+
+  /// Button to stop voice recording
+  ///
+  /// In en, this message translates to:
+  /// **'Stop'**
+  String get voiceStop;
+
+  /// Calm message when mic permission is denied
+  ///
+  /// In en, this message translates to:
+  /// **'Microphone access is needed to hear your voice.'**
+  String get voicePermissionDenied;
+
+  /// Guidance when spoken input is unparsed
+  ///
+  /// In en, this message translates to:
+  /// **'Did not catch that. Try saying Home, Fields, Alerts, or What to do.'**
+  String get voiceNotUnderstood;
+
+  /// Spoken help options
+  ///
+  /// In en, this message translates to:
+  /// **'You can say Home, My Fields, Alerts, or What to do.'**
+  String get voiceHelpPrompt;
+
+  /// Spoken response when there are no alerts
+  ///
+  /// In en, this message translates to:
+  /// **'No alert today. Your fields look fine.'**
+  String get voiceNoAlerts;
+
+  /// Spoken response when farmer asks about field status without fields
+  ///
+  /// In en, this message translates to:
+  /// **'Please add a field first.'**
+  String get voiceNoFields;
+
+  /// Feedback banner and speech for home command
+  ///
+  /// In en, this message translates to:
+  /// **'Opening Home'**
+  String get voiceOpeningHome;
+
+  /// Feedback banner and speech for fields command
+  ///
+  /// In en, this message translates to:
+  /// **'Opening My Fields'**
+  String get voiceOpeningFields;
+
+  /// Feedback banner and speech for alerts command
+  ///
+  /// In en, this message translates to:
+  /// **'Opening Alerts'**
+  String get voiceOpeningAlerts;
+
+  /// Feedback banner and speech when navigating to an alert
+  ///
+  /// In en, this message translates to:
+  /// **'Opening alert for {fieldName}'**
+  String voiceOpeningAlertDetail(String fieldName);
+
+  /// Banner when listen command is triggered
+  ///
+  /// In en, this message translates to:
+  /// **'Reading screen'**
+  String get voiceReadingScreen;
+
+  /// Overall field telemetry voice response
+  ///
+  /// In en, this message translates to:
+  /// **'{field}: Health is {health}, water is {water}, pest risk is {pest}.'**
+  String voiceStatusReport(
+      String field, String health, String water, String pest);
+
+  /// Water status voice response
+  ///
+  /// In en, this message translates to:
+  /// **'{field}: Water is {water}.'**
+  String voiceStatusWaterReport(String field, String water);
+
+  /// Pest status voice response
+  ///
+  /// In en, this message translates to:
+  /// **'{field}: Pest risk is {pest}.'**
+  String voiceStatusPestReport(String field, String pest);
+
+  /// Health status voice response
+  ///
+  /// In en, this message translates to:
+  /// **'{field}: Crop health is {health}.'**
+  String voiceStatusHealthReport(String field, String health);
+
+  /// Accessibility tooltip for mic button
+  ///
+  /// In en, this message translates to:
+  /// **'Voice command'**
+  String get voiceMicTooltip;
 }
 
 class _AppLocalizationsDelegate

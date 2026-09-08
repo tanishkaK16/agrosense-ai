@@ -413,4 +413,69 @@ class AppLocalizationsMr extends AppLocalizations {
   String alertDetailSpeech(String problem, String steps, String help) {
     return '$problem. आजची पावले: $steps. $help';
   }
+
+  @override
+  String get voiceListening => 'ऐकत आहोत...';
+
+  @override
+  String get voiceStop => 'थांबवा';
+
+  @override
+  String get voicePermissionDenied =>
+      'तुमचा आवाज ऐकण्यासाठी मायक्रोफोन परवानगी आवश्यक आहे.';
+
+  @override
+  String get voiceNotUnderstood =>
+      'समजले नाही. घर, शेत, इशारा, किंवा काय करायचे ते सांगा.';
+
+  @override
+  String get voiceHelpPrompt =>
+      'तुम्ही घर, माझी शेते, इशारा, किंवा काय करायचे ते बोलू शकता.';
+
+  @override
+  String get voiceNoAlerts => 'आज कोणतीही सूचना नाही. तुमची शेते उत्तम आहेत.';
+
+  @override
+  String get voiceNoFields => 'कृपया आधी एक शेत जोडा.';
+
+  @override
+  String get voiceOpeningHome => 'मुख्य पृष्ठ उघडत आहे';
+
+  @override
+  String get voiceOpeningFields => 'माझी शेते उघडत आहे';
+
+  @override
+  String get voiceOpeningAlerts => 'इशारे उघडत आहे';
+
+  @override
+  String voiceOpeningAlertDetail(String fieldName) {
+    return '$fieldName साठी इशारा उघडत आहे';
+  }
+
+  @override
+  String get voiceReadingScreen => 'वाचून दाखवत आहोत';
+
+  @override
+  String voiceStatusReport(
+      String field, String health, String water, String pest) {
+    return '$field: आरोग्य $health आहे, पाणी $water आहे, आणि कीड $pest आहे.';
+  }
+
+  @override
+  String voiceStatusWaterReport(String field, String water) {
+    return '$field: पाणी $water आहे.';
+  }
+
+  @override
+  String voiceStatusPestReport(String field, String pest) {
+    return '$field: कीड $pest आहे.';
+  }
+
+  @override
+  String voiceStatusHealthReport(String field, String health) {
+    return '$field: पिकाचे आरोग्य $health आहे.';
+  }
+
+  @override
+  String get voiceMicTooltip => 'बोलून आज्ञा द्या';
 }

@@ -6,6 +6,7 @@ import '../../core/routing/app_router.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_shadows.dart';
 import '../../core/theme/app_text_styles.dart';
+import '../../core/voice/mic_button.dart';
 import '../../core/widgets/listen_button.dart';
 import '../../generated/l10n/app_localizations.dart';
 import '../auth/data/mock_auth_repository.dart';
@@ -227,6 +228,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 ),
+                MicButton(
+                  onPhoto: false,
+                  currentListenText: speechText,
+                ),
+                const SizedBox(width: AppSizes.paddingS),
                 ListenButton(
                   onPhoto: false,
                   text: speechText,
@@ -309,7 +315,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                   borderRadius: BorderRadius.circular(AppSizes.radiusLarge + 4),
                   child: Container(
-                    height: 250,
+                    height: 260,
                     decoration: BoxDecoration(
                       borderRadius:
                           BorderRadius.circular(AppSizes.radiusLarge + 4),

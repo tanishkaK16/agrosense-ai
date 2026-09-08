@@ -414,4 +414,69 @@ class AppLocalizationsEn extends AppLocalizations {
   String alertDetailSpeech(String problem, String steps, String help) {
     return '$problem. Steps for today: $steps. $help';
   }
+
+  @override
+  String get voiceListening => 'Listening...';
+
+  @override
+  String get voiceStop => 'Stop';
+
+  @override
+  String get voicePermissionDenied =>
+      'Microphone access is needed to hear your voice.';
+
+  @override
+  String get voiceNotUnderstood =>
+      'Did not catch that. Try saying Home, Fields, Alerts, or What to do.';
+
+  @override
+  String get voiceHelpPrompt =>
+      'You can say Home, My Fields, Alerts, or What to do.';
+
+  @override
+  String get voiceNoAlerts => 'No alert today. Your fields look fine.';
+
+  @override
+  String get voiceNoFields => 'Please add a field first.';
+
+  @override
+  String get voiceOpeningHome => 'Opening Home';
+
+  @override
+  String get voiceOpeningFields => 'Opening My Fields';
+
+  @override
+  String get voiceOpeningAlerts => 'Opening Alerts';
+
+  @override
+  String voiceOpeningAlertDetail(String fieldName) {
+    return 'Opening alert for $fieldName';
+  }
+
+  @override
+  String get voiceReadingScreen => 'Reading screen';
+
+  @override
+  String voiceStatusReport(
+      String field, String health, String water, String pest) {
+    return '$field: Health is $health, water is $water, pest risk is $pest.';
+  }
+
+  @override
+  String voiceStatusWaterReport(String field, String water) {
+    return '$field: Water is $water.';
+  }
+
+  @override
+  String voiceStatusPestReport(String field, String pest) {
+    return '$field: Pest risk is $pest.';
+  }
+
+  @override
+  String voiceStatusHealthReport(String field, String health) {
+    return '$field: Crop health is $health.';
+  }
+
+  @override
+  String get voiceMicTooltip => 'Voice command';
 }
