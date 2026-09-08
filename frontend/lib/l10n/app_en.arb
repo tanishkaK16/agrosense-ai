@@ -1,0 +1,59 @@
+{
+  "@@locale": "en",
+  "appName": "AgroSense",
+  "@appName": { "description": "Application name" },
+
+  "welcomeTitle": "Grow smarter, worry less",
+  "@welcomeTitle": { "description": "Hero welcome headline on the language screen" },
+
+  "welcomeSubtitle": "Know what your crops need, before problems start.",
+  "@welcomeSubtitle": { "description": "Short supporting line below the welcome title" },
+
+  "chooseLanguage": "Choose your language",
+  "@chooseLanguage": { "description": "Prompt to select a language" },
+
+  "languageEnglish": "English",
+  "@languageEnglish": { "description": "Language option: English" },
+
+  "languageHindi": "Hindi",
+  "@languageHindi": { "description": "Language option: Hindi, shown in Hindi script" },
+
+  "languageMarathi": "Marathi",
+  "@languageMarathi": { "description": "Language option: Marathi, shown in Marathi script" },
+
+  "continueLabel": "Continue",
+  "@continueLabel": { "description": "Continue button on language screen" },
+
+  "getStarted": "Get started",
+  "@getStarted": { "description": "Alternative label for the primary CTA button" },
+
+  "home": "Home",
+  "@home": { "description": "Bottom nav: Home tab label" },
+
+  "myFields": "My Fields",
+  "@myFields": { "description": "Bottom nav: My Fields tab label" },
+
+  "alerts": "Alerts",
+  "@alerts": { "description": "Bottom nav: Alerts tab label" },
+
+  "comingSoon": "More here soon",
+  "@comingSoon": { "description": "Placeholder text for screens under construction" },
+
+  "listen": "Listen",
+  "@listen": { "description": "Accessibility listen button label (TTS, future phase)" },
+
+  "good": "Good",
+  "@good": { "description": "Crop health status: healthy" },
+
+  "warning": "Watch",
+  "@warning": { "description": "Crop health status: caution" },
+
+  "danger": "Act now",
+  "@danger": { "description": "Crop health status: critical" },
+
+  "tapToStart": "Tap a language to begin",
+  "@tapToStart": { "description": "Hint shown before a language is selected" },
+
+  "helloFarmer": "Welcome, farmer",
+  "@helloFarmer": { "description": "Generic greeting on the home screen — no real name" }
+}

@@ -1,0 +1,22 @@
+{
+  "@@locale": "mr",
+  "appName": "अॅग्रोसेन्स",
+  "welcomeTitle": "हुशारीने पिकवा, काळजी कमी करा",
+  "welcomeSubtitle": "समस्या येण्यापूर्वी जाणून घ्या पिकाला काय हवे आहे.",
+  "chooseLanguage": "आपली भाषा निवडा",
+  "languageEnglish": "English",
+  "languageHindi": "हिंदी",
+  "languageMarathi": "मराठी",
+  "continueLabel": "पुढे जा",
+  "getStarted": "सुरू करा",
+  "home": "मुख्यपृष्ठ",
+  "myFields": "माझे शेत",
+  "alerts": "सूचना",
+  "comingSoon": "लवकरच येत आहे",
+  "listen": "ऐका",
+  "good": "चांगले",
+  "warning": "सावधान",
+  "danger": "आत्ता कारवाई करा",
+  "tapToStart": "सुरू करण्यासाठी भाषा निवडा",
+  "helloFarmer": "नमस्कार, शेतकरी"
+}

@@ -1,0 +1,22 @@
+{
+  "@@locale": "hi",
+  "appName": "एग्रोसेंस",
+  "welcomeTitle": "समझदारी से उगाएं, चिंता कम करें",
+  "welcomeSubtitle": "समस्या आने से पहले जानें कि आपकी फसल को क्या चाहिए।",
+  "chooseLanguage": "अपनी भाषा चुनें",
+  "languageEnglish": "English",
+  "languageHindi": "हिंदी",
+  "languageMarathi": "मराठी",
+  "continueLabel": "आगे बढ़ें",
+  "getStarted": "शुरू करें",
+  "home": "होम",
+  "myFields": "मेरे खेत",
+  "alerts": "चेतावनी",
+  "comingSoon": "जल्द आ रहा है",
+  "listen": "सुनें",
+  "good": "अच्छा",
+  "warning": "सावधान",
+  "danger": "तुरंत कार्रवाई करें",
+  "tapToStart": "शुरू करने के लिए भाषा चुनें",
+  "helloFarmer": "नमस्ते, किसान"
+}

@@ -1,0 +1,42 @@
+name: agrosense_ai
+description: Crop-stress early warning for smallholder farmers.
+publish_to: 'none'
+
+version: 0.1.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # Routing
+  go_router: ^14.2.0
+
+  # Fonts
+  google_fonts: ^6.2.1
+
+  # Persistence
+  shared_preferences: ^2.3.1
+
+  # SVG icons (for custom leaf / wheat marks)
+  flutter_svg: ^2.0.10
+
+  # i18n code generation
+  intl: ^0.20.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  generate: true
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
