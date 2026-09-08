@@ -326,5 +326,100 @@
       "pest": { "type": "String" },
       "summary": { "type": "String" }
     }
+  },
+
+  "fieldsLookFine": "Your fields look fine.",
+  "@fieldsLookFine": { "description": "Empty state subtitle when all fields are healthy" },
+
+  "alertTimeToday": "Today",
+  "@alertTimeToday": { "description": "Timestamp label for recent alert" },
+
+  "alertProblemWaterLow": "Water is low.",
+  "@alertProblemWaterLow": { "description": "Problem title: water low" },
+
+  "alertProblemWaterCritical": "Soil is critically dry.",
+  "@alertProblemWaterCritical": { "description": "Problem title: critical water stress" },
+
+  "alertProblemPestWatch": "Pest risk is up.",
+  "@alertProblemPestWatch": { "description": "Problem title: pest caution" },
+
+  "alertProblemPestCritical": "High pest activity detected.",
+  "@alertProblemPestCritical": { "description": "Problem title: pest danger" },
+
+  "alertProblemHealthWatch": "Crop weakness detected.",
+  "@alertProblemHealthWatch": { "description": "Problem title: health caution" },
+
+  "alertProblemHealthCritical": "Severe crop stress detected.",
+  "@alertProblemHealthCritical": { "description": "Problem title: health danger" },
+
+  "alertActionWater": "Give water if the soil is dry.",
+  "@alertActionWater": { "description": "One-line action for water alert" },
+
+  "alertActionPest": "Walk the field and look under leaves.",
+  "@alertActionPest": { "description": "One-line action for pest alert" },
+
+  "alertActionHealth": "Inspect the weak corner shown on the field.",
+  "@alertActionHealth": { "description": "One-line action for health alert" },
+
+  "alertStepWater1": "Check soil moisture with your fingers near crop roots.",
+  "@alertStepWater1": { "description": "Step 1 for water alert" },
+
+  "alertStepWater2": "Water in early morning or evening to reduce loss.",
+  "@alertStepWater2": { "description": "Step 2 for water alert" },
+
+  "alertStepWater3": "Do not flood the field if unsure of drainage.",
+  "@alertStepWater3": { "description": "Step 3 for water alert" },
+
+  "alertStepPest1": "Walk the field and inspect under leaves carefully.",
+  "@alertStepPest1": { "description": "Step 1 for pest alert" },
+
+  "alertStepPest2": "Pick and remove any visible pests or damaged leaves.",
+  "@alertStepPest2": { "description": "Step 2 for pest alert" },
+
+  "alertStepPest3": "Ask your local agriculture officer before spraying chemicals.",
+  "@alertStepPest3": { "description": "Step 3 for pest alert" },
+
+  "alertStepHealth1": "Check water moisture and pests in the field first.",
+  "@alertStepHealth1": { "description": "Step 1 for health alert" },
+
+  "alertStepHealth2": "Look at the weak corner shown on your field photo.",
+  "@alertStepHealth2": { "description": "Step 2 for health alert" },
+
+  "alertStepHealth3": "Ensure proper sunlight and soil aeration around roots.",
+  "@alertStepHealth3": { "description": "Step 3 for health alert" },
+
+  "alertHelpNotice": "If it gets worse in 2 days, ask your local shop or officer.",
+  "@alertHelpNotice": { "description": "Guidance on when to seek professional help" },
+
+  "whatToDoToday": "What to do today",
+  "@whatToDoToday": { "description": "Section header on alert detail screen" },
+
+  "markDone": "Done",
+  "@markDone": { "description": "Action pill button marking alert as seen" },
+
+  "seeWhatToDo": "See what to do",
+  "@seeWhatToDo": { "description": "Link on field detail to view action steps" },
+
+  "alertsSpeechEmpty": "No alert today. Your fields look fine.",
+  "@alertsSpeechEmpty": { "description": "Spoken text when alerts list is empty" },
+
+  "alertsSpeechCount": "You have {count} alerts. First: {firstProblem} in {fieldName}.",
+  "@alertsSpeechCount": {
+    "description": "Spoken text when alerts exist",
+    "placeholders": {
+      "count": { "type": "int" },
+      "firstProblem": { "type": "String" },
+      "fieldName": { "type": "String" }
+    }
+  },
+
+  "alertDetailSpeech": "{problem}. Steps for today: {steps}. {help}",
+  "@alertDetailSpeech": {
+    "description": "Spoken text for alert detail",
+    "placeholders": {
+      "problem": { "type": "String" },
+      "steps": { "type": "String" },
+      "help": { "type": "String" }
+    }
   }
 }

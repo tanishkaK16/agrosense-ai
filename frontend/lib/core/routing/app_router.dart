@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../core/l10n/locale_controller.dart';
 import '../../core/storage/app_prefs.dart';
+import '../../features/alerts/alert_detail_screen.dart';
 import '../../features/alerts/alerts_screen.dart';
 import '../../features/auth/otp_screen.dart';
 import '../../features/auth/phone_screen.dart';
@@ -29,6 +30,7 @@ abstract final class AppRoutes {
   static const String fieldsPin = '/fields/pin';
   static const String fieldDetail = '/fields/:id';
   static const String alerts = '/alerts';
+  static const String alertDetail = '/alerts/:id';
 }
 
 /// Application router.
@@ -180,6 +182,15 @@ GoRouter buildRouter() {
           final fieldId = state.pathParameters['id'] ?? '';
           return NoTransitionPage(
             child: FieldDetailScreen(fieldId: fieldId),
+          );
+        },
+      ),
+      GoRoute(
+        path: AppRoutes.alertDetail,
+        pageBuilder: (context, state) {
+          final alertId = state.pathParameters['id'] ?? '';
+          return NoTransitionPage(
+            child: AlertDetailScreen(alertId: alertId),
           );
         },
       ),

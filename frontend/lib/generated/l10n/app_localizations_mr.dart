@@ -323,4 +323,94 @@ class AppLocalizationsMr extends AppLocalizations {
       String name, String health, String water, String pest, String summary) {
     return '$name. आरोग्य $health. पाणी $water. कीड $pest. $summary';
   }
+
+  @override
+  String get fieldsLookFine => 'तुमची सर्व शेते उत्तम दिसत आहेत.';
+
+  @override
+  String get alertTimeToday => 'आज';
+
+  @override
+  String get alertProblemWaterLow => 'पाणी कमी आहे.';
+
+  @override
+  String get alertProblemWaterCritical => 'माती खूप कोरडी झाली आहे.';
+
+  @override
+  String get alertProblemPestWatch => 'कीडीचा धोका वाढला आहे.';
+
+  @override
+  String get alertProblemPestCritical => 'कीडीचा प्रादुर्भाव जास्त आहे.';
+
+  @override
+  String get alertProblemHealthWatch => 'पिकात अशक्तपणा दिसत आहे.';
+
+  @override
+  String get alertProblemHealthCritical => 'पिकावर गंभीर ताण आहे.';
+
+  @override
+  String get alertActionWater => 'माती कोरडी असल्यास पाणी द्या.';
+
+  @override
+  String get alertActionPest => 'शेतात जाऊन पानांखाली तपासा.';
+
+  @override
+  String get alertActionHealth => 'शेतातील बाधित भागाची पाहणी करा.';
+
+  @override
+  String get alertStepWater1 => 'मुळांजवळील मातीत बोट घालून ओलावा तपासा.';
+
+  @override
+  String get alertStepWater2 =>
+      'बाष्पीभवन टाळण्यासाठी सकाळी किंवा संध्याकाळी पाणी द्या.';
+
+  @override
+  String get alertStepWater3 => 'पाणी साचून राहत असल्यास जास्त पाणी देऊ नका.';
+
+  @override
+  String get alertStepPest1 => 'शेतात फेरफटका मारून पानांच्या मागे नीट तपासा.';
+
+  @override
+  String get alertStepPest2 =>
+      'दिसणारी कीड किंवा खराब पाने हाताने वेचून नष्ट करा.';
+
+  @override
+  String get alertStepPest3 =>
+      'औषध फवारण्यापूर्वी स्थानिक कृषी अधिकाऱ्याचा सल्ला घ्या.';
+
+  @override
+  String get alertStepHealth1 => 'प्रथम शेतातील ओलावा आणि कीड तपासा.';
+
+  @override
+  String get alertStepHealth2 => 'फोटोत दाखवलेल्या बाधित कोपऱ्याची पाहणी करा.';
+
+  @override
+  String get alertStepHealth3 => 'मुळांजवळ हवा आणि सूर्यप्रकाश पोहोचू द्या.';
+
+  @override
+  String get alertHelpNotice =>
+      '२ दिवसांत सुधारणा न झाल्यास स्थानिक कृषी केंद्राशी संपर्क साधा.';
+
+  @override
+  String get whatToDoToday => 'आज काय करावे';
+
+  @override
+  String get markDone => 'झाले';
+
+  @override
+  String get seeWhatToDo => 'काय करायचे ते पहा';
+
+  @override
+  String get alertsSpeechEmpty =>
+      'आज कोणतीही सूचना नाही. तुमची शेते उत्तम आहेत.';
+
+  @override
+  String alertsSpeechCount(int count, String firstProblem, String fieldName) {
+    return 'तुमच्याकडे $count सूचना आहेत. पहिली: $fieldName मध्ये $firstProblem';
+  }
+
+  @override
+  String alertDetailSpeech(String problem, String steps, String help) {
+    return '$problem. आजची पावले: $steps. $help';
+  }
 }

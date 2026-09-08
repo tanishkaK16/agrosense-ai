@@ -8,6 +8,8 @@ import '../../core/theme/app_shadows.dart';
 import '../../core/voice/voice_service.dart';
 import '../../core/widgets/listen_button.dart';
 import '../../generated/l10n/app_localizations.dart';
+import '../alerts/data/mock_alerts_repository.dart';
+import '../alerts/models/farm_alert.dart';
 import 'data/local_fields_repository.dart';
 import 'data/mock_field_status_repository.dart';
 import 'models/farm_field.dart';
@@ -36,6 +38,7 @@ class FieldDetailScreen extends StatefulWidget {
 class _FieldDetailScreenState extends State<FieldDetailScreen> {
   FarmField? _field;
   FieldStatus? _status;
+  FarmAlert? _alert;
   bool _isLoading = true;
 
   @override
@@ -75,10 +78,20 @@ class _FieldDetailScreenState extends State<FieldDetailScreen> {
       widget.fieldId,
     );
 
+    final alerts = await MockAlertsRepository.instance.getAlerts();
+    FarmAlert? fieldAlert;
+    for (final a in alerts) {
+      if (a.fieldId == widget.fieldId) {
+        fieldAlert = a;
+        break;
+      }
+    }
+
     if (mounted) {
       setState(() {
         _field = field;
         _status = status;
+        _alert = fieldAlert;
         _isLoading = false;
       });
     }
@@ -577,15 +590,63 @@ class _FieldDetailScreenState extends State<FieldDetailScreen> {
                     ),
                     const SizedBox(width: 12),
                     Expanded(
-                      child: Text(
-                        summaryText,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          color: _getSummaryTextColor(status),
-                          height: 1.4,
-                        ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            summaryText,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              color: _getSummaryTextColor(status),
+                              height: 1.4,
+                            ),
+                          ),
+                          if (_alert != null) ...[
+                            const SizedBox(height: 10),
+                            InkWell(
+                              onTap: () => context.push('/alerts/${_alert!.id}'),
+                              borderRadius:
+                                  BorderRadius.circular(AppSizes.radiusPill),
+                              child: Container(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 12,
+                                  vertical: 5,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: AppColors.surface,
+                                  borderRadius:
+                                      BorderRadius.circular(AppSizes.radiusPill),
+                                  border: Border.all(
+                                    color: _getSummaryBorderColor(status),
+                                    width: 1,
+                                  ),
+                                ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Text(
+                                      l10n.seeWhatToDo,
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 13,
+                                        fontWeight: FontWeight.w600,
+                                        color: _getSummaryTextColor(status),
+                                      ),
+                                    ),
+                                    const SizedBox(width: 4),
+                                    Icon(
+                                      Icons.arrow_forward_rounded,
+                                      size: 14,
+                                      color: _getSummaryTextColor(status),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ],
                       ),
                     ),
                   ],

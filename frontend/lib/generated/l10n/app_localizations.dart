@@ -671,6 +671,168 @@ abstract class AppLocalizations {
   /// **'{name}. Health {health}. Water {water}. Pest {pest}. {summary}'**
   String fieldDetailSpeech(
       String name, String health, String water, String pest, String summary);
+
+  /// Empty state subtitle when all fields are healthy
+  ///
+  /// In en, this message translates to:
+  /// **'Your fields look fine.'**
+  String get fieldsLookFine;
+
+  /// Timestamp label for recent alert
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get alertTimeToday;
+
+  /// Problem title: water low
+  ///
+  /// In en, this message translates to:
+  /// **'Water is low.'**
+  String get alertProblemWaterLow;
+
+  /// Problem title: critical water stress
+  ///
+  /// In en, this message translates to:
+  /// **'Soil is critically dry.'**
+  String get alertProblemWaterCritical;
+
+  /// Problem title: pest caution
+  ///
+  /// In en, this message translates to:
+  /// **'Pest risk is up.'**
+  String get alertProblemPestWatch;
+
+  /// Problem title: pest danger
+  ///
+  /// In en, this message translates to:
+  /// **'High pest activity detected.'**
+  String get alertProblemPestCritical;
+
+  /// Problem title: health caution
+  ///
+  /// In en, this message translates to:
+  /// **'Crop weakness detected.'**
+  String get alertProblemHealthWatch;
+
+  /// Problem title: health danger
+  ///
+  /// In en, this message translates to:
+  /// **'Severe crop stress detected.'**
+  String get alertProblemHealthCritical;
+
+  /// One-line action for water alert
+  ///
+  /// In en, this message translates to:
+  /// **'Give water if the soil is dry.'**
+  String get alertActionWater;
+
+  /// One-line action for pest alert
+  ///
+  /// In en, this message translates to:
+  /// **'Walk the field and look under leaves.'**
+  String get alertActionPest;
+
+  /// One-line action for health alert
+  ///
+  /// In en, this message translates to:
+  /// **'Inspect the weak corner shown on the field.'**
+  String get alertActionHealth;
+
+  /// Step 1 for water alert
+  ///
+  /// In en, this message translates to:
+  /// **'Check soil moisture with your fingers near crop roots.'**
+  String get alertStepWater1;
+
+  /// Step 2 for water alert
+  ///
+  /// In en, this message translates to:
+  /// **'Water in early morning or evening to reduce loss.'**
+  String get alertStepWater2;
+
+  /// Step 3 for water alert
+  ///
+  /// In en, this message translates to:
+  /// **'Do not flood the field if unsure of drainage.'**
+  String get alertStepWater3;
+
+  /// Step 1 for pest alert
+  ///
+  /// In en, this message translates to:
+  /// **'Walk the field and inspect under leaves carefully.'**
+  String get alertStepPest1;
+
+  /// Step 2 for pest alert
+  ///
+  /// In en, this message translates to:
+  /// **'Pick and remove any visible pests or damaged leaves.'**
+  String get alertStepPest2;
+
+  /// Step 3 for pest alert
+  ///
+  /// In en, this message translates to:
+  /// **'Ask your local agriculture officer before spraying chemicals.'**
+  String get alertStepPest3;
+
+  /// Step 1 for health alert
+  ///
+  /// In en, this message translates to:
+  /// **'Check water moisture and pests in the field first.'**
+  String get alertStepHealth1;
+
+  /// Step 2 for health alert
+  ///
+  /// In en, this message translates to:
+  /// **'Look at the weak corner shown on your field photo.'**
+  String get alertStepHealth2;
+
+  /// Step 3 for health alert
+  ///
+  /// In en, this message translates to:
+  /// **'Ensure proper sunlight and soil aeration around roots.'**
+  String get alertStepHealth3;
+
+  /// Guidance on when to seek professional help
+  ///
+  /// In en, this message translates to:
+  /// **'If it gets worse in 2 days, ask your local shop or officer.'**
+  String get alertHelpNotice;
+
+  /// Section header on alert detail screen
+  ///
+  /// In en, this message translates to:
+  /// **'What to do today'**
+  String get whatToDoToday;
+
+  /// Action pill button marking alert as seen
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get markDone;
+
+  /// Link on field detail to view action steps
+  ///
+  /// In en, this message translates to:
+  /// **'See what to do'**
+  String get seeWhatToDo;
+
+  /// Spoken text when alerts list is empty
+  ///
+  /// In en, this message translates to:
+  /// **'No alert today. Your fields look fine.'**
+  String get alertsSpeechEmpty;
+
+  /// Spoken text when alerts exist
+  ///
+  /// In en, this message translates to:
+  /// **'You have {count} alerts. First: {firstProblem} in {fieldName}.'**
+  String alertsSpeechCount(int count, String firstProblem, String fieldName);
+
+  /// Spoken text for alert detail
+  ///
+  /// In en, this message translates to:
+  /// **'{problem}. Steps for today: {steps}. {help}'**
+  String alertDetailSpeech(String problem, String steps, String help);
 }
 
 class _AppLocalizationsDelegate

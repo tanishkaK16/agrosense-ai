@@ -320,4 +320,98 @@ class AppLocalizationsEn extends AppLocalizations {
       String name, String health, String water, String pest, String summary) {
     return '$name. Health $health. Water $water. Pest $pest. $summary';
   }
+
+  @override
+  String get fieldsLookFine => 'Your fields look fine.';
+
+  @override
+  String get alertTimeToday => 'Today';
+
+  @override
+  String get alertProblemWaterLow => 'Water is low.';
+
+  @override
+  String get alertProblemWaterCritical => 'Soil is critically dry.';
+
+  @override
+  String get alertProblemPestWatch => 'Pest risk is up.';
+
+  @override
+  String get alertProblemPestCritical => 'High pest activity detected.';
+
+  @override
+  String get alertProblemHealthWatch => 'Crop weakness detected.';
+
+  @override
+  String get alertProblemHealthCritical => 'Severe crop stress detected.';
+
+  @override
+  String get alertActionWater => 'Give water if the soil is dry.';
+
+  @override
+  String get alertActionPest => 'Walk the field and look under leaves.';
+
+  @override
+  String get alertActionHealth => 'Inspect the weak corner shown on the field.';
+
+  @override
+  String get alertStepWater1 =>
+      'Check soil moisture with your fingers near crop roots.';
+
+  @override
+  String get alertStepWater2 =>
+      'Water in early morning or evening to reduce loss.';
+
+  @override
+  String get alertStepWater3 => 'Do not flood the field if unsure of drainage.';
+
+  @override
+  String get alertStepPest1 =>
+      'Walk the field and inspect under leaves carefully.';
+
+  @override
+  String get alertStepPest2 =>
+      'Pick and remove any visible pests or damaged leaves.';
+
+  @override
+  String get alertStepPest3 =>
+      'Ask your local agriculture officer before spraying chemicals.';
+
+  @override
+  String get alertStepHealth1 =>
+      'Check water moisture and pests in the field first.';
+
+  @override
+  String get alertStepHealth2 =>
+      'Look at the weak corner shown on your field photo.';
+
+  @override
+  String get alertStepHealth3 =>
+      'Ensure proper sunlight and soil aeration around roots.';
+
+  @override
+  String get alertHelpNotice =>
+      'If it gets worse in 2 days, ask your local shop or officer.';
+
+  @override
+  String get whatToDoToday => 'What to do today';
+
+  @override
+  String get markDone => 'Done';
+
+  @override
+  String get seeWhatToDo => 'See what to do';
+
+  @override
+  String get alertsSpeechEmpty => 'No alert today. Your fields look fine.';
+
+  @override
+  String alertsSpeechCount(int count, String firstProblem, String fieldName) {
+    return 'You have $count alerts. First: $firstProblem in $fieldName.';
+  }
+
+  @override
+  String alertDetailSpeech(String problem, String steps, String help) {
+    return '$problem. Steps for today: $steps. $help';
+  }
 }

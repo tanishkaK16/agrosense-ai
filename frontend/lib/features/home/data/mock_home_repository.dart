@@ -1,3 +1,4 @@
+import '../../alerts/data/mock_alerts_repository.dart';
 import '../models/home_snapshot.dart';
 import 'home_repository.dart';
 
@@ -5,7 +6,7 @@ import 'home_repository.dart';
 /// Options: FieldHealth.healthy, FieldHealth.watch, FieldHealth.actNow
 const FieldHealth kDevHealthOverride = FieldHealth.healthy;
 
-/// Single switch to test alert notifications in development.
+/// Single switch to test alert notifications in development (0 = automatic from repository).
 const int kDevAlertCount = 0;
 
 /// Mock implementation of [HomeRepository].
@@ -21,6 +22,10 @@ class MockHomeRepository implements HomeRepository {
     FieldHealth? fieldHealth,
   }) async {
     final effectiveHealth = fieldHealth ?? kDevHealthOverride;
+    final alerts = await MockAlertsRepository.instance.getAlerts();
+    final effectiveAlertCount =
+        kDevAlertCount > 0 ? kDevAlertCount : alerts.length;
+
     return HomeSnapshot(
       temperatureC: 32,
       rainMm: 0,
@@ -31,7 +36,7 @@ class MockHomeRepository implements HomeRepository {
           : 'wheat',
       health: effectiveHealth,
       summarySentence: _getSummaryForHealth(effectiveHealth),
-      alertCount: kDevAlertCount,
+      alertCount: effectiveAlertCount,
     );
   }
 
