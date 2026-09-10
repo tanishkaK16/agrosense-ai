@@ -1,0 +1,16 @@
+services:
+  postgis:
+    image: postgis/postgis:16-3.4
+    container_name: agrosense_postgis
+    restart: unless-stopped
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-agrosense}
+      POSTGRES_USER: ${POSTGRES_USER:-agrosense}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-agrosense}
+    volumes:
+      - postgis_data:/var/lib/postgresql/data
+
+volumes:
+  postgis_data:

@@ -48,6 +48,53 @@ agrosense-ai/
 
 ---
 
+## Running the Backend API
+
+1. Navigate to the backend directory:
+   ```bash
+   cd backend
+   ```
+
+2. Create and activate a virtual environment:
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate
+   ```
+
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Configure environment:
+   ```bash
+   cp .env.example .env
+   ```
+
+5. Start the PostGIS database container:
+   ```bash
+   docker compose up -d
+   ```
+
+6. Apply database migrations:
+   ```bash
+   python manage.py migrate
+   ```
+
+7. Run the development server:
+   ```bash
+   python manage.py runserver 0.0.0.0:8000
+   ```
+
+8. Verify the health check:
+   ```bash
+   curl http://127.0.0.1:8000/api/v1/health/
+   ```
+
+> **Android Emulator Note**: When connecting the Flutter app running on the Android emulator to the host Django backend, use `API_BASE_URL=http://10.0.2.2:8000`.
+
+---
+
 ## Languages
 
 The mobile client supports three languages with full on-device voice readouts and speech commands:
